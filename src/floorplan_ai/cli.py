@@ -18,7 +18,7 @@ def main(argv:Sequence[str]|None=None):
  if not a.command:return 0
  try:
   if a.command=='reconstruct':
-   from floorplan_ai.pipeline import PipelineConfig,run_reconstruction; run_reconstruction(a.input,a.output,PipelineConfig(a.disable_drift_correction))
+   from floorplan_ai.pipeline import PipelineConfig,run_reconstruction; run_reconstruction(a.input,a.output,PipelineConfig(disable_drift_correction=a.disable_drift_correction))
   elif a.command=='evaluate':
    from floorplan_ai.evaluation import evaluate; evaluate(a.prediction,a.ground_truth,a.report_out)
   elif a.command=='fetch-models':
