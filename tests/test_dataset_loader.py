@@ -6,6 +6,7 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 SRC = ROOT / "src"
@@ -59,7 +60,7 @@ class DatasetLoaderTests(unittest.TestCase):
         self.assertEqual(dataset.dataset_id, "synthetic-customer")
         self.assertEqual([capture.capture_id for capture in dataset.captures], ["office-photo", "foyer-photo", "walkthrough"])
 
-    def test_ground_truth_is_not_an_inference_capture(self) -> None:
+    def test_valid_ground_truth_is_isolated_from_inference_capture(self) -> None:
         raw = self.manifest([{"capture_id": "p", "source_type": "photo", "file": "p.jpg"}])
         raw["evaluation"] = {"ground_truth_file": "evaluation/truth.xlsx", "format": "xlsx"}
         root = self.write_dataset(raw, ("p.jpg", "evaluation/truth.xlsx"))
@@ -67,6 +68,21 @@ class DatasetLoaderTests(unittest.TestCase):
         self.assertEqual([capture.capture_id for capture in dataset.captures], ["p"])
         self.assertEqual(ground_truth_path(root), root / "evaluation/truth.xlsx")
         self.assertFalse(hasattr(dataset, "evaluation"))
+
+    def test_missing_ground_truth_is_rejected_by_evaluation_api(self) -> None:
+        raw = self.manifest([{"capture_id": "p", "source_type": "photo", "file": "p.jpg"}])
+        raw["evaluation"] = {"ground_truth_file": "ground_truth/expected.json", "format": "json"}
+        root = self.write_dataset(raw, ("p.jpg",))
+        with self.assertRaisesRegex(DatasetValidationError, "ground_truth/expected.json.*does not exist"):
+            ground_truth_path(root)
+
+    def test_unreadable_ground_truth_is_rejected_by_evaluation_api(self) -> None:
+        raw = self.manifest([{"capture_id": "p", "source_type": "photo", "file": "p.jpg"}])
+        raw["evaluation"] = {"ground_truth_file": "ground_truth/expected.json", "format": "json"}
+        root = self.write_dataset(raw, ("p.jpg", "ground_truth/expected.json"))
+        with patch("floorplan_ai.evaluation.dataset.os.access", return_value=False):
+            with self.assertRaisesRegex(DatasetValidationError, "ground_truth/expected.json.*not readable"):
+                ground_truth_path(root)
 
     def test_actionable_invalid_datasets(self) -> None:
         missing = Path(tempfile.mkdtemp())
