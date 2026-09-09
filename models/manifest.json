@@ -1,0 +1,1 @@
+{"models":[{"model":"Apple Depth Pro","version":"local-checkpoint","filename":"depth_pro.pt","sha256":"obtain-from-upstream-release","size":"not bundled","source":"https://github.com/apple/ml-depth-pro","license":"Apple sample-code license; verify checkpoint terms","expected_location":"models/depth_pro.pt"}]}
