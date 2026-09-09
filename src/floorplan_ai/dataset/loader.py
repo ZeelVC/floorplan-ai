@@ -110,10 +110,14 @@ def _validate_and_resolve(root: Path, manifest: Manifest) -> CaptureDataset:
 
 def load_dataset(dataset_root: str | Path) -> CaptureDataset:
     """Load inference captures only; ground truth is deliberately not returned."""
-    root = Path(dataset_root).resolve()
+    # Use an absolute lexical path rather than Path.resolve().  On macOS, resolve()
+    # canonicalizes /var/folders through the /private symlink, which makes the
+    # returned media paths differ from the caller's Path even though they refer
+    # to the same file.  Dataset paths are contracts, so preserve their spelling.
+    root = Path(dataset_root).absolute()
     return _validate_and_resolve(root, _read_manifest(root))
 
 
 def load_evaluation_reference(dataset_root: str | Path) -> EvaluationReference | None:
     """Return the separately declared evaluation reference without loading inference captures."""
-    return _read_manifest(Path(dataset_root).resolve()).evaluation
+    return _read_manifest(Path(dataset_root).absolute()).evaluation
