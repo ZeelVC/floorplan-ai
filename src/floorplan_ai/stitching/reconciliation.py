@@ -1,21 +1,9 @@
 """Conservative stitching of independently reconstructed canonical models."""
 from __future__ import annotations
 
-from math import hypot
-from uuid import uuid4
-
 import numpy as np
 
-from floorplan_ai.canonical.schema import (
-    CanonicalWorldModel,
-    FrameTransform,
-    CoordinateFrame,
-    FrameType,
-    Plane,
-    Point2D,
-    Provenance,
-    TransformKind,
-)
+from floorplan_ai.canonical.schema import CanonicalWorldModel, Plane, Provenance
 from .registration import register_points
 
 
@@ -38,36 +26,82 @@ def _registration_points(source, target, tolerance=0.08):
             continue
         a, b = sm[length][0], tm[length][0]
         source_points.append(
-            ((a.start_point_2d[0] + a.end_point_2d[0]) / 2,
-             (a.start_point_2d[1] + a.end_point_2d[1]) / 2, 0.0)
+            (
+                (a.start_point_2d[0] + a.end_point_2d[0]) / 2,
+                (a.start_point_2d[1] + a.end_point_2d[1]) / 2,
+                0.0,
+            )
         )
         target_points.append(
-            ((b.start_point_2d[0] + b.end_point_2d[0]) / 2,
-             (b.start_point_2d[1] + b.end_point_2d[1]) / 2, 0.0)
+            (
+                (b.start_point_2d[0] + b.end_point_2d[0]) / 2,
+                (b.start_point_2d[1] + b.end_point_2d[1]) / 2,
+                0.0,
+            )
         )
 
     if len(source_points) < 3:
         return None
+    # Three non-collinear architectural landmarks are required. Midpoints that are
+    # effectively collinear cannot constrain a stable 2-D rigid transform.
+    centered = np.asarray(source_points, dtype=float)[:, :2]
+    if np.linalg.matrix_rank(centered - centered.mean(axis=0)) < 2:
+        return None
+
     result = register_points(source_points, target_points, allow_scale=False, max_rmse=tolerance)
     return result if result.accepted else None
 
 
 def _transform_point(point, matrix):
     x, y = point
-    return (float(matrix[0][0] * x + matrix[0][1] * y + matrix[0][3]),
-            float(matrix[1][0] * x + matrix[1][1] * y + matrix[1][3]))
+    return (
+        float(matrix[0][0] * x + matrix[0][1] * y + matrix[0][3]),
+        float(matrix[1][0] * x + matrix[1][1] * y + matrix[1][3]),
+    )
+
+
+def _transform_plane(plane, matrix):
+    n = np.asarray(plane.normal_vector, dtype=float)
+    r = np.asarray(matrix, dtype=float)[:3, :3]
+    t = np.asarray(matrix, dtype=float)[:3, 3]
+    transformed_normal = r @ n
+    transformed_offset = float(plane.distance_offset - transformed_normal.dot(t))
+    boundary = tuple(
+        tuple(float(v) for v in (r @ np.asarray(point) + t))
+        for point in plane.boundary_polygon_3d
+    )
+    return plane.model_copy(
+        update={
+            "normal_vector": tuple(float(v) for v in transformed_normal),
+            "distance_offset": transformed_offset,
+            "boundary_polygon_3d": boundary,
+        }
+    )
 
 
 def _transform_model_2d(model, matrix):
-    """Transform structural 2-D entities; retain source frames and provenance."""
-    rooms = tuple(room.model_copy(update={
-        "boundary_polygon_2d": tuple(_transform_point(p, matrix) for p in room.boundary_polygon_2d)
-    }) for room in model.rooms)
-    walls = tuple(wall.model_copy(update={
-        "start_point_2d": _transform_point(wall.start_point_2d, matrix),
-        "end_point_2d": _transform_point(wall.end_point_2d, matrix),
-    }) for wall in model.walls)
-    return model.model_copy(update={"rooms": rooms, "walls": walls})
+    """Transform architectural geometry and the planes that support it."""
+    rooms = tuple(
+        room.model_copy(
+            update={
+                "boundary_polygon_2d": tuple(
+                    _transform_point(p, matrix) for p in room.boundary_polygon_2d
+                )
+            }
+        )
+        for room in model.rooms
+    )
+    walls = tuple(
+        wall.model_copy(
+            update={
+                "start_point_2d": _transform_point(wall.start_point_2d, matrix),
+                "end_point_2d": _transform_point(wall.end_point_2d, matrix),
+            }
+        )
+        for wall in model.walls
+    )
+    planes = tuple(_transform_plane(plane, matrix) for plane in model.planes)
+    return model.model_copy(update={"rooms": rooms, "walls": walls, "planes": planes})
 
 
 def reconcile_models(models):
@@ -84,31 +118,34 @@ def reconcile_models(models):
         return models[0]
 
     accepted = [models[0]]
-    registration_count = 0
-    rejected_count = 0
-
     for incoming in models[1:]:
-        # Register against the accumulated structural geometry. The registration is applied
-        # only to 2-D architectural entities; source observations remain in their own frames.
         reference = accepted[0]
         result = _registration_points(incoming, reference)
         if result is not None:
             incoming = _transform_model_2d(incoming, result.matrix)
-            registration_count += 1
-        else:
-            rejected_count += 1
         accepted.append(incoming)
 
     fields = (
-        "frames", "captures", "cameras", "poses", "observations", "geometries",
-        "planes", "rooms", "walls", "openings", "relationships", "scale_estimates"
+        "frames",
+        "captures",
+        "cameras",
+        "poses",
+        "observations",
+        "geometries",
+        "planes",
+        "rooms",
+        "walls",
+        "openings",
+        "relationships",
+        "scale_estimates",
     )
-    payload = {field: tuple(item for model in accepted for item in getattr(model, field)) for field in fields}
+    payload = {
+        field: tuple(item for model in accepted for item in getattr(model, field))
+        for field in fields
+    }
     return CanonicalWorldModel(
         **payload,
-        provenance=Provenance(
-            generating_pipeline_stage="property_stitching",
-        ),
+        provenance=Provenance(generating_pipeline_stage="property_stitching"),
     )
 
 
