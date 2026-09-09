@@ -20,7 +20,17 @@ classifiers = [
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13",
 ]
-dependencies = ["pydantic>=2.0,<3", "numpy", "opencv-python", "open3d", "scipy", "Pillow", "shapely", "ezdxf"]
+dependencies = [
+  "pydantic>=2.0,<3",
+  "numpy>=1.26,<2",
+  "opencv-python",
+  "open3d>=0.18,<0.20",
+  "scipy>=1.11,<1.14",
+  "scikit-learn>=1.4,<1.6",
+  "Pillow",
+  "shapely",
+  "ezdxf",
+]
 
 [project.optional-dependencies]
 dev = ["pytest>=8"]
