@@ -37,7 +37,7 @@ def main(argv:Sequence[str]|None=None):
    print(json.dumps(report,indent=2,sort_keys=True))
    return 0 if report['ready'] else 1
   elif a.command=='fetch-models':
-   from scripts.fetch_models import main as fetch; return fetch(['--model-dir',str(a.model_dir)]+(['--check'] if a.check else []))
+   from floorplan_ai.model_setup import main as fetch; return fetch(['--model-dir',str(a.model_dir)]+(['--check'] if a.check else []))
   else:
    from floorplan_ai.pipeline import run_reconstruction; run_reconstruction(Path(a.input),Path(a.output))
  except (OSError,ValueError,RuntimeError) as exc: build_parser().error(str(exc))
