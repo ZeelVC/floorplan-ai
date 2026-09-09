@@ -12,7 +12,7 @@ from floorplan_ai.depth import DepthProEstimator
 from floorplan_ai.inference import StructuralInferenceConfig, infer_structure
 from floorplan_ai.measurement import measurements_for
 from floorplan_ai.output import export_json, export_svg, export_dxf
-from floorplan_ai.stitching import reconcile_models
+from floorplan_ai.stitching import optimize_property, reconcile_models
 from .routing import detect_input, photo_groups
 
 
@@ -87,9 +87,7 @@ def run_reconstruction(
             )
 
         model = reconcile_models(tuple(local_models))
-        # A component is a local reconstruction that could not be registered into the
-        # accumulated architectural frame. The current reconciler keeps those components
-        # valid and separate rather than inventing a transform.
+        model = optimize_property(model)
         stitching_components = len(local_models)
 
     model = model.model_copy(update={"measurements": measurements_for(model)})
@@ -110,6 +108,7 @@ def run_reconstruction(
             "room_count": len(model.rooms),
             "opening_count": len(model.openings),
             "measurement_count": len(model.measurements),
+            "global_property_optimization": mode == "photo",
         }
     )
     (output_dir / "diagnostics.json").write_text(
