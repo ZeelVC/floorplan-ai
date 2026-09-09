@@ -298,3 +298,12 @@ These are architectural strategies to be validated, not confirmed implementation
 | Overfitting current benchmark; unseen-property walk-in robustness | held-out/unseen-property evaluation in later milestones |
 
 Unresolved implementation questions include the final Photo/Video/depth models; exact plane extraction, room segmentation, opening detection, optimization backend, confidence calibration, and rendering implementation. They are intentionally deferred to experimental milestones.
+
+## Milestone 4 implementation note
+
+The canonical contract is implemented in `src/floorplan_ai/canonical/` using
+Pydantic v2. It provides source-independent entities, explicit SE(3) camera
+poses and SE(3)/Sim(3) frame transforms, validation, provenance, uncertainty,
+topology, JSON serialization/schema generation, and adapter/export protocols.
+It intentionally implements no reconstruction, optimization, rendering, or
+model backend.
