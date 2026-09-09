@@ -1,0 +1,320 @@
+{
+  "schema_version": "1.0",
+  "dataset_id": "orientation-benchmark",
+  "properties": [
+    {
+      "property_id": "benchmark-property",
+      "rooms": [
+        {
+          "room_id": "room-1"
+        },
+        {
+          "room_id": "room-2"
+        },
+        {
+          "room_id": "room-3"
+        }
+      ],
+      "trials": [
+        {
+          "trial_id": "trial-1-horizontal",
+          "captures": [
+            {
+              "capture_id": "trial-1-horizontal-photo-01",
+              "source_type": "photo",
+              "file": "inference/trial-1-horizontal/photos/photo-01.jpg",
+              "room_id": "room-1",
+              "sequence": 1,
+              "orientation": {
+                "value": "horizontal",
+                "source": "declared"
+              }
+            },
+            {
+              "capture_id": "trial-1-horizontal-photo-02",
+              "source_type": "photo",
+              "file": "inference/trial-1-horizontal/photos/photo-02.jpg",
+              "room_id": "room-1",
+              "sequence": 2,
+              "orientation": {
+                "value": "horizontal",
+                "source": "declared"
+              }
+            },
+            {
+              "capture_id": "trial-1-horizontal-photo-03",
+              "source_type": "photo",
+              "file": "inference/trial-1-horizontal/photos/photo-03.jpg",
+              "room_id": "room-1",
+              "sequence": 3,
+              "orientation": {
+                "value": "horizontal",
+                "source": "declared"
+              }
+            },
+            {
+              "capture_id": "trial-1-horizontal-photo-04",
+              "source_type": "photo",
+              "file": "inference/trial-1-horizontal/photos/photo-04.jpg",
+              "room_id": "room-1",
+              "sequence": 4,
+              "orientation": {
+                "value": "horizontal",
+                "source": "declared"
+              }
+            },
+            {
+              "capture_id": "trial-1-horizontal-photo-05",
+              "source_type": "photo",
+              "file": "inference/trial-1-horizontal/photos/photo-05.jpg",
+              "room_id": "room-2",
+              "sequence": 5,
+              "orientation": {
+                "value": "horizontal",
+                "source": "declared"
+              }
+            },
+            {
+              "capture_id": "trial-1-horizontal-photo-06",
+              "source_type": "photo",
+              "file": "inference/trial-1-horizontal/photos/photo-06.jpg",
+              "room_id": "room-2",
+              "sequence": 6,
+              "orientation": {
+                "value": "horizontal",
+                "source": "declared"
+              }
+            },
+            {
+              "capture_id": "trial-1-horizontal-photo-07",
+              "source_type": "photo",
+              "file": "inference/trial-1-horizontal/photos/photo-07.jpg",
+              "room_id": "room-2",
+              "sequence": 7,
+              "orientation": {
+                "value": "horizontal",
+                "source": "declared"
+              }
+            },
+            {
+              "capture_id": "trial-1-horizontal-photo-08",
+              "source_type": "photo",
+              "file": "inference/trial-1-horizontal/photos/photo-08.jpg",
+              "room_id": "room-2",
+              "sequence": 8,
+              "orientation": {
+                "value": "horizontal",
+                "source": "declared"
+              }
+            },
+            {
+              "capture_id": "trial-1-horizontal-photo-09",
+              "source_type": "photo",
+              "file": "inference/trial-1-horizontal/photos/photo-09.jpg",
+              "room_id": "room-3",
+              "sequence": 9,
+              "orientation": {
+                "value": "horizontal",
+                "source": "declared"
+              }
+            },
+            {
+              "capture_id": "trial-1-horizontal-photo-10",
+              "source_type": "photo",
+              "file": "inference/trial-1-horizontal/photos/photo-10.jpg",
+              "room_id": "room-3",
+              "sequence": 10,
+              "orientation": {
+                "value": "horizontal",
+                "source": "declared"
+              }
+            },
+            {
+              "capture_id": "trial-1-horizontal-photo-11",
+              "source_type": "photo",
+              "file": "inference/trial-1-horizontal/photos/photo-11.jpg",
+              "room_id": "room-3",
+              "sequence": 11,
+              "orientation": {
+                "value": "horizontal",
+                "source": "declared"
+              }
+            },
+            {
+              "capture_id": "trial-1-horizontal-photo-12",
+              "source_type": "photo",
+              "file": "inference/trial-1-horizontal/photos/photo-12.jpg",
+              "room_id": "room-3",
+              "sequence": 12,
+              "orientation": {
+                "value": "horizontal",
+                "source": "declared"
+              }
+            },
+            {
+              "capture_id": "trial-1-horizontal-video",
+              "source_type": "video",
+              "file": "inference/trial-1-horizontal/videos/1000177529.mp4",
+              "sequence": 99,
+              "orientation": {
+                "value": "horizontal",
+                "source": "declared"
+              }
+            }
+          ]
+        },
+        {
+          "trial_id": "trial-2-vertical",
+          "captures": [
+            {
+              "capture_id": "trial-2-vertical-photo-01",
+              "source_type": "photo",
+              "file": "inference/trial-2-vertical/photos/photo-01.jpg",
+              "room_id": "room-1",
+              "sequence": 1,
+              "orientation": {
+                "value": "vertical",
+                "source": "declared"
+              }
+            },
+            {
+              "capture_id": "trial-2-vertical-photo-02",
+              "source_type": "photo",
+              "file": "inference/trial-2-vertical/photos/photo-02.jpg",
+              "room_id": "room-1",
+              "sequence": 2,
+              "orientation": {
+                "value": "vertical",
+                "source": "declared"
+              }
+            },
+            {
+              "capture_id": "trial-2-vertical-photo-03",
+              "source_type": "photo",
+              "file": "inference/trial-2-vertical/photos/photo-03.jpg",
+              "room_id": "room-1",
+              "sequence": 3,
+              "orientation": {
+                "value": "vertical",
+                "source": "declared"
+              }
+            },
+            {
+              "capture_id": "trial-2-vertical-photo-04",
+              "source_type": "photo",
+              "file": "inference/trial-2-vertical/photos/photo-04.jpg",
+              "room_id": "room-1",
+              "sequence": 4,
+              "orientation": {
+                "value": "vertical",
+                "source": "declared"
+              }
+            },
+            {
+              "capture_id": "trial-2-vertical-photo-05",
+              "source_type": "photo",
+              "file": "inference/trial-2-vertical/photos/photo-05.jpg",
+              "room_id": "room-2",
+              "sequence": 5,
+              "orientation": {
+                "value": "vertical",
+                "source": "declared"
+              }
+            },
+            {
+              "capture_id": "trial-2-vertical-photo-06",
+              "source_type": "photo",
+              "file": "inference/trial-2-vertical/photos/photo-06.jpg",
+              "room_id": "room-2",
+              "sequence": 6,
+              "orientation": {
+                "value": "vertical",
+                "source": "declared"
+              }
+            },
+            {
+              "capture_id": "trial-2-vertical-photo-07",
+              "source_type": "photo",
+              "file": "inference/trial-2-vertical/photos/photo-07.jpg",
+              "room_id": "room-2",
+              "sequence": 7,
+              "orientation": {
+                "value": "vertical",
+                "source": "declared"
+              }
+            },
+            {
+              "capture_id": "trial-2-vertical-photo-08",
+              "source_type": "photo",
+              "file": "inference/trial-2-vertical/photos/photo-08.jpg",
+              "room_id": "room-2",
+              "sequence": 8,
+              "orientation": {
+                "value": "vertical",
+                "source": "declared"
+              }
+            },
+            {
+              "capture_id": "trial-2-vertical-photo-09",
+              "source_type": "photo",
+              "file": "inference/trial-2-vertical/photos/photo-09.jpg",
+              "room_id": "room-3",
+              "sequence": 9,
+              "orientation": {
+                "value": "vertical",
+                "source": "declared"
+              }
+            },
+            {
+              "capture_id": "trial-2-vertical-photo-10",
+              "source_type": "photo",
+              "file": "inference/trial-2-vertical/photos/photo-10.jpg",
+              "room_id": "room-3",
+              "sequence": 10,
+              "orientation": {
+                "value": "vertical",
+                "source": "declared"
+              }
+            },
+            {
+              "capture_id": "trial-2-vertical-photo-11",
+              "source_type": "photo",
+              "file": "inference/trial-2-vertical/photos/photo-11.jpg",
+              "room_id": "room-3",
+              "sequence": 11,
+              "orientation": {
+                "value": "vertical",
+                "source": "declared"
+              }
+            },
+            {
+              "capture_id": "trial-2-vertical-photo-12",
+              "source_type": "photo",
+              "file": "inference/trial-2-vertical/photos/photo-12.jpg",
+              "room_id": "room-3",
+              "sequence": 12,
+              "orientation": {
+                "value": "vertical",
+                "source": "declared"
+              }
+            },
+            {
+              "capture_id": "trial-2-vertical-video",
+              "source_type": "video",
+              "file": "inference/trial-2-vertical/videos/1000177534.mp4",
+              "sequence": 99,
+              "orientation": {
+                "value": "vertical",
+                "source": "declared"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "evaluation": {
+    "ground_truth_file": "evaluation/floorplan_ground_truth_sheet (2).xlsx",
+    "format": "xlsx"
+  }
+}
