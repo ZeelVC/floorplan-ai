@@ -10,12 +10,7 @@ from floorplan_ai.canonical.schema import Measurement
 
 @dataclass(frozen=True)
 class CalibrationResult:
-    """Empirical calibration diagnostics for measurement intervals.
-
-    Ground truth is evaluation-only: it is consumed here to estimate how well
-    predicted uncertainty describes observed errors. The result is never fed
-    back into reconstruction or scale inference automatically.
-    """
+    """Empirical calibration diagnostics for measurement intervals."""
 
     sample_count: int
     target_coverage: float
@@ -34,13 +29,18 @@ def _validate_target(target_coverage: float) -> None:
         raise ValueError("target_coverage must be between 0 and 1")
 
 
+def _metric_key(measurement: Measurement) -> str:
+    metric = measurement.metric_type
+    return metric.value if hasattr(metric, "value") else str(metric)
+
+
 def _pairs(
     predictions: Sequence[Measurement],
     ground_truth: Mapping[tuple[object, str], float],
 ) -> list[tuple[Measurement, float]]:
     pairs: list[tuple[Measurement, float]] = []
     for measurement in predictions:
-        key = (measurement.target_entity_id, str(measurement.metric_type))
+        key = (measurement.target_entity_id, _metric_key(measurement))
         if key not in ground_truth:
             continue
         truth = float(ground_truth[key])
@@ -60,11 +60,10 @@ def calibrate_measurements(
 ) -> CalibrationResult:
     """Estimate an empirical uncertainty multiplier without altering predictions.
 
-    ``ground_truth`` is explicitly an evaluation-only mapping keyed by
-    ``(target_entity_id, metric_type)``. The multiplier is the ratio between
-    the empirical target quantile of ``|error| / sigma`` and the normal-theory
-    95% z-value (1.96). It can be applied by a reporting/evaluation layer, but
-    this function does not mutate the canonical model.
+    ``ground_truth`` is evaluation-only and must never be supplied to the
+    reconstruction or scale-inference pipeline. The returned multiplier can
+    be used by an evaluation/reporting layer to widen intervals when empirical
+    coverage is below the requested target.
     """
     _validate_target(target_coverage)
     pairs = _pairs(predictions, ground_truth)
@@ -82,8 +81,6 @@ def calibrate_measurements(
     if len(normalized) == 1:
         quantile_value = normalized[0]
     else:
-        # statistics.quantiles is deterministic and avoids a dependency on a
-        # numerical stack for this evaluation-only operation.
         q_index = min(99, max(1, round(target_coverage * 100)))
         quantile_value = quantiles(normalized, n=100, method="inclusive")[q_index - 1]
 
