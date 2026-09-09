@@ -88,7 +88,7 @@ def integrate_metric_depth(world,capture_inputs,result,output_dir:Path,config,pl
     cameras={camera.camera_id:camera for camera in world.cameras}; pose_by_id={pose.pose_id:pose for pose in world.poses}
     raw_pose_ids={raw.image_name:stable_id('pose/'+str(raw.image_id)) for raw in result.poses}; raw_camera_ids={raw.name:stable_id('camera/'+str(raw.camera_id)) for raw in result.images}; inputs={Path(item.file).name:item for item in capture_inputs}
     out=output_dir/'depth'; out.mkdir(parents=True,exist_ok=True)
-    observations=list(world.observations); sparse_depth=[]; metric_depth=[]; camera_clouds=[]; camera_pose_pairs=[]
+    observations=list(world.observations); sparse_depth=[]; metric_depth=[]; camera_pose_pairs=[]
     for image_name,pose_id in raw_pose_ids.items():
         pose=pose_by_id.get(pose_id); camera=cameras.get(raw_camera_ids.get(image_name)); item=inputs.get(Path(image_name).name)
         if pose is None or camera is None or item is None or camera.focal_length is None or camera.principal_point is None: continue
@@ -98,7 +98,7 @@ def integrate_metric_depth(world,capture_inputs,result,output_dir:Path,config,pl
         mask=np.isfinite(depth)&(depth>0)&(confidence>=config.min_confidence)
         camera_points=unproject_depth(depth,K,mask,stride=config.depth_stride,maximum_points=config.maximum_depth_points)
         if not len(camera_points): raise RuntimeError(f'metric_depth: no confident depth points for {image_name}')
-        camera_clouds.append(camera_points); camera_pose_pairs.append((pose,camera_points))
+        camera_pose_pairs.append((pose,camera_points))
         stem=Path(image_name).stem; depth_path,mask_path=out/f'{stem}.depth.npy',out/f'{stem}.confidence.npy'; np.save(depth_path,depth); np.save(mask_path,mask)
         observations.append(Observation(observation_id=stable_id('depth/'+image_name),pose_id=pose.pose_id,camera_id=camera.camera_id,observation_type=ObservationType.DEPTH,payload_reference=str(depth_path.relative_to(output_dir)),confidence_mask=str(mask_path.relative_to(output_dir))))
         inverse=np.linalg.inv(np.asarray(pose.camera_to_frame))
@@ -107,7 +107,7 @@ def integrate_metric_depth(world,capture_inputs,result,output_dir:Path,config,pl
             if local[2]<=0: continue
             pixel=K@local[:3]; u,v=int(round(pixel[0]/pixel[2])),int(round(pixel[1]/pixel[2]))
             if 0<=v<depth.shape[0] and 0<=u<depth.shape[1] and mask[v,u]: sparse_depth.append(float(local[2])); metric_depth.append(float(depth[v,u]))
-    if not camera_clouds: raise RuntimeError('metric_depth: no valid reconstructed frame has usable intrinsics and pose')
+    if not camera_pose_pairs: raise RuntimeError('metric_depth: no valid reconstructed frame has usable intrinsics and pose')
     try: scale=robust_scale_estimate(np.array(sparse_depth),np.array(metric_depth))
     except ValueError as exc:
         if config.require_scale_evidence: raise RuntimeError(f'metric_depth: insufficient scale correspondences: {exc}') from exc
