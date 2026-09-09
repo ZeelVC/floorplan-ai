@@ -35,16 +35,16 @@ def validate_output(output_dir: Path) -> dict:
     if model is not None:
         checks["has_rooms"] = bool(model.rooms)
         checks["has_walls"] = bool(model.walls)
-        checks["has_measurements"] = bool(model.measurements)
         if not model.rooms:
             errors.append("canonical model contains no rooms")
         if not model.walls:
             errors.append("canonical model contains no walls")
-        if not model.measurements:
-            errors.append("canonical model contains no measurements")
 
         missing_intervals = [m.measurement_id for m in model.measurements if m.interval_95 is None]
-        checks["all_measurements_have_95_intervals"] = not missing_intervals
+        checks["all_measurements_have_95_intervals"] = bool(model.measurements) and not missing_intervals
+        checks["has_measurements"] = bool(model.measurements) and not missing_intervals
+        if not model.measurements:
+            errors.append("canonical model contains no measurements")
         if missing_intervals:
             errors.append(f"measurements without 95% intervals: {len(missing_intervals)}")
 
