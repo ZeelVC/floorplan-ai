@@ -40,9 +40,8 @@ are needed.
 
 ## Current milestone
 
-Repository initialization only: package layout, packaging metadata, a minimal
-CLI, and import/CLI smoke tests. No reconstruction, depth estimation, room or
-opening detection, stitching, or AI models are implemented.
+Milestone 5 implements a deterministic, manifest-driven customer capture-dataset
+loader for original photos and videos. See [How to prepare a capture dataset](docs/capture-dataset.md). It performs input validation only; no reconstruction, depth estimation, room or opening detection, stitching, or AI models are implemented.
 
 ## Create an environment
 
