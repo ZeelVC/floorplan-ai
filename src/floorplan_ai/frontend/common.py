@@ -70,7 +70,7 @@ def build_model(capture_inputs, result:ReconstructionResult, output_dir:Path, so
     output_dir.mkdir(parents=True,exist_ok=True)
     frame=CoordinateFrame(frame_id=stable_id(str(output_dir.resolve())+'/frame'),frame_type=FrameType.LOCAL)
     captures=tuple(Capture(capture_id=stable_id('capture/'+c.capture_id),capture_type=source_type,payload_reference=c.file,metadata=dict(c.metadata)) for c in capture_inputs)
-    cap_by_name={Path(c.file).name:c.capture_id for c in captures}; default_capture=captures[0].capture_id
+    cap_by_name={Path(c.payload_reference).name:c.capture_id for c in captures}; default_capture=captures[0].capture_id
     cameras=[]; camera_by_backend={}
     for raw in result.camera_models:
         focal,pp,dist=camera_intrinsics(raw); cid=stable_id('camera/'+str(raw.camera_id)); camera_by_backend[raw.camera_id]=cid
