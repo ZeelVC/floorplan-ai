@@ -8,7 +8,7 @@ from floorplan_ai.dataset.loader import DatasetValidationError, load_evaluation_
 
 def ground_truth_path(dataset_root: str | Path) -> Path | None:
     """Resolve and validate an opt-in evaluation artifact; never expose it to inference."""
-    root = Path(dataset_root).resolve()
+    root = Path(dataset_root)
     reference = load_evaluation_reference(root)
     if reference is None:
         return None

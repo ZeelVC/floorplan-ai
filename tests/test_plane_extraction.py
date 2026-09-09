@@ -12,7 +12,7 @@ def test_open3d_extracts_floor_ceiling_and_walls():
     rng = np.random.default_rng(7)
     n = 250
     xy = rng.uniform((0, 0), (4, 5), (n, 2))
-    xz = rng.uniform((0, 4), (4, 2.8), (n, 2))
+    xz = rng.uniform((0, 0), (4, 2.8), (n, 2))
     yz = rng.uniform((0, 0), (5, 2.8), (n, 2))
     points = np.vstack((
         np.c_[xy, np.zeros(n)], np.c_[xy, np.full(n, 2.8)],
