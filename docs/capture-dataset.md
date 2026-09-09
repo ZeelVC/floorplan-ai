@@ -34,7 +34,9 @@ ID. Properties and trials sort by ID, so loading is deterministic.
 
 Orientation is optional and is an object so its provenance remains clear:
 `{"value": "horizontal|vertical|unknown", "source": "declared|derived"}`.
-The loader never rotates a file. `metadata` is an optional JSON object for
+`source: "derived"` means an upstream component or dataset-preparation process
+derived and supplied the value; M5 does not visually infer orientation. The
+loader never rotates a file. `metadata` is an optional JSON object for
 device details, image/video resolution, frame rate, timestamps, EXIF, or camera
 information. Missing EXIF is valid and means no metadata prior was supplied.
 
@@ -66,6 +68,16 @@ readable. Photo extensions supported by this lightweight validator are `.jpg`,
 `.jpeg`, `.png`, `.heic`, `.heif`, and `.webp`; video extensions are `.mp4`,
 `.mov`, `.m4v`, and `.avi`.
 
+## Media validation boundary
+
+M5 validates manifest/schema correctness, safe relative paths, a readable
+regular file, supported extensions, and `source_type`/extension compatibility.
+It does **not** decode images or video and therefore does not guarantee JPEG or
+PNG semantic validity, video container/codec validity, successful decoding,
+corruption detection, frame extraction, or visual quality. Those checks belong
+to downstream media-processing stages. No image rotation, orientation
+correction, camera calibration, or computer-vision processing occurs in M5.
+
 An invalid example is `{ "capture_id": "p1", "source_type":
 "image_sequence", "file": "a.jpg" }`: use `photo` for an individual image.
 Likewise, a capture with `room_id: "kitchen"` is invalid unless `kitchen` is
@@ -78,4 +90,6 @@ not included in `load_dataset(...).captures`. Normal customer inference inputs
 must be valid without it. Never include laser/tape measurements, floor-plan
 answers, PDFs/contact sheets as photo substitutes, or ground truth used to set
 scale/calibration as capture inputs. Keep the source workbook separately from
-the inference media where practical.
+the inference media where practical. When the explicit evaluation helper is
+used, a declared ground-truth reference must resolve to a readable regular file;
+a missing or unreadable workbook produces a dataset validation error.
