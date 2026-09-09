@@ -13,7 +13,16 @@ REQUIRED_ARTIFACTS = ("floorplan.json", "floorplan.svg", "floorplan.dxf", "diagn
 def validate_output(output_dir: Path) -> dict:
     """Validate a completed run without requiring benchmark ground truth."""
     root = Path(output_dir)
-    checks: dict[str, bool] = {}
+    checks: dict[str, bool] = {
+        "canonical_model_valid": False,
+        "has_rooms": False,
+        "has_walls": False,
+        "has_measurements": False,
+        "all_measurements_have_95_intervals": False,
+        "supported_capture_type": False,
+        "diagnostics_valid": False,
+        "provenance_valid": False,
+    }
     errors: list[str] = []
 
     for name in REQUIRED_ARTIFACTS:
@@ -29,7 +38,6 @@ def validate_output(output_dir: Path) -> dict:
             model = CanonicalWorldModel.from_json(floorplan.read_text())
             checks["canonical_model_valid"] = True
         except Exception as exc:
-            checks["canonical_model_valid"] = False
             errors.append(f"invalid floorplan.json: {exc}")
 
     if model is not None:
@@ -61,7 +69,6 @@ def validate_output(output_dir: Path) -> dict:
             if not checks["diagnostics_valid"]:
                 errors.append("diagnostics.json is not a JSON object")
         except json.JSONDecodeError as exc:
-            checks["diagnostics_valid"] = False
             errors.append(f"invalid diagnostics.json: {exc}")
 
     provenance_path = root / "provenance.json"
@@ -70,7 +77,6 @@ def validate_output(output_dir: Path) -> dict:
             json.loads(provenance_path.read_text())
             checks["provenance_valid"] = True
         except json.JSONDecodeError as exc:
-            checks["provenance_valid"] = False
             errors.append(f"invalid provenance.json: {exc}")
 
     ready = not errors
