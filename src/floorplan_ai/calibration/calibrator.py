@@ -1,8 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from math import isfinite
-from statistics import quantiles
+from math import ceil, isfinite
 from typing import Mapping, Sequence
 
 from floorplan_ai.canonical.schema import Measurement
@@ -52,6 +51,19 @@ def _pairs(
     return pairs
 
 
+def _finite_sample_quantile(values: Sequence[float], probability: float) -> float:
+    """Return a conservative order-statistic quantile for finite samples.
+
+    Calibration must not produce an interval that fails to cover the empirical
+    target merely because interpolation between sparse observations yields a
+    value below the largest required residual. The ceiling order statistic is
+    therefore used: for three samples at 95%, the maximum residual is required.
+    """
+    ordered = sorted(values)
+    index = min(len(ordered) - 1, max(0, ceil(probability * len(ordered)) - 1))
+    return ordered[index]
+
+
 def calibrate_measurements(
     predictions: Sequence[Measurement],
     ground_truth: Mapping[tuple[object, str], float],
@@ -78,12 +90,7 @@ def calibrate_measurements(
         and measurement.interval_95[0] <= truth <= measurement.interval_95[1]
     ) / len(pairs)
 
-    if len(normalized) == 1:
-        quantile_value = normalized[0]
-    else:
-        q_index = min(99, max(1, round(target_coverage * 100)))
-        quantile_value = quantiles(normalized, n=100, method="inclusive")[q_index - 1]
-
+    quantile_value = _finite_sample_quantile(normalized, target_coverage)
     factor = max(1.0, quantile_value / 1.96)
     calibrated_covered = sum(
         1
