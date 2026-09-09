@@ -9,7 +9,8 @@ from floorplan_ai.reconstruction.colmap import colmap_pose_to_canonical
 from floorplan_ai.reconstruction.models import ReconstructionResult
 from floorplan_ai.reconstruction.scale import ScaleEstimator
 
-def stable_id(value:str)->UUID:return uuid5(NAMESPACE_URL,'floorplan-ai/m6/'+value)
+_STABLE_SCOPE = ''
+def stable_id(value:str)->UUID:return uuid5(NAMESPACE_URL,'floorplan-ai/m6/'+_STABLE_SCOPE+'/'+value)
 def provenance(stage:str,captures=(),poses=(),observations=()):return Provenance(source_capture_ids=tuple(captures),source_pose_ids=tuple(poses),source_observation_ids=tuple(observations),generating_pipeline_stage=stage,timestamp=datetime.now(timezone.utc))
 def camera_intrinsics(camera):
     p=camera.params; model=camera.model; focal=None; principal=None; distortion=()
@@ -20,6 +21,8 @@ def camera_intrinsics(camera):
     return focal,principal,distortion
 
 def build_model(capture_inputs, result:ReconstructionResult, output_dir:Path, source_type:str, plane_config:dict|None=None)->CanonicalWorldModel:
+    global _STABLE_SCOPE
+    _STABLE_SCOPE = str(output_dir.resolve())
     output_dir.mkdir(parents=True,exist_ok=True); frame=CoordinateFrame(frame_id=stable_id(str(output_dir.resolve())+'/frame'),frame_type=FrameType.LOCAL)
     captures=tuple(Capture(capture_id=stable_id('capture/'+c.capture_id),capture_type=source_type,payload_reference=c.file,metadata=dict(c.metadata)) for c in capture_inputs)
     cap_by_name={Path(c.file).name:capture.capture_id for c,capture in zip(capture_inputs,captures)}; default_capture=captures[0].capture_id

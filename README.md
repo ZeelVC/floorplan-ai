@@ -1,82 +1,23 @@
 # floorplan-ai
 
-`floorplan-ai` is an incremental Applied AI engineering project for reconstructing
-indoor, metric floor plans from property captures. Its intended outputs include
-per-room and whole-property plans, geometry, openings, measurements with
-confidence intervals, structured JSON, and rendered plans.
+Local, offline-first **photo and video** reconstruction of a canonical, stitched property floorplan. The active scope is wall geometry, rooms, openings where supported by evidence, measurements with intervals, and JSON/SVG/DXF output. LiDAR and all damage analysis are intentionally out of scope.
 
-## Current scope
-
-This project currently accepts **PHOTO** and **VIDEO** capture tiers as future
-inputs. They will be developed as independent perception pipelines that converge
-on one canonical spatial representation. LiDAR, damage detection, and damage
-assessment are explicitly out of scope.
-
-Physical laser or tape measurements are ground truth for evaluation only. They
-must never be used as inference input in the production pipeline.
-
-The benchmark currently comprises one three-room property with distinct
-horizontal-phone and vertical-phone capture trials, 24 still photographs in
-total, and one walkthrough video per trial. This repository makes no accuracy
-or benchmark-result claims at this milestone.
-
-## High-level architecture
-
-```text
-capture -> preprocessing -> reconstruction/{photo,video} -> depth
-        -> geometry -> rooms/openings -> stitching -> measurements
-        -> calibration -> rendering/evaluation -> pipeline
-```
-
-The photo and video branches will remain independently testable until they
-converge at the canonical spatial representation.
-
-## Development philosophy
-
-Build the system in small, reviewable milestones. Keep experimental captures
-separate, evaluate against held-out ground truth, record uncertainty rather than
-false precision, and avoid adding models or heavyweight dependencies before they
-are needed.
-
-## Current milestone
-
-Milestone 5 implements a deterministic, manifest-driven customer capture-dataset
-loader for original photos and videos. See [How to prepare a capture dataset](docs/capture-dataset.md). It performs input validation only; no reconstruction, depth estimation, room or opening detection, stitching, or AI models are implemented.
-
-## Create an environment
-
-Python 3.11 or newer is required.
+## Use
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
+pip install -e '.[dev]'
+floorplan-ai fetch-models --check  # optional Depth Pro validation
+floorplan-ai reconstruct --input ./capture --output ./result
+floorplan-ai reconstruct --input ./walkthrough.mp4 --output ./result
+floorplan-ai evaluate --prediction result/floorplan.json --ground-truth ground-truth.json --report-out result/report.json
 ```
 
-## Install the project
+Photo folders may contain room subdirectories; all images are routed through one canonical model and shared structural core. Video uses the existing COLMAP/video frontend and records its trajectory artifact. Runtime does not download model weights; Depth Pro is optional and must be installed and placed locally first (see `models/manifest.json`).
 
-Install in editable/development mode:
+## Outputs
 
-```bash
-python -m pip install -e .
-```
+`floorplan.json` is the canonical model, while `floorplan.svg` and `floorplan.dxf` are deterministic renderings. `diagnostics.json`, `provenance.json`, and reconstruction artifacts make a run inspectable. Measurements have a 95% interval based on available geometric residual evidence.
 
-For test tooling, install the development extra:
+## Limits
 
-```bash
-python -m pip install -e '.[dev]'
-```
-
-## Run tests
-
-```bash
-python -m unittest discover -s tests -v
-```
-
-## Run the CLI
-
-```bash
-floorplan-ai --help
-# or
-python -m floorplan_ai --help
-```
+COLMAP and optional local model assets must be available for real media. Structural inference emits only geometrically closed rooms and does not invent openings from missing points. Challenge accuracy gates are targets, not claims of passing benchmark validation.
