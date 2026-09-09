@@ -26,10 +26,7 @@ def unproject_depth(
     stride: int = 1,
     maximum_points: int | None = None,
 ) -> np.ndarray:
-    """Unproject valid depth samples into the camera coordinate frame.
-
-    Sampling is a deterministic image grid; it never randomly subsamples evidence.
-    """
+    """Unproject valid depth samples into the camera coordinate frame."""
     depth = np.asarray(depth_map, dtype=float)
     intrinsics = np.asarray(intrinsic_matrix, dtype=float)
     if depth.ndim != 2:
@@ -63,7 +60,65 @@ def transform_points(points: np.ndarray, camera_to_frame: Iterable[Iterable[floa
     matrix = np.asarray(tuple(tuple(row) for row in camera_to_frame), dtype=float)
     if xyz.ndim != 2 or xyz.shape[1] != 3 or matrix.shape != (4, 4):
         raise ValueError("expected Nx3 points and a 4x4 camera_to_frame transform")
+    rotation = matrix[:3, :3]
+    if not np.allclose(rotation.T @ rotation, np.eye(3), atol=1e-5):
+        raise ValueError("camera_to_frame rotation must be orthonormal")
     return (matrix @ np.column_stack((xyz, np.ones(len(xyz)))).T).T[:, :3]
+
+
+def scale_points(points: np.ndarray, scale_factor: float) -> np.ndarray:
+    """Apply metric similarity scale to points around the canonical origin."""
+    xyz = np.asarray(points, dtype=float)
+    scale = float(scale_factor)
+    if xyz.ndim != 2 or xyz.shape[1] != 3:
+        raise ValueError("points must be Nx3")
+    if not np.isfinite(scale) or scale <= 0:
+        raise ValueError("scale_factor must be finite and positive")
+    return xyz * scale
+
+
+def scale_pose_translation(camera_to_frame: Iterable[Iterable[float]], scale_factor: float) -> tuple[tuple[float, float, float, float], ...]:
+    """Scale only the translation component of a canonical pose."""
+    matrix = np.asarray(tuple(tuple(row) for row in camera_to_frame), dtype=float)
+    scale = float(scale_factor)
+    if matrix.shape != (4, 4):
+        raise ValueError("camera_to_frame must be 4x4")
+    if not np.isfinite(scale) or scale <= 0:
+        raise ValueError("scale_factor must be finite and positive")
+    out = matrix.copy()
+    out[:3, 3] *= scale
+    return tuple(tuple(float(v) for v in row) for row in out)
+
+
+def fuse_metric_clouds(sparse_points: np.ndarray, dense_points: np.ndarray, *, distance_threshold: float = 0.02) -> np.ndarray:
+    """Combine metric sparse and dense points and deterministically remove near-duplicates."""
+    sparse = np.asarray(sparse_points, dtype=float)
+    dense = np.asarray(dense_points, dtype=float)
+    for name, value in (("sparse_points", sparse), ("dense_points", dense)):
+        if value.ndim != 2 or value.shape[1] != 3:
+            raise ValueError(f"{name} must be Nx3")
+    if distance_threshold <= 0:
+        raise ValueError("distance_threshold must be positive")
+    combined = np.vstack([x for x in (sparse, dense) if len(x)]) if len(sparse) or len(dense) else np.empty((0, 3))
+    if not len(combined):
+        return combined
+    valid = np.all(np.isfinite(combined), axis=1)
+    combined = combined[valid]
+    if len(combined) <= 1:
+        return combined
+    # Deterministic voxel deduplication: retain first point in lexicographic order.
+    keys = np.floor(combined / distance_threshold).astype(np.int64)
+    order = np.lexsort((combined[:, 2], combined[:, 1], combined[:, 0]))
+    keys = keys[order]
+    ordered = combined[order]
+    unique = []
+    seen = set()
+    for key, point in zip(map(tuple, keys), ordered):
+        if key in seen:
+            continue
+        seen.add(key)
+        unique.append(point)
+    return np.asarray(unique, dtype=float)
 
 
 def robust_scale_estimate(sparse_depth: np.ndarray, metric_depth: np.ndarray) -> RobustScaleResult:
@@ -91,6 +146,5 @@ def robust_scale_estimate(sparse_depth: np.ndarray, metric_depth: np.ndarray) ->
 
 
 def robust_scale(sparse_depth: np.ndarray, metric_depth: np.ndarray) -> tuple[float, float]:
-    """Backward-compatible pair of robust scale and median residual."""
     result = robust_scale_estimate(sparse_depth, metric_depth)
     return result.scale, result.residual
