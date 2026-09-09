@@ -19,13 +19,20 @@ class ColmapBackend:
         result=subprocess.run(args, check=False, capture_output=True, text=True)
         log.write_text(result.stdout+"\n"+result.stderr,encoding="utf-8")
         if result.returncode: raise RuntimeError(f"{' '.join(args[1:])} failed ({result.returncode}): {result.stderr.strip()}")
-    def reconstruct(self, inputs:Sequence[Path], output_dir:Path, *, camera_model:str="SIMPLE_RADIAL", single_camera:bool=False)->ReconstructionResult:
+    def reconstruct(self, inputs:Sequence[Path], output_dir:Path, *, camera_model:str="SIMPLE_RADIAL", single_camera:bool=False, camera_priors:dict[str,dict]|None=None)->ReconstructionResult:
         if shutil.which(self.executable) is None: return ReconstructionResult(success=False,backend_name="COLMAP",failure_reason="COLMAP executable not found. Install COLMAP and ensure `colmap` is on PATH.")
         if not inputs: return ReconstructionResult(success=False,backend_name="COLMAP",failure_reason="No input images supplied.")
         root=output_dir/'colmap'; sparse=root/'sparse'; logs=root/'logs'; dense=root/'dense'; [p.mkdir(parents=True,exist_ok=True) for p in (sparse,logs,dense)]
         db=root/'database.db'
         try:
-            self._run([self.executable,'feature_extractor','--database_path',str(db),'--image_path',str(inputs[0].parent),'--ImageReader.camera_model',camera_model,'--ImageReader.single_camera','1' if single_camera else '0'],logs/'feature_extractor.log')
+            args=[self.executable,'feature_extractor','--database_path',str(db),'--image_path',str(inputs[0].parent),'--ImageReader.camera_model',camera_model,'--ImageReader.single_camera','1' if single_camera else '0']
+            # COLMAP accepts a focal-length factor at image-reader initialization.
+            # EXIF remains a prior; subsequent bundle adjustment may change it.
+            focal_pixels=[p['focal_length_pixels'] for p in (camera_priors or {}).values() if p.get('focal_length_pixels')]
+            if focal_pixels:
+                width=next((p.get('width') for p in (camera_priors or {}).values() if p.get('width')), None)
+                if width: args += ['--ImageReader.default_focal_length_factor', str(float(focal_pixels[0]) / float(width))]
+            self._run(args,logs/'feature_extractor.log')
             self._run([self.executable,'exhaustive_matcher','--database_path',str(db)],logs/'exhaustive_matcher.log')
             self._run([self.executable,'mapper','--database_path',str(db),'--image_path',str(inputs[0].parent),'--output_path',str(sparse)],logs/'mapper.log')
             models=sorted(p for p in sparse.iterdir() if p.is_dir())
