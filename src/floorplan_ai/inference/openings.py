@@ -32,18 +32,18 @@ def infer_openings(
 ) -> tuple[Opening, ...]:
     """Infer persistent, wall-local occupancy gaps from a reconstructed cloud.
 
-    Points are assumed to be in the canonical z-up frame.  A candidate must be
+    Points are assumed to be in the canonical z-up frame. A candidate must be
     bounded by observed wall support on both longitudinal sides, which avoids
     interpreting an unobserved wall end as an opening.
     """
     config = config or OpeningInferenceConfig()
+    if ceiling_height <= floor_height:
+        raise ValueError("ceiling_height must be above floor_height")
     cloud = np.asarray(tuple(points), dtype=float)
     if cloud.size == 0:
         return ()
     if cloud.ndim != 2 or cloud.shape[1] != 3:
         raise ValueError("points must be an Nx3 canonical point cloud")
-    if ceiling_height <= floor_height:
-        raise ValueError("ceiling_height must be above floor_height")
     openings: list[Opening] = []
     for wall in walls:
         openings.extend(_openings_for_wall(cloud, wall, floor_height, ceiling_height, config))
@@ -54,6 +54,8 @@ def _openings_for_wall(cloud: np.ndarray, wall: Wall, floor: float, ceiling: flo
     start, end = np.asarray(wall.start_point_2d), np.asarray(wall.end_point_2d)
     direction = end - start
     length = float(np.linalg.norm(direction))
+    if length <= 1e-9:
+        return []
     tangent = direction / length
     relative = cloud[:, :2] - start
     longitudinal = relative @ tangent
@@ -76,7 +78,6 @@ def _openings_for_wall(cloud: np.ndarray, wall: Wall, floor: float, ceiling: flo
     np.add.at(grid, (u, v), 1)
     occupied = grid >= config.min_support_per_cell
     candidates: list[Opening] = []
-    # A vertical gap is eligible only when it has contiguous empty vertical bins.
     for lo in range(n_long):
         for hi in range(lo + 1, n_long + 1):
             width = (hi - lo) * length / n_long
@@ -94,7 +95,6 @@ def _openings_for_wall(cloud: np.ndarray, wall: Wall, floor: float, ceiling: flo
                 if height < config.min_height:
                     continue
                 sill = floor + z0 * (ceiling - floor) / n_vertical
-                # Reject candidates that contain another already selected gap.
                 if any(abs(candidate.offset_along_wall - lo * length / n_long) < config.longitudinal_bin_size for candidate in candidates):
                     continue
                 opening_type = _classify(width, height, sill - floor)
@@ -112,7 +112,6 @@ def _openings_for_wall(cloud: np.ndarray, wall: Wall, floor: float, ceiling: flo
                     )
                 )
                 break
-    # Longest candidate wins when overlapping scan windows describe the same gap.
     selected: list[Opening] = []
     for candidate in sorted(candidates, key=lambda item: (-item.width, item.offset_along_wall)):
         if not any(_overlap(candidate, existing) for existing in selected):
