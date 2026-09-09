@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "dataset_id": "synthetic-customer",
+  "properties": [{
+    "property_id": "property-a",
+    "rooms": [{"room_id": "foyer"}, {"room_id": "office"}],
+    "trials": [{
+      "trial_id": "capture-a",
+      "captures": [
+        {"capture_id": "foyer-photo", "source_type": "photo", "file": "media/foyer.jpg", "room_id": "foyer", "sequence": 2},
+        {"capture_id": "office-photo", "source_type": "photo", "file": "media/office.jpg", "room_id": "office", "sequence": 1},
+        {"capture_id": "walkthrough", "source_type": "video", "file": "media/walkthrough.mp4", "orientation": {"value": "unknown", "source": "declared"}}
+      ]
+    }]
+  }]
+}
