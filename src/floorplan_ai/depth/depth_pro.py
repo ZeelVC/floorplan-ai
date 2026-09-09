@@ -14,13 +14,25 @@ class DepthProEstimator:
         self.model_path, self.device = Path(model_path), device
         if not self.model_path.exists():
             raise FileNotFoundError("Depth Pro model not found. Run: floorplan-ai fetch-models")
-    def predict(self, image_path: Path, focal_length_px: float | None = None) -> MetricDepthResult:
-        try: module = importlib.import_module("depth_pro")
-        except ImportError as exc: raise RuntimeError("Depth Pro local runtime is unavailable; install it during setup.") from exc
-        # Support the official runtime's documented create_model_and_transforms API.
+        self._model = None
+        self._transform = None
+        self._module = None
+
+    def _load(self) -> None:
+        """Load the local model once, then reuse it for every accepted keyframe."""
+        if self._model is not None:
+            return
+        try:
+            module = importlib.import_module("depth_pro")
+        except ImportError as exc:
+            raise RuntimeError("Depth Pro local runtime is unavailable; install it during setup.") from exc
         model, transform = module.create_model_and_transforms(device=self.device, precision=None)
         model.load_state_dict(module.load_checkpoint(str(self.model_path)), strict=True)
-        prediction = model.infer(transform(str(image_path)), f_px=focal_length_px)
+        self._module, self._model, self._transform = module, model, transform
+
+    def predict(self, image_path: Path, focal_length_px: float | None = None) -> MetricDepthResult:
+        self._load()
+        prediction = self._model.infer(self._transform(str(image_path)), f_px=focal_length_px)
         depth = np.asarray(prediction["depth"], dtype=np.float32)
         focal = float(prediction.get("focal_length_px", focal_length_px)) if prediction.get("focal_length_px", focal_length_px) else None
         confidence = confidence_from_depth(depth)

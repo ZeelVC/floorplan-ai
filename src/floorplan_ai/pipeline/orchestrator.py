@@ -4,17 +4,26 @@ from dataclasses import dataclass
 from pathlib import Path
 from floorplan_ai.dataset.models import CaptureInput
 from floorplan_ai.frontend import reconstruct_photos,reconstruct_video
-from floorplan_ai.inference import infer_structure
+from floorplan_ai.frontend.photo import PhotoFrontendConfig
+from floorplan_ai.frontend.common import MetricDepthConfig
+from floorplan_ai.depth import DepthProEstimator
+from floorplan_ai.inference import StructuralInferenceConfig, infer_structure
 from floorplan_ai.measurement import measurements_for
 from floorplan_ai.output import export_json,export_svg,export_dxf
 from floorplan_ai.canonical.schema import CanonicalWorldModel, Provenance
 from floorplan_ai.stitching import candidate_pairs, components, reconcile
 from .routing import detect_input,photo_groups
 @dataclass(frozen=True)
-class PipelineConfig: disable_drift_correction:bool=False
+class PipelineConfig:
+ depth_enabled: bool = True
+ depth_model_path: Path = Path('models/depth_pro.pt')
+ depth_device: str = 'auto'
+ disable_drift_correction: bool = False
 @dataclass(frozen=True)
 class ReconstructionRunResult: output_dir:Path; model:object
 def run_reconstruction(input_path:Path,output_dir:Path,config:PipelineConfig=PipelineConfig()):
+ if config.depth_enabled and not config.depth_model_path.exists(): raise RuntimeError(f'metric_depth: Depth Pro checkpoint missing: {config.depth_model_path}')
+ depth_config = MetricDepthConfig(DepthProEstimator(config.depth_model_path, config.depth_device)) if config.depth_enabled else None
  output_dir.mkdir(parents=True,exist_ok=True); mode=detect_input(input_path)
  if mode=='video': model=reconstruct_video(CaptureInput(capture_id='video',source_type='video',file=input_path.name,resolved_file=input_path),output_dir)
  else:
@@ -22,7 +31,7 @@ def run_reconstruction(input_path:Path,output_dir:Path,config:PipelineConfig=Pip
   for group in photo_groups(input_path):
    local_output=output_dir/'reconstruction'/group.capture_id
    inputs=tuple(CaptureInput(capture_id=f'{group.capture_id}-{i}',source_type='photo',file=p.name,resolved_file=p,metadata={'room_group_id':group.room_group_id} if group.room_group_id else {}) for i,p in enumerate(group.paths))
-   local_models.append(infer_structure(reconstruct_photos(inputs,local_output)))
+   local_models.append(infer_structure(reconstruct_photos(inputs,local_output,PhotoFrontendConfig(metric_depth=depth_config)), StructuralInferenceConfig(artifact_root=local_output)))
   # Models remain independent components unless registration evidence supports a transform.
   if len(local_models)==1: model=local_models[0]
   else:
