@@ -4,6 +4,7 @@ from pathlib import Path
 from typing import Sequence
 from floorplan_ai.dataset.models import CaptureDataset,CaptureInput
 from floorplan_ai.reconstruction import ColmapBackend
+from floorplan_ai.reconstruction.depth_odometry import reconstruct_with_depth_odometry
 from floorplan_ai.capture import photo_metadata
 from .common import build_model, MetricDepthConfig
 
@@ -36,4 +37,22 @@ def reconstruct_photos(captures:CaptureDataset|Sequence[CaptureInput],output_dir
             result=config.reconstruction.reconstruct(paths,output_dir,camera_priors=priors)
         except TypeError:
             result=config.reconstruction.reconstruct(paths,output_dir)
+    if not result.success and config.metric_depth is not None:
+        metadata=enriched[0].metadata if enriched else {}
+        width=float(metadata.get('width') or 0)
+        focal=float(next(iter(priors.values()))['focal_length_pixels']) if priors else 1.2*width
+        fallback=reconstruct_with_depth_odometry(
+            paths,
+            config.metric_depth.estimator,
+            output_dir,
+            focal_length_px=focal,
+            min_confidence=config.metric_depth.min_confidence,
+        )
+        fallback=fallback.model_copy(update={'diagnostics': {
+            **fallback.diagnostics,
+            'colmap_fallback': True,
+            'colmap_failure_reason': result.failure_reason,
+            'colmap_diagnostics': result.diagnostics,
+        }})
+        result=fallback
     return build_model(tuple(enriched),result,output_dir,'photo',config.plane,config.metric_depth)
