@@ -20,6 +20,7 @@ class MetricDepthConfig:
     min_confidence: float = 0.2
     require_scale_evidence: bool = True
     fusion_distance_threshold: float = 0.02
+    direct_metric_scale_uncertainty: float = 0.15
 
 _STABLE_SCOPE = ''
 def stable_id(value:str)->UUID:return uuid5(NAMESPACE_URL,'floorplan-ai/m6/'+_STABLE_SCOPE+'/'+value)
@@ -69,9 +70,6 @@ def build_model(capture_inputs, result:ReconstructionResult, output_dir:Path, so
     _STABLE_SCOPE = str(output_dir.resolve())
     output_dir.mkdir(parents=True,exist_ok=True)
 
-    # Degraded reconstruction is valid for the frontend contract when metric
-    # fusion is not requested. Real metric reconstruction must fail early with
-    # the backend's actionable error instead of a generic depth error.
     if metric_depth is not None:
         if not result.success:
             reason = result.failure_reason or 'reconstruction backend reported failure without a reason'
@@ -124,28 +122,40 @@ def integrate_metric_depth(world,capture_inputs,result,output_dir:Path,config,pl
     raw_pose_ids={raw.image_name:stable_id('pose/'+str(raw.image_id)) for raw in result.poses}; raw_camera_ids={raw.name:stable_id('camera/'+str(raw.camera_id)) for raw in result.images}; inputs={Path(item.file).name:item for item in capture_inputs}
     out=output_dir/'depth'; out.mkdir(parents=True,exist_ok=True)
     observations=list(world.observations); sparse_depth=[]; metric_depth=[]; camera_pose_pairs=[]
+    direct_metric=bool(result.diagnostics.get('depth_odometry'))
     for image_name,pose_id in raw_pose_ids.items():
         pose=pose_by_id.get(pose_id); camera=cameras.get(raw_camera_ids.get(image_name)); item=inputs.get(Path(image_name).name)
         if pose is None or camera is None or item is None or camera.focal_length is None or camera.principal_point is None: continue
         fx,fy=camera.focal_length; cx,cy=camera.principal_point; K=np.array(((fx,0.,cx),(0.,fy,cy),(0.,0.,1.)))
-        prediction=config.estimator.predict(item.resolved_file or Path(item.file),focal_length_px=float(fx)); depth,confidence=np.asarray(prediction.depth_map),np.asarray(prediction.confidence_map)
+        cached_depth=Path(result.diagnostics.get('depth_cache_dir','')) / f'{Path(image_name).stem}.depth.npy'
+        cached_conf=Path(result.diagnostics.get('depth_cache_dir','')) / f'{Path(image_name).stem}.confidence.npy'
+        if direct_metric and cached_depth.is_file() and cached_conf.is_file():
+            depth=np.load(cached_depth); confidence=np.load(cached_conf)
+        else:
+            prediction=config.estimator.predict(item.resolved_file or Path(item.file),focal_length_px=float(fx)); depth,confidence=np.asarray(prediction.depth_map),np.asarray(prediction.confidence_map)
         if depth.ndim!=2 or depth.size==0 or confidence.shape!=depth.shape: raise RuntimeError(f'metric_depth: invalid depth result for {image_name}')
         mask=np.isfinite(depth)&(depth>0)&(confidence>=config.min_confidence); camera_points=unproject_depth(depth,K,mask,stride=config.depth_stride,maximum_points=config.maximum_depth_points)
         if not len(camera_points): raise RuntimeError(f'metric_depth: no confident depth points for {image_name}')
         camera_pose_pairs.append((pose,camera_points)); stem=Path(image_name).stem; depth_path,mask_path=out/f'{stem}.depth.npy',out/f'{stem}.confidence.npy'; np.save(depth_path,depth); np.save(mask_path,mask)
         observations.append(Observation(observation_id=stable_id('depth/'+image_name),pose_id=pose.pose_id,camera_id=camera.camera_id,observation_type=ObservationType.DEPTH,payload_reference=str(depth_path.relative_to(output_dir)),confidence_mask=str(mask_path.relative_to(output_dir))))
-        inverse=np.linalg.inv(np.asarray(pose.camera_to_frame))
-        for point in result.points:
-            local=inverse@np.array((*point.xyz,1.))
-            if local[2]<=0: continue
-            pixel=K@local[:3]; u,v=int(round(pixel[0]/pixel[2])),int(round(pixel[1]/pixel[2]))
-            if 0<=v<depth.shape[0] and 0<=u<depth.shape[1] and mask[v,u]: sparse_depth.append(float(local[2])); metric_depth.append(float(depth[v,u]))
+        if not direct_metric:
+            inverse=np.linalg.inv(np.asarray(pose.camera_to_frame))
+            for point in result.points:
+                local=inverse@np.array((*point.xyz,1.))
+                if local[2]<=0: continue
+                pixel=K@local[:3]; u,v=int(round(pixel[0]/pixel[2])),int(round(pixel[1]/pixel[2]))
+                if 0<=v<depth.shape[0] and 0<=u<depth.shape[1] and mask[v,u]: sparse_depth.append(float(local[2])); metric_depth.append(float(depth[v,u]))
     if not camera_pose_pairs: raise RuntimeError('metric_depth: no valid reconstructed frame has usable intrinsics and pose')
-    try: scale=robust_scale_estimate(np.array(sparse_depth),np.array(metric_depth))
-    except ValueError as exc:
-        if config.require_scale_evidence: raise RuntimeError(f'metric_depth: insufficient scale correspondences: {exc}') from exc
-        class _ScaleFallback: pass
-        scale=_ScaleFallback(); scale.scale=1.0; scale.uncertainty=0.0; scale.confidence=0.0; scale.state=ScaleState.UNKNOWN
+    if direct_metric:
+        successful_edges=int(result.diagnostics.get('odometry_successful_edge_count',0)); total_edges=int(result.diagnostics.get('odometry_edge_count',0)); edge_fraction=successful_edges/max(1,total_edges); confidence=float(np.clip(0.45+0.5*edge_fraction,0.45,0.95)); factor=1.0; scale_uncertainty=float(config.direct_metric_scale_uncertainty)
+        class _DirectScale: pass
+        scale=_DirectScale(); scale.scale=factor; scale.uncertainty=scale_uncertainty; scale.confidence=confidence; scale.state=ScaleState.METRIC
+    else:
+        try: scale=robust_scale_estimate(np.array(sparse_depth),np.array(metric_depth))
+        except ValueError as exc:
+            if config.require_scale_evidence: raise RuntimeError(f'metric_depth: insufficient scale correspondences: {exc}') from exc
+            class _ScaleFallback: pass
+            scale=_ScaleFallback(); scale.scale=1.0; scale.uncertainty=0.0; scale.confidence=0.0; scale.state=ScaleState.UNKNOWN
     factor=float(scale.scale); sparse_metric,poses_metric=_scale_sparse_geometry(result,world.poses,factor)
     dense_metric=np.vstack([transform_points(points,scale_pose_translation(pose.camera_to_frame,factor)) for pose,points in camera_pose_pairs]); fused=fuse_metric_clouds(sparse_metric,dense_metric,distance_threshold=config.fusion_distance_threshold)
     if not len(fused): raise RuntimeError('metric_depth: fused metric cloud is empty')
@@ -153,5 +163,5 @@ def integrate_metric_depth(world,capture_inputs,result,output_dir:Path,config,pl
     bbox=(tuple(np.min(fused,axis=0)),tuple(np.max(fused,axis=0)))
     geometry=Geometry3D(geometry_id=stable_id('geometry/metric-fused'),frame_id=world.frames[0].frame_id,geometry_type=GeometryType.POINT_CLOUD,vertex_buffer_reference=str(point_path.relative_to(output_dir)),bounding_box=bbox,point_density=0.)
     plane_result=extract_planes(fused,PlaneConfig(**(plane_config or {}))); planes=_planes_from_result(plane_result,world)
-    metric_scale=ScaleEstimate(frame_id=world.frames[0].frame_id,scale_factor=factor,confidence=float(scale.confidence),evidence=(ScaleEvidenceType.METRIC_DEPTH,ScaleEvidenceType.GEOMETRIC_CONSISTENCY),uncertainty=_scale_uncertainty(scale),provenance=provenance('metric_depth_scale',tuple(c.capture_id for c in world.captures)))
+    metric_scale=ScaleEstimate(frame_id=world.frames[0].frame_id,scale_factor=factor,confidence=float(scale.confidence),evidence=(ScaleEvidenceType.METRIC_DEPTH,) if direct_metric else (ScaleEvidenceType.METRIC_DEPTH,ScaleEvidenceType.GEOMETRIC_CONSISTENCY),uncertainty=Uncertainty(distribution_type='metric_depth_model_prior' if direct_metric else 'depth_scale_mad',confidence_bounds=(0.0,float(scale.uncertainty))),provenance=provenance('metric_depth_scale' if not direct_metric else 'depth_odometry_metric_scale',tuple(c.capture_id for c in world.captures)))
     return world.model_copy(update={'poses':poses_metric,'observations':tuple(observations),'geometries':(geometry,),'planes':planes,'scale_estimates':(metric_scale,)})
