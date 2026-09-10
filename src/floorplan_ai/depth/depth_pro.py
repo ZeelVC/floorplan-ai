@@ -17,6 +17,22 @@ class DepthProEstimator:
         self._model = None
         self._transform = None
         self._module = None
+        self._resolved_device = None
+
+    def _resolve_device(self) -> str:
+        """Resolve the user-friendly ``auto`` setting to a real torch device string."""
+        if self.device != "auto":
+            return self.device
+        try:
+            torch = importlib.import_module("torch")
+        except ImportError:
+            return "cpu"
+        if bool(getattr(torch.cuda, "is_available", lambda: False)()):
+            return "cuda"
+        mps = getattr(torch.backends, "mps", None)
+        if mps is not None and bool(getattr(mps, "is_available", lambda: False)()):
+            return "mps"
+        return "cpu"
 
     def _load(self) -> None:
         """Load the local model once, then reuse it for every accepted keyframe."""
@@ -26,7 +42,11 @@ class DepthProEstimator:
             module = importlib.import_module("depth_pro")
         except ImportError as exc:
             raise RuntimeError("Depth Pro local runtime is unavailable; install it during setup.") from exc
-        model, transform = module.create_model_and_transforms(device=self.device, precision=None)
+        self._resolved_device = self._resolve_device()
+        model, transform = module.create_model_and_transforms(
+            device=self._resolved_device,
+            precision=None,
+        )
         model.load_state_dict(module.load_checkpoint(str(self.model_path)), strict=True)
         self._module, self._model, self._transform = module, model, transform
 
@@ -36,7 +56,19 @@ class DepthProEstimator:
         depth = np.asarray(prediction["depth"], dtype=np.float32)
         focal = float(prediction.get("focal_length_px", focal_length_px)) if prediction.get("focal_length_px", focal_length_px) else None
         confidence = confidence_from_depth(depth)
-        return MetricDepthResult(depth, focal, confidence, "Apple Depth Pro", "local", {"checkpoint": str(self.model_path), "runtime": "local_only"})
+        return MetricDepthResult(
+            depth,
+            focal,
+            confidence,
+            "Apple Depth Pro",
+            "local",
+            {
+                "checkpoint": str(self.model_path),
+                "runtime": "local_only",
+                "requested_device": self.device,
+                "resolved_device": self._resolved_device,
+            },
+        )
 
 def confidence_from_depth(depth: np.ndarray) -> np.ndarray:
     valid = np.isfinite(depth) & (depth > 0)
