@@ -68,6 +68,18 @@ def build_model(capture_inputs, result:ReconstructionResult, output_dir:Path, so
     global _STABLE_SCOPE
     _STABLE_SCOPE = str(output_dir.resolve())
     output_dir.mkdir(parents=True,exist_ok=True)
+
+    # Never allow a failed or empty camera reconstruction to reach metric-depth
+    # fusion.  Previously this was converted into the much less useful
+    # "no valid reconstructed frame" error, hiding the actual COLMAP failure.
+    if not result.success:
+        reason = result.failure_reason or 'reconstruction backend reported failure without a reason'
+        raise RuntimeError(f'{source_type}_reconstruction: {reason}')
+    if not result.camera_models:
+        raise RuntimeError(f'{source_type}_reconstruction: backend produced no camera models; verify COLMAP input and feature extraction')
+    if not result.poses:
+        raise RuntimeError(f'{source_type}_reconstruction: backend produced no registered camera poses; provide overlapping views of the same scene and verify COLMAP mapper output')
+
     frame=CoordinateFrame(frame_id=stable_id(str(output_dir.resolve())+'/frame'),frame_type=FrameType.LOCAL)
     captures=tuple(Capture(capture_id=stable_id('capture/'+c.capture_id),capture_type=source_type,payload_reference=c.file,metadata=dict(c.metadata)) for c in capture_inputs)
     cap_by_name={Path(c.payload_reference).name:c.capture_id for c in captures}; default_capture=captures[0].capture_id
@@ -120,7 +132,7 @@ def integrate_metric_depth(world,capture_inputs,result,output_dir:Path,config,pl
         mask=np.isfinite(depth)&(depth>0)&(confidence>=config.min_confidence); camera_points=unproject_depth(depth,K,mask,stride=config.depth_stride,maximum_points=config.maximum_depth_points)
         if not len(camera_points): raise RuntimeError(f'metric_depth: no confident depth points for {image_name}')
         camera_pose_pairs.append((pose,camera_points)); stem=Path(image_name).stem; depth_path,mask_path=out/f'{stem}.depth.npy',out/f'{stem}.confidence.npy'; np.save(depth_path,depth); np.save(mask_path,mask)
-        observations.append(Observation(observation_id=stable_id('depth/'+image_name),pose_id=pose.pose_id,camera_id=camera.camera_id,observation_type=ObservationType.DEPTH,payload_reference=str(depth_path.relative_to(output_dir)),confidence_mask=str(mask_path.relative_to(output_dir))))
+        observations.append(Observation(observation_id=stable_id('depth/'+image_name),pose_id=pose.pose_id,camera_id=camera.camera_id,observation_type=ObservationType.DEPTH,payload_reference=str(depth_path.relative_to(output_dir)),confidence_mask=str(mask_path.relative_to(output_dir)))
         inverse=np.linalg.inv(np.asarray(pose.camera_to_frame))
         for point in result.points:
             local=inverse@np.array((*point.xyz,1.))
