@@ -1,13 +1,18 @@
 """Adapter for an explicitly installed, local Apple Depth Pro runtime.
 
-No package import or checkpoint acquisition happens until ``predict``.  This keeps
+No package import or checkpoint acquisition happens until ``predict``. This keeps
 normal reconstruction offline and makes the optional dependency failure explicit.
 """
 from __future__ import annotations
+
+from dataclasses import replace
 from pathlib import Path
 import importlib
+
 import numpy as np
+
 from .base import MetricDepthResult
+
 
 class DepthProEstimator:
     def __init__(self, model_path: Path, device: str = "auto"):
@@ -35,26 +40,54 @@ class DepthProEstimator:
         return "cpu"
 
     def _load(self) -> None:
-        """Load the local model once, then reuse it for every accepted keyframe."""
+        """Load Apple's model directly from the explicitly configured local checkpoint."""
         if self._model is not None:
             return
         try:
             module = importlib.import_module("depth_pro")
+            torch = importlib.import_module("torch")
         except ImportError as exc:
             raise RuntimeError("Depth Pro local runtime is unavailable; install it during setup.") from exc
+
         self._resolved_device = self._resolve_device()
-        model, transform = module.create_model_and_transforms(
-            device=self._resolved_device,
-            precision=None,
-        )
-        model.load_state_dict(module.load_checkpoint(str(self.model_path)), strict=True)
+        device = torch.device(self._resolved_device)
+        try:
+            depth_pro_module = importlib.import_module("depth_pro.depth_pro")
+            default_config = depth_pro_module.DEFAULT_MONODEPTH_CONFIG_DICT
+            config = replace(default_config, checkpoint_uri=str(self.model_path))
+            model, transform = module.create_model_and_transforms(
+                config=config,
+                device=device,
+                precision=torch.float32,
+            )
+        except (AttributeError, TypeError):
+            # Compatibility with older wrappers that do not accept an explicit config.
+            model, transform = module.create_model_and_transforms(
+                device=device,
+                precision=torch.float32,
+            )
+            loader = getattr(module, "load_checkpoint", None)
+            if loader is None:
+                raise RuntimeError("Depth Pro runtime does not expose a supported local checkpoint loader.")
+            model.load_state_dict(loader(str(self.model_path)), strict=True)
+
+        model.eval()
         self._module, self._model, self._transform = module, model, transform
 
     def predict(self, image_path: Path, focal_length_px: float | None = None) -> MetricDepthResult:
         self._load()
-        prediction = self._model.infer(self._transform(str(image_path)), f_px=focal_length_px)
+        image, _, metadata_focal = self._module.load_rgb(image_path)
+        focal_for_inference = focal_length_px if focal_length_px is not None else metadata_focal
+        prediction = self._model.infer(
+            self._transform(image),
+            f_px=focal_for_inference,
+        )
         depth = np.asarray(prediction["depth"], dtype=np.float32)
-        focal = float(prediction.get("focal_length_px", focal_length_px)) if prediction.get("focal_length_px", focal_length_px) else None
+        predicted_focal = prediction.get(
+            "focallength_px",
+            prediction.get("focal_length_px", metadata_focal),
+        )
+        focal = float(predicted_focal) if predicted_focal is not None else None
         confidence = confidence_from_depth(depth)
         return MetricDepthResult(
             depth,
@@ -70,11 +103,20 @@ class DepthProEstimator:
             },
         )
 
+
 def confidence_from_depth(depth: np.ndarray) -> np.ndarray:
     valid = np.isfinite(depth) & (depth > 0)
-    if not valid.any(): return np.zeros(depth.shape, dtype=np.float32)
+    if not valid.any():
+        return np.zeros(depth.shape, dtype=np.float32)
     low, high = np.percentile(depth[valid], (1, 99))
     edge = np.zeros_like(depth, dtype=float)
-    edge[1:-1, 1:-1] = np.hypot(np.diff(depth, axis=0, prepend=depth[:1]), np.diff(depth, axis=1, prepend=depth[:, :1]))[1:-1,1:-1]
+    edge[1:-1, 1:-1] = np.hypot(
+        np.diff(depth, axis=0, prepend=depth[:1]),
+        np.diff(depth, axis=1, prepend=depth[:, :1]),
+    )[1:-1, 1:-1]
     scale = np.nanpercentile(edge[valid], 95) or 1.0
-    return (valid * np.clip(1 - edge / scale, 0.0, 1.0) * ((depth >= low) & (depth <= high))).astype(np.float32)
+    return (
+        valid
+        * np.clip(1 - edge / scale, 0.0, 1.0)
+        * ((depth >= low) & (depth <= high))
+    ).astype(np.float32)
