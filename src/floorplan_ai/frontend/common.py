@@ -8,7 +8,7 @@ import numpy as np
 from floorplan_ai.canonical.schema import *
 from floorplan_ai.geometry import PlaneConfig, extract_planes, write_ply
 from floorplan_ai.reconstruction.colmap import colmap_pose_to_canonical
-from floorplan_ai.reconstruction.models import ReconstructionResult
+from floorplan_ai.reconstruction.models import ReconstructionResult, ScaleState
 from floorplan_ai.reconstruction.scale import ScaleEstimator
 from floorplan_ai.depth import MetricDepthEstimator, robust_scale_estimate, transform_points, unproject_depth, scale_points, scale_pose_translation, fuse_metric_clouds
 
@@ -59,7 +59,7 @@ def _write_outputs(world,result,output_dir,source_type,captures,scale,plane_resu
     if floor_plane is not None:
         floor_z=-floor_plane.distance_offset/floor_plane.normal_vector[2]
         above=[p for p in horizontal if p.plane_id!=floor_plane.plane_id and (-p.distance_offset/p.normal_vector[2])>floor_z]
-        ceiling_plane=max(above,key=lambda p:p.inlier_count) if above else None
+        ceiling_plane=max(above,key=p.inlier_count) if above else None
     metric_scale=world.scale_estimates[-1] if world.scale_estimates else None
     diag={'source_type':source_type,'input_count':len(captures),'successful_input_count':len(captures),'backend':result.backend_name,'reconstruction_success':result.success,'camera_count':len(world.cameras),'pose_count':len(world.poses),'point_count':len(result.points),'plane_count':len(planes),'floor_plane_found':floor_plane is not None,'ceiling_plane_found':ceiling_plane is not None,'wall_plane_candidate_count':sum(abs(p.normal_vector[2])<=.2 for p in planes),'scale_state':scale.state.value,'scale_confidence':float(metric_scale.confidence if metric_scale else scale.confidence),'warnings':[] if result.success else [result.failure_reason],'errors':[]}
     (output_dir/'diagnostics.json').write_text(json.dumps(diag,sort_keys=True,indent=2))
