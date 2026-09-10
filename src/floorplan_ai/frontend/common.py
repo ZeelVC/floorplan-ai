@@ -70,7 +70,7 @@ def build_model(capture_inputs, result:ReconstructionResult, output_dir:Path, so
     output_dir.mkdir(parents=True,exist_ok=True)
 
     # Never allow a failed or empty camera reconstruction to reach metric-depth
-    # fusion.  Previously this was converted into the much less useful
+    # fusion. Previously this was converted into the much less useful
     # "no valid reconstructed frame" error, hiding the actual COLMAP failure.
     if not result.success:
         reason = result.failure_reason or 'reconstruction backend reported failure without a reason'
@@ -132,7 +132,7 @@ def integrate_metric_depth(world,capture_inputs,result,output_dir:Path,config,pl
         mask=np.isfinite(depth)&(depth>0)&(confidence>=config.min_confidence); camera_points=unproject_depth(depth,K,mask,stride=config.depth_stride,maximum_points=config.maximum_depth_points)
         if not len(camera_points): raise RuntimeError(f'metric_depth: no confident depth points for {image_name}')
         camera_pose_pairs.append((pose,camera_points)); stem=Path(image_name).stem; depth_path,mask_path=out/f'{stem}.depth.npy',out/f'{stem}.confidence.npy'; np.save(depth_path,depth); np.save(mask_path,mask)
-        observations.append(Observation(observation_id=stable_id('depth/'+image_name),pose_id=pose.pose_id,camera_id=camera.camera_id,observation_type=ObservationType.DEPTH,payload_reference=str(depth_path.relative_to(output_dir)),confidence_mask=str(mask_path.relative_to(output_dir)))
+        observations.append(Observation(observation_id=stable_id('depth/'+image_name),pose_id=pose.pose_id,camera_id=camera.camera_id,observation_type=ObservationType.DEPTH,payload_reference=str(depth_path.relative_to(output_dir)),confidence_mask=str(mask_path.relative_to(output_dir))))
         inverse=np.linalg.inv(np.asarray(pose.camera_to_frame))
         for point in result.points:
             local=inverse@np.array((*point.xyz,1.))
