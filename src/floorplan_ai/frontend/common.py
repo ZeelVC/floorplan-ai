@@ -59,7 +59,7 @@ def _write_outputs(world,result,output_dir,source_type,captures,scale,plane_resu
     if floor_plane is not None:
         floor_z=-floor_plane.distance_offset/floor_plane.normal_vector[2]
         above=[p for p in horizontal if p.plane_id!=floor_plane.plane_id and (-p.distance_offset/p.normal_vector[2])>floor_z]
-        ceiling_plane=max(above,key=p.inlier_count) if above else None
+        ceiling_plane=max(above,key=lambda p:p.inlier_count) if above else None
     metric_scale=world.scale_estimates[-1] if world.scale_estimates else None
     diag={'source_type':source_type,'input_count':len(captures),'successful_input_count':len(captures),'backend':result.backend_name,'reconstruction_success':result.success,'camera_count':len(world.cameras),'pose_count':len(world.poses),'point_count':len(result.points),'plane_count':len(planes),'floor_plane_found':floor_plane is not None,'ceiling_plane_found':ceiling_plane is not None,'wall_plane_candidate_count':sum(abs(p.normal_vector[2])<=.2 for p in planes),'scale_state':scale.state.value,'scale_confidence':float(metric_scale.confidence if metric_scale else scale.confidence),'warnings':[] if result.success else [result.failure_reason],'errors':[]}
     (output_dir/'diagnostics.json').write_text(json.dumps(diag,sort_keys=True,indent=2))
@@ -137,7 +137,7 @@ def integrate_metric_depth(world,capture_inputs,result,output_dir:Path,config,pl
         mask=np.isfinite(depth)&(depth>0)&(confidence>=config.min_confidence); camera_points=unproject_depth(depth,K,mask,stride=config.depth_stride,maximum_points=config.maximum_depth_points)
         if not len(camera_points): raise RuntimeError(f'metric_depth: no confident depth points for {image_name}')
         camera_pose_pairs.append((pose,camera_points)); stem=Path(image_name).stem; depth_path,mask_path=out/f'{stem}.depth.npy',out/f'{stem}.confidence.npy'; np.save(depth_path,depth); np.save(mask_path,mask)
-        observations.append(Observation(observation_id=stable_id('depth/'+image_name),pose_id=pose.pose_id,camera_id=camera.camera_id,observation_type=ObservationType.DEPTH,payload_reference=str(depth_path.relative_to(output_dir)),confidence_mask=str(mask_path.relative_to(output_dir))))
+        observations.append(Observation(observation_id=stable_id('depth/'+image_name),pose_id=pose.pose_id,camera_id=camera.camera_id,observation_type=ObservationType.DEPTH,payload_reference=str(depth_path.relative_to(output_dir)),confidence_mask=str(mask_path.relative_to(output_dir))) )
         if not direct_metric:
             inverse=np.linalg.inv(np.asarray(pose.camera_to_frame))
             for point in result.points:
