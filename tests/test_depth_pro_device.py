@@ -50,6 +50,10 @@ def test_native_loader_overrides_depth_pro_cwd_checkpoint(tmp_path, monkeypatch)
         def eval(self):
             calls["eval"] = True
 
+    def create_model_and_transforms(**kwargs):
+        calls.update(kwargs)
+        return FakeModel(), lambda image: image
+
     fake_torch = SimpleNamespace(
         cuda=SimpleNamespace(is_available=lambda: False),
         backends=SimpleNamespace(mps=SimpleNamespace(is_available=lambda: False)),
@@ -58,12 +62,7 @@ def test_native_loader_overrides_depth_pro_cwd_checkpoint(tmp_path, monkeypatch)
     )
     fake_config = SimpleNamespace(checkpoint_uri="./checkpoints/depth_pro.pt")
     fake_depth_module = SimpleNamespace(DEFAULT_MONODEPTH_CONFIG_DICT=fake_config)
-    fake_module = SimpleNamespace(
-        create_model_and_transforms=lambda **kwargs: (
-            calls.update(kwargs) or FakeModel(),
-            lambda image: image,
-        )
-    )
+    fake_module = SimpleNamespace(create_model_and_transforms=create_model_and_transforms)
 
     def fake_import(name):
         if name == "torch":
