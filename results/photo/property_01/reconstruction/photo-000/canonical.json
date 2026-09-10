@@ -1,0 +1,692 @@
+{
+  "model_id": "17915244-bd98-4d1d-a041-5c85d4086299",
+  "frames": [
+    {
+      "frame_id": "9d508333-e367-571f-af71-6b08d878d2f8",
+      "frame_type": "local",
+      "units": "m",
+      "up_vector": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "convention": "right_handed_z_up"
+    }
+  ],
+  "captures": [
+    {
+      "capture_id": "8a50c41c-8740-5eef-aa56-3dfe96090149",
+      "capture_type": "photo",
+      "payload_reference": "1.jpeg",
+      "metadata": {
+        "room_group_id": "room_1",
+        "width": 1280,
+        "height": 960
+      }
+    },
+    {
+      "capture_id": "a559b74e-6c5b-56aa-b1f6-c1be0f125860",
+      "capture_type": "photo",
+      "payload_reference": "2.jpeg",
+      "metadata": {
+        "room_group_id": "room_1",
+        "width": 1280,
+        "height": 960
+      }
+    },
+    {
+      "capture_id": "dfe3b524-5f7e-5a65-a998-16d4112844e2",
+      "capture_type": "photo",
+      "payload_reference": "3.jpeg",
+      "metadata": {
+        "room_group_id": "room_1",
+        "width": 1280,
+        "height": 960
+      }
+    },
+    {
+      "capture_id": "966d7341-e1ac-59dd-bb46-8d392d255e90",
+      "capture_type": "photo",
+      "payload_reference": "4.jpeg",
+      "metadata": {
+        "room_group_id": "room_1",
+        "width": 1280,
+        "height": 960
+      }
+    }
+  ],
+  "cameras": [
+    {
+      "camera_id": "e1e39f9d-b262-5719-92bb-3084330a9c03",
+      "capture_id": "8a50c41c-8740-5eef-aa56-3dfe96090149",
+      "focal_length": [
+        1536.0,
+        1536.0
+      ],
+      "principal_point": [
+        640.0,
+        480.0
+      ],
+      "distortion_coefficients": [
+        0.0
+      ],
+      "resolution": [
+        1280,
+        960
+      ],
+      "prior_source": "reconstruction"
+    }
+  ],
+  "poses": [
+    {
+      "pose_id": "93c7689f-ac22-5231-9e12-e26e0d72bd13",
+      "frame_id": "9d508333-e367-571f-af71-6b08d878d2f8",
+      "camera_to_frame": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "pose_id": "12cfcec8-1fd8-5ce6-8d08-2e1da20e7d1a",
+      "frame_id": "9d508333-e367-571f-af71-6b08d878d2f8",
+      "camera_to_frame": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "pose_id": "8bd54729-8d13-581b-9b29-87761b31440b",
+      "frame_id": "9d508333-e367-571f-af71-6b08d878d2f8",
+      "camera_to_frame": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "pose_id": "563bab03-5fe5-53f7-bd4a-e37ae96fcf68",
+      "frame_id": "9d508333-e367-571f-af71-6b08d878d2f8",
+      "camera_to_frame": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "observation_id": "366daff6-1a20-5ed9-9d65-2730106052b4",
+      "pose_id": "93c7689f-ac22-5231-9e12-e26e0d72bd13",
+      "camera_id": "e1e39f9d-b262-5719-92bb-3084330a9c03",
+      "observation_type": "image",
+      "payload_reference": "1.jpeg"
+    },
+    {
+      "observation_id": "8054632e-181f-5799-b041-320595ff3012",
+      "pose_id": "12cfcec8-1fd8-5ce6-8d08-2e1da20e7d1a",
+      "camera_id": "e1e39f9d-b262-5719-92bb-3084330a9c03",
+      "observation_type": "image",
+      "payload_reference": "2.jpeg"
+    },
+    {
+      "observation_id": "33737752-b528-5985-8b6a-edbdc5d2c865",
+      "pose_id": "8bd54729-8d13-581b-9b29-87761b31440b",
+      "camera_id": "e1e39f9d-b262-5719-92bb-3084330a9c03",
+      "observation_type": "image",
+      "payload_reference": "3.jpeg"
+    },
+    {
+      "observation_id": "fe707585-b7fa-5936-bddd-9f68e0b4121a",
+      "pose_id": "563bab03-5fe5-53f7-bd4a-e37ae96fcf68",
+      "camera_id": "e1e39f9d-b262-5719-92bb-3084330a9c03",
+      "observation_type": "image",
+      "payload_reference": "4.jpeg"
+    },
+    {
+      "observation_id": "36372857-8c47-56bc-8fc6-5c4aeec13ec6",
+      "observation_type": "feature_correspondence",
+      "payload_reference": "observations/correspondences.json"
+    },
+    {
+      "observation_id": "8ee7c771-f2f6-50cd-b718-5bf875af319c",
+      "pose_id": "93c7689f-ac22-5231-9e12-e26e0d72bd13",
+      "camera_id": "e1e39f9d-b262-5719-92bb-3084330a9c03",
+      "observation_type": "depth",
+      "payload_reference": "depth/1.depth.npy",
+      "confidence_mask": "depth/1.confidence.npy"
+    },
+    {
+      "observation_id": "321bc69e-89b6-535f-a6d7-42fe0cb801d5",
+      "pose_id": "12cfcec8-1fd8-5ce6-8d08-2e1da20e7d1a",
+      "camera_id": "e1e39f9d-b262-5719-92bb-3084330a9c03",
+      "observation_type": "depth",
+      "payload_reference": "depth/2.depth.npy",
+      "confidence_mask": "depth/2.confidence.npy"
+    },
+    {
+      "observation_id": "99e6a4de-0942-5755-9867-b822526c6ace",
+      "pose_id": "8bd54729-8d13-581b-9b29-87761b31440b",
+      "camera_id": "e1e39f9d-b262-5719-92bb-3084330a9c03",
+      "observation_type": "depth",
+      "payload_reference": "depth/3.depth.npy",
+      "confidence_mask": "depth/3.confidence.npy"
+    },
+    {
+      "observation_id": "d98d2caa-369c-5713-a10a-d03163a776ac",
+      "pose_id": "563bab03-5fe5-53f7-bd4a-e37ae96fcf68",
+      "camera_id": "e1e39f9d-b262-5719-92bb-3084330a9c03",
+      "observation_type": "depth",
+      "payload_reference": "depth/4.depth.npy",
+      "confidence_mask": "depth/4.confidence.npy"
+    }
+  ],
+  "geometries": [
+    {
+      "geometry_id": "10586d0e-8a6e-5fc7-956a-c6c45dc7d9fe",
+      "frame_id": "9d508333-e367-571f-af71-6b08d878d2f8",
+      "geometry_type": "point_cloud",
+      "vertex_buffer_reference": "depth/metric_fused_points.xyz",
+      "bounding_box": [
+        [
+          -2.6771708329518638,
+          -1.2593673666318257,
+          1.5957361459732056
+        ],
+        [
+          1.7403830997645855,
+          1.4910319062570732,
+          10.394552230834961
+        ]
+      ],
+      "point_density": 0.0
+    }
+  ],
+  "planes": [
+    {
+      "plane_id": "d5f46f32-7389-5deb-ac29-b2681bcfbb46",
+      "frame_id": "9d508333-e367-571f-af71-6b08d878d2f8",
+      "normal_vector": [
+        -0.00047697078323188734,
+        -0.999975314849249,
+        0.0070101491437440785
+      ],
+      "distance_offset": -0.9171238338582619,
+      "boundary_polygon_3d": [
+        [
+          -1.7028554280598958,
+          -0.9297292778889338,
+          2.6502695083618164
+        ],
+        [
+          1.7158862762153149,
+          -0.8246280774474144,
+          7.287059783935547
+        ]
+      ],
+      "inlier_count": 10986,
+      "rmse": 0.022595003315355668,
+      "uncertainty": {
+        "uncertainty_id": "609ad194-64e8-4e31-b188-ab9cfec1f55d",
+        "distribution_type": "plane_fit",
+        "confidence_bounds": [
+          0.011297501657677834,
+          0.033892504973033505
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "8a50c41c-8740-5eef-aa56-3dfe96090149",
+          "a559b74e-6c5b-56aa-b1f6-c1be0f125860",
+          "dfe3b524-5f7e-5a65-a998-16d4112844e2",
+          "966d7341-e1ac-59dd-bb46-8d392d255e90"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:50:28.217122Z"
+      }
+    },
+    {
+      "plane_id": "1f5f7c4f-f6b5-5549-8ccf-914b21c2467f",
+      "frame_id": "9d508333-e367-571f-af71-6b08d878d2f8",
+      "normal_vector": [
+        0.010496556883486502,
+        0.9942795331221831,
+        0.10629220247941723
+      ],
+      "distance_offset": -1.2370927172733581,
+      "boundary_polygon_3d": [
+        [
+          -2.6682114601135254,
+          0.17158228158950806,
+          2.8484420776367188
+        ],
+        [
+          1.7172184586524963,
+          0.9560016157726446,
+          9.568108558654785
+        ]
+      ],
+      "inlier_count": 9510,
+      "rmse": 0.028186618653724984,
+      "uncertainty": {
+        "uncertainty_id": "40d3b7bc-2349-4e59-8e8d-98adfc67eb07",
+        "distribution_type": "plane_fit",
+        "confidence_bounds": [
+          0.014093309326862492,
+          0.042279927980587474
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "8a50c41c-8740-5eef-aa56-3dfe96090149",
+          "a559b74e-6c5b-56aa-b1f6-c1be0f125860",
+          "dfe3b524-5f7e-5a65-a998-16d4112844e2",
+          "966d7341-e1ac-59dd-bb46-8d392d255e90"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:50:28.217172Z"
+      }
+    },
+    {
+      "plane_id": "a6a62322-9163-5fa6-b9a0-d693a6d92ecb",
+      "frame_id": "9d508333-e367-571f-af71-6b08d878d2f8",
+      "normal_vector": [
+        0.9983757982072949,
+        0.021991980280748214,
+        0.052555859400051905
+      ],
+      "distance_offset": -1.4270129692296403,
+      "boundary_polygon_3d": [
+        [
+          0.8908541202545166,
+          -1.2241305969655514,
+          2.8982954025268555
+        ],
+        [
+          1.3084331961969535,
+          1.4401959752043088,
+          10.390849113464355
+        ]
+      ],
+      "inlier_count": 9553,
+      "rmse": 0.02106932139420896,
+      "uncertainty": {
+        "uncertainty_id": "7d2ea5eb-72f9-4c64-b1bf-458ef154b080",
+        "distribution_type": "plane_fit",
+        "confidence_bounds": [
+          0.01053466069710448,
+          0.03160398209131344
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "8a50c41c-8740-5eef-aa56-3dfe96090149",
+          "a559b74e-6c5b-56aa-b1f6-c1be0f125860",
+          "dfe3b524-5f7e-5a65-a998-16d4112844e2",
+          "966d7341-e1ac-59dd-bb46-8d392d255e90"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:50:28.217188Z"
+      }
+    },
+    {
+      "plane_id": "4bb30ce0-03fb-53ee-a113-5b5bec7a9a9c",
+      "frame_id": "9d508333-e367-571f-af71-6b08d878d2f8",
+      "normal_vector": [
+        0.1455458104529703,
+        5.823643803516887e-7,
+        0.9893515133961482
+      ],
+      "distance_offset": -4.059373528806829,
+      "boundary_polygon_3d": [
+        [
+          -1.8398425976435344,
+          -1.2408487585683663,
+          3.8230059146881104
+        ],
+        [
+          1.6135438419878483,
+          1.3529349242647488,
+          4.428778171539307
+        ]
+      ],
+      "inlier_count": 8812,
+      "rmse": 0.022214841163158527,
+      "uncertainty": {
+        "uncertainty_id": "6dc73637-255e-474a-a82d-4298513ebd71",
+        "distribution_type": "plane_fit",
+        "confidence_bounds": [
+          0.011107420581579264,
+          0.03332226174473779
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "8a50c41c-8740-5eef-aa56-3dfe96090149",
+          "a559b74e-6c5b-56aa-b1f6-c1be0f125860",
+          "dfe3b524-5f7e-5a65-a998-16d4112844e2",
+          "966d7341-e1ac-59dd-bb46-8d392d255e90"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:50:28.217201Z"
+      }
+    },
+    {
+      "plane_id": "77742e98-4ef0-5822-a6d7-cdd73f3880bc",
+      "frame_id": "9d508333-e367-571f-af71-6b08d878d2f8",
+      "normal_vector": [
+        0.9983693616724884,
+        -0.013288432290151671,
+        0.055516080922002164
+      ],
+      "distance_offset": 0.5669513977541806,
+      "boundary_polygon_3d": [
+        [
+          -0.979075255493323,
+          -1.2543808321158092,
+          1.5957361459732056
+        ],
+        [
+          -0.6433121301233768,
+          1.4332225086788337,
+          6.564359188079834
+        ]
+      ],
+      "inlier_count": 8782,
+      "rmse": 0.020338907294122844,
+      "uncertainty": {
+        "uncertainty_id": "c9cf1b76-9c57-4f6f-8d22-cf84b4675c4f",
+        "distribution_type": "plane_fit",
+        "confidence_bounds": [
+          0.010169453647061422,
+          0.030508360941184268
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "8a50c41c-8740-5eef-aa56-3dfe96090149",
+          "a559b74e-6c5b-56aa-b1f6-c1be0f125860",
+          "dfe3b524-5f7e-5a65-a998-16d4112844e2",
+          "966d7341-e1ac-59dd-bb46-8d392d255e90"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:50:28.217212Z"
+      }
+    },
+    {
+      "plane_id": "91c4ff09-4098-5e7f-8fe3-db3368c48d1f",
+      "frame_id": "9d508333-e367-571f-af71-6b08d878d2f8",
+      "normal_vector": [
+        -0.07726741785795604,
+        -0.231323093112669,
+        0.9698037805300367
+      ],
+      "distance_offset": -6.273718614473371,
+      "boundary_polygon_3d": [
+        [
+          -2.6771708329518638,
+          -1.2593673666318257,
+          6.009139537811279
+        ],
+        [
+          1.468259507169326,
+          1.3352184556424618,
+          6.88077974319458
+        ]
+      ],
+      "inlier_count": 9453,
+      "rmse": 0.02253748633693507,
+      "uncertainty": {
+        "uncertainty_id": "28eaea48-0ac6-4c89-966f-ee47cfff5c16",
+        "distribution_type": "plane_fit",
+        "confidence_bounds": [
+          0.011268743168467535,
+          0.0338062295054026
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "8a50c41c-8740-5eef-aa56-3dfe96090149",
+          "a559b74e-6c5b-56aa-b1f6-c1be0f125860",
+          "dfe3b524-5f7e-5a65-a998-16d4112844e2",
+          "966d7341-e1ac-59dd-bb46-8d392d255e90"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:50:28.217223Z"
+      }
+    },
+    {
+      "plane_id": "24eb8483-779e-5ff2-9d83-b555fb94e878",
+      "frame_id": "9d508333-e367-571f-af71-6b08d878d2f8",
+      "normal_vector": [
+        0.9982740745379194,
+        0.0451565243697728,
+        0.037546776323709244
+      ],
+      "distance_offset": -1.4991470607340192,
+      "boundary_polygon_3d": [
+        [
+          1.0642995436986287,
+          -1.2211821873982747,
+          3.1950509548187256
+        ],
+        [
+          1.4746044104297955,
+          1.18825888261199,
+          10.351935386657715
+        ]
+      ],
+      "inlier_count": 8543,
+      "rmse": 0.019225899789395706,
+      "uncertainty": {
+        "uncertainty_id": "138cb4ff-31a9-4704-a9fa-3dfd2063e5c5",
+        "distribution_type": "plane_fit",
+        "confidence_bounds": [
+          0.009612949894697853,
+          0.02883884968409356
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "8a50c41c-8740-5eef-aa56-3dfe96090149",
+          "a559b74e-6c5b-56aa-b1f6-c1be0f125860",
+          "dfe3b524-5f7e-5a65-a998-16d4112844e2",
+          "966d7341-e1ac-59dd-bb46-8d392d255e90"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:50:28.217233Z"
+      }
+    },
+    {
+      "plane_id": "0f76f95a-745e-5bec-b380-7143c5adf12c",
+      "frame_id": "9d508333-e367-571f-af71-6b08d878d2f8",
+      "normal_vector": [
+        0.9950661576625496,
+        -0.012168641805053702,
+        0.09846454200020638
+      ],
+      "distance_offset": -2.0811300965262767,
+      "boundary_polygon_3d": [
+        [
+          0.9959984918435415,
+          -1.0836847126483917,
+          3.956987142562866
+        ],
+        [
+          1.717276256531477,
+          1.1664397716522217,
+          10.384565353393555
+        ]
+      ],
+      "inlier_count": 7533,
+      "rmse": 0.013761404539373523,
+      "uncertainty": {
+        "uncertainty_id": "2d4ca675-c6fe-4bc0-bf74-5439ee6a7248",
+        "distribution_type": "plane_fit",
+        "confidence_bounds": [
+          0.0068807022696867615,
+          0.020642106809060284
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "8a50c41c-8740-5eef-aa56-3dfe96090149",
+          "a559b74e-6c5b-56aa-b1f6-c1be0f125860",
+          "dfe3b524-5f7e-5a65-a998-16d4112844e2",
+          "966d7341-e1ac-59dd-bb46-8d392d255e90"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:50:28.217243Z"
+      }
+    }
+  ],
+  "rooms": [],
+  "walls": [],
+  "openings": [],
+  "relationships": [],
+  "measurements": [],
+  "scale_estimates": [
+    {
+      "scale_id": "2ff6076b-0876-45b6-94bb-b40d9b28bd19",
+      "frame_id": "9d508333-e367-571f-af71-6b08d878d2f8",
+      "scale_factor": 1.0,
+      "uncertainty": {
+        "uncertainty_id": "0bb9a3f3-0c6d-4e43-abb6-db82bb0883d4",
+        "distribution_type": "metric_depth_model_prior",
+        "confidence_bounds": [
+          0.0,
+          0.15
+        ]
+      },
+      "confidence": 0.45,
+      "evidence": [
+        "metric_depth"
+      ],
+      "provenance": {
+        "source_capture_ids": [
+          "8a50c41c-8740-5eef-aa56-3dfe96090149",
+          "a559b74e-6c5b-56aa-b1f6-c1be0f125860",
+          "dfe3b524-5f7e-5a65-a998-16d4112844e2",
+          "966d7341-e1ac-59dd-bb46-8d392d255e90"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "depth_odometry_metric_scale",
+        "timestamp": "2026-09-10T00:50:28.217254Z"
+      }
+    }
+  ],
+  "provenance": {
+    "source_capture_ids": [
+      "8a50c41c-8740-5eef-aa56-3dfe96090149",
+      "a559b74e-6c5b-56aa-b1f6-c1be0f125860",
+      "dfe3b524-5f7e-5a65-a998-16d4112844e2",
+      "966d7341-e1ac-59dd-bb46-8d392d255e90"
+    ],
+    "source_pose_ids": [],
+    "source_observation_ids": [],
+    "generating_pipeline_stage": "photo_reconstruction",
+    "timestamp": "2026-09-10T00:50:25.707057Z"
+  }
+}

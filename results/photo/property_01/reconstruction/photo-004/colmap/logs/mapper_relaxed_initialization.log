@@ -1,0 +1,54 @@
+
+I20260910 06:21:57.915672 0x1fa65e140 incremental_pipeline.cc:353] Loading database
+I20260910 06:21:57.915978 0x1fa65e140 database_cache.cc:73] Loading rigs...
+I20260910 06:21:57.915997 0x1fa65e140 database_cache.cc:83]  1 in 0.000s
+I20260910 06:21:57.916000 0x1fa65e140 database_cache.cc:91] Loading cameras...
+I20260910 06:21:57.916006 0x1fa65e140 database_cache.cc:109]  1 in 0.000s
+I20260910 06:21:57.916008 0x1fa65e140 database_cache.cc:117] Loading frames...
+I20260910 06:21:57.916021 0x1fa65e140 database_cache.cc:127]  4 in 0.000s
+I20260910 06:21:57.916024 0x1fa65e140 database_cache.cc:135] Loading matches...
+I20260910 06:21:57.916043 0x1fa65e140 database_cache.cc:140]  2 in 0.000s
+I20260910 06:21:57.916046 0x1fa65e140 database_cache.cc:148] Loading images...
+I20260910 06:21:57.916236 0x1fa65e140 database_cache.cc:245]  4 in 0.000s (connected 3, loaded 3)
+I20260910 06:21:57.916239 0x1fa65e140 database_cache.cc:259] Loading pose priors...
+I20260910 06:21:57.916243 0x1fa65e140 database_cache.cc:267]  0 in 0.000s
+I20260910 06:21:57.916245 0x1fa65e140 database_cache.cc:275] Building correspondence graph...
+I20260910 06:21:57.916291 0x1fa65e140 database_cache.cc:304]  in 0.000s (ignored 0)
+I20260910 06:21:57.916295 0x1fa65e140 timer.cc:90] Elapsed time: 0.000 [minutes]
+I20260910 06:21:57.916365 0x1fa65e140 incremental_pipeline.cc:465] Finding good initial image pair
+I20260910 06:21:57.917931 0x1fa65e140 incremental_pipeline.cc:492] Registering initial image pair #4 and #1
+I20260910 06:21:57.918049 0x1fa65e140 incremental_pipeline.cc:791] Discarding reconstruction due to bad initial pair
+I20260910 06:21:57.918144 0x1fa65e140 incremental_pipeline.cc:465] Finding good initial image pair
+I20260910 06:21:57.918283 0x1fa65e140 incremental_pipeline.cc:472] => No good initial image pair found.
+I20260910 06:21:57.918288 0x1fa65e140 incremental_pipeline.cc:800] Discarding reconstruction due to no initial pair
+I20260910 06:21:57.918294 0x1fa65e140 incremental_pipeline.cc:429] => Relaxing the initialization constraints.
+I20260910 06:21:57.918345 0x1fa65e140 incremental_pipeline.cc:465] Finding good initial image pair
+I20260910 06:21:57.919747 0x1fa65e140 incremental_pipeline.cc:492] Registering initial image pair #4 and #1
+I20260910 06:21:57.919864 0x1fa65e140 incremental_pipeline.cc:791] Discarding reconstruction due to bad initial pair
+I20260910 06:21:57.919926 0x1fa65e140 incremental_pipeline.cc:465] Finding good initial image pair
+I20260910 06:21:57.920048 0x1fa65e140 incremental_pipeline.cc:472] => No good initial image pair found.
+I20260910 06:21:57.920053 0x1fa65e140 incremental_pipeline.cc:800] Discarding reconstruction due to no initial pair
+I20260910 06:21:57.920061 0x1fa65e140 incremental_pipeline.cc:442] => Relaxing the initialization constraints.
+I20260910 06:21:57.920101 0x1fa65e140 incremental_pipeline.cc:465] Finding good initial image pair
+I20260910 06:21:57.921453 0x1fa65e140 incremental_pipeline.cc:492] Registering initial image pair #4 and #1
+I20260910 06:21:57.921563 0x1fa65e140 incremental_pipeline.cc:791] Discarding reconstruction due to bad initial pair
+I20260910 06:21:57.921628 0x1fa65e140 incremental_pipeline.cc:465] Finding good initial image pair
+I20260910 06:21:57.921766 0x1fa65e140 incremental_pipeline.cc:472] => No good initial image pair found.
+I20260910 06:21:57.921770 0x1fa65e140 incremental_pipeline.cc:800] Discarding reconstruction due to no initial pair
+I20260910 06:21:57.921776 0x1fa65e140 incremental_pipeline.cc:429] => Relaxing the initialization constraints.
+I20260910 06:21:57.921803 0x1fa65e140 incremental_pipeline.cc:465] Finding good initial image pair
+I20260910 06:21:57.923158 0x1fa65e140 incremental_pipeline.cc:492] Registering initial image pair #4 and #1
+I20260910 06:21:57.923265 0x1fa65e140 incremental_pipeline.cc:791] Discarding reconstruction due to bad initial pair
+I20260910 06:21:57.923328 0x1fa65e140 incremental_pipeline.cc:465] Finding good initial image pair
+I20260910 06:21:57.923455 0x1fa65e140 incremental_pipeline.cc:472] => No good initial image pair found.
+I20260910 06:21:57.923458 0x1fa65e140 incremental_pipeline.cc:800] Discarding reconstruction due to no initial pair
+I20260910 06:21:57.923475 0x1fa65e140 incremental_pipeline.cc:442] => Relaxing the initialization constraints.
+I20260910 06:21:57.923499 0x1fa65e140 incremental_pipeline.cc:465] Finding good initial image pair
+I20260910 06:21:57.924777 0x1fa65e140 incremental_pipeline.cc:492] Registering initial image pair #4 and #1
+I20260910 06:21:57.924885 0x1fa65e140 incremental_pipeline.cc:791] Discarding reconstruction due to bad initial pair
+I20260910 06:21:57.924942 0x1fa65e140 incremental_pipeline.cc:465] Finding good initial image pair
+I20260910 06:21:57.925056 0x1fa65e140 incremental_pipeline.cc:472] => No good initial image pair found.
+I20260910 06:21:57.925059 0x1fa65e140 incremental_pipeline.cc:800] Discarding reconstruction due to no initial pair
+I20260910 06:21:57.925063 0x1fa65e140 timer.cc:90] Elapsed time: 0.000 [minutes]
+[0;31mE20260910 06:21:57.925066 0x1fa65e140 sfm.cc:310] Failed to create any sparse model
+[m

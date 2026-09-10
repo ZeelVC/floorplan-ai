@@ -1,0 +1,45 @@
+
+I20260910 06:19:31.328767 0x1fa65e140 incremental_pipeline.cc:353] Loading database
+I20260910 06:19:31.329069 0x1fa65e140 database_cache.cc:73] Loading rigs...
+I20260910 06:19:31.329086 0x1fa65e140 database_cache.cc:83]  1 in 0.000s
+I20260910 06:19:31.329090 0x1fa65e140 database_cache.cc:91] Loading cameras...
+I20260910 06:19:31.329095 0x1fa65e140 database_cache.cc:109]  1 in 0.000s
+I20260910 06:19:31.329097 0x1fa65e140 database_cache.cc:117] Loading frames...
+I20260910 06:19:31.329110 0x1fa65e140 database_cache.cc:127]  4 in 0.000s
+I20260910 06:19:31.329113 0x1fa65e140 database_cache.cc:135] Loading matches...
+I20260910 06:19:31.329132 0x1fa65e140 database_cache.cc:140]  3 in 0.000s
+I20260910 06:19:31.329134 0x1fa65e140 database_cache.cc:148] Loading images...
+I20260910 06:19:31.329322 0x1fa65e140 database_cache.cc:245]  4 in 0.000s (connected 4, loaded 4)
+I20260910 06:19:31.329325 0x1fa65e140 database_cache.cc:259] Loading pose priors...
+I20260910 06:19:31.329329 0x1fa65e140 database_cache.cc:267]  0 in 0.000s
+I20260910 06:19:31.329331 0x1fa65e140 database_cache.cc:275] Building correspondence graph...
+I20260910 06:19:31.329389 0x1fa65e140 database_cache.cc:304]  in 0.000s (ignored 0)
+I20260910 06:19:31.329391 0x1fa65e140 timer.cc:90] Elapsed time: 0.000 [minutes]
+I20260910 06:19:31.330020 0x1fa65e140 incremental_pipeline.cc:465] Finding good initial image pair
+I20260910 06:19:31.330201 0x1fa65e140 incremental_pipeline.cc:472] => No good initial image pair found.
+I20260910 06:19:31.330204 0x1fa65e140 incremental_pipeline.cc:800] Discarding reconstruction due to no initial pair
+I20260910 06:19:31.330390 0x1fa65e140 incremental_pipeline.cc:429] => Relaxing the initialization constraints.
+I20260910 06:19:31.330417 0x1fa65e140 incremental_pipeline.cc:465] Finding good initial image pair
+I20260910 06:19:31.330557 0x1fa65e140 incremental_pipeline.cc:472] => No good initial image pair found.
+I20260910 06:19:31.330562 0x1fa65e140 incremental_pipeline.cc:800] Discarding reconstruction due to no initial pair
+I20260910 06:19:31.330568 0x1fa65e140 incremental_pipeline.cc:442] => Relaxing the initialization constraints.
+I20260910 06:19:31.330626 0x1fa65e140 incremental_pipeline.cc:465] Finding good initial image pair
+I20260910 06:19:31.330759 0x1fa65e140 incremental_pipeline.cc:472] => No good initial image pair found.
+I20260910 06:19:31.330765 0x1fa65e140 incremental_pipeline.cc:800] Discarding reconstruction due to no initial pair
+I20260910 06:19:31.330770 0x1fa65e140 incremental_pipeline.cc:429] => Relaxing the initialization constraints.
+I20260910 06:19:31.330825 0x1fa65e140 incremental_pipeline.cc:465] Finding good initial image pair
+I20260910 06:19:31.332728 0x1fa65e140 incremental_pipeline.cc:492] Registering initial image pair #2 and #3
+I20260910 06:19:31.332861 0x1fa65e140 incremental_pipeline.cc:791] Discarding reconstruction due to bad initial pair
+I20260910 06:19:31.332933 0x1fa65e140 incremental_pipeline.cc:465] Finding good initial image pair
+I20260910 06:19:31.333062 0x1fa65e140 incremental_pipeline.cc:472] => No good initial image pair found.
+I20260910 06:19:31.333066 0x1fa65e140 incremental_pipeline.cc:800] Discarding reconstruction due to no initial pair
+I20260910 06:19:31.333070 0x1fa65e140 incremental_pipeline.cc:442] => Relaxing the initialization constraints.
+I20260910 06:19:31.333109 0x1fa65e140 incremental_pipeline.cc:465] Finding good initial image pair
+I20260910 06:19:31.334800 0x1fa65e140 incremental_pipeline.cc:492] Registering initial image pair #2 and #3
+I20260910 06:19:31.334913 0x1fa65e140 incremental_pipeline.cc:791] Discarding reconstruction due to bad initial pair
+I20260910 06:19:31.334986 0x1fa65e140 incremental_pipeline.cc:465] Finding good initial image pair
+I20260910 06:19:31.335113 0x1fa65e140 incremental_pipeline.cc:472] => No good initial image pair found.
+I20260910 06:19:31.335116 0x1fa65e140 incremental_pipeline.cc:800] Discarding reconstruction due to no initial pair
+I20260910 06:19:31.335119 0x1fa65e140 timer.cc:90] Elapsed time: 0.000 [minutes]
+[0;31mE20260910 06:19:31.335122 0x1fa65e140 sfm.cc:310] Failed to create any sparse model
+[m

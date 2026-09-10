@@ -1,0 +1,7 @@
+
+I20260910 06:19:30.860832 0x16df73000 feature_matching.cc:196] === Feature matching & geometric verification ===
+I20260910 06:19:30.880746 0x16dfff000 sift.cc:1680] Creating SIFT GPU feature matcher
+I20260910 06:19:30.905148 0x16df73000 pairing.cc:179] Generating exhaustive image pairs...
+I20260910 06:19:30.905154 0x16df73000 pairing.cc:212] Processing block [1/1, 1/1]
+I20260910 06:19:31.217271 0x16df73000 feature_matching.cc:218] in 0.312s
+I20260910 06:19:31.217286 0x16df73000 timer.cc:90] Elapsed time: 0.006 [minutes]

@@ -1,0 +1,28 @@
+
+I20260910 06:19:30.328613 0x16fd1b000 feature_extraction.cc:498] === Feature extraction ===
+I20260910 06:19:30.350372 0x17031f000 sift.cc:759] Creating SIFT GPU feature extractor
+I20260910 06:19:30.479703 0x1703ab000 feature_extraction.cc:270] Processed file [1/4]
+I20260910 06:19:30.479721 0x1703ab000 feature_extraction.cc:273]   Name:            1.jpeg
+I20260910 06:19:30.479724 0x1703ab000 feature_extraction.cc:282]   Dimensions:      1280 x 960
+I20260910 06:19:30.479726 0x1703ab000 feature_extraction.cc:285]   Camera:          #1 - SIMPLE_RADIAL
+I20260910 06:19:30.479728 0x1703ab000 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20260910 06:19:30.479731 0x1703ab000 feature_extraction.cc:294]   Features:        3719 (SIFT)
+I20260910 06:19:30.524401 0x1703ab000 feature_extraction.cc:270] Processed file [2/4]
+I20260910 06:19:30.524420 0x1703ab000 feature_extraction.cc:273]   Name:            2.jpeg
+I20260910 06:19:30.524423 0x1703ab000 feature_extraction.cc:282]   Dimensions:      1280 x 960
+I20260910 06:19:30.524425 0x1703ab000 feature_extraction.cc:285]   Camera:          #1 - SIMPLE_RADIAL
+I20260910 06:19:30.524427 0x1703ab000 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20260910 06:19:30.524430 0x1703ab000 feature_extraction.cc:294]   Features:        4306 (SIFT)
+I20260910 06:19:30.570439 0x1703ab000 feature_extraction.cc:270] Processed file [3/4]
+I20260910 06:19:30.570451 0x1703ab000 feature_extraction.cc:273]   Name:            3.jpeg
+I20260910 06:19:30.570454 0x1703ab000 feature_extraction.cc:282]   Dimensions:      1280 x 960
+I20260910 06:19:30.570456 0x1703ab000 feature_extraction.cc:285]   Camera:          #1 - SIMPLE_RADIAL
+I20260910 06:19:30.570458 0x1703ab000 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20260910 06:19:30.570461 0x1703ab000 feature_extraction.cc:294]   Features:        5132 (SIFT)
+I20260910 06:19:30.615545 0x1703ab000 feature_extraction.cc:270] Processed file [4/4]
+I20260910 06:19:30.615560 0x1703ab000 feature_extraction.cc:273]   Name:            4.jpeg
+I20260910 06:19:30.615563 0x1703ab000 feature_extraction.cc:282]   Dimensions:      1280 x 960
+I20260910 06:19:30.615565 0x1703ab000 feature_extraction.cc:285]   Camera:          #1 - SIMPLE_RADIAL
+I20260910 06:19:30.615567 0x1703ab000 feature_extraction.cc:289]   Focal Length:    1536.00px
+I20260910 06:19:30.615571 0x1703ab000 feature_extraction.cc:294]   Features:        5240 (SIFT)
+I20260910 06:19:30.618751 0x16fd1b000 timer.cc:90] Elapsed time: 0.005 [minutes]

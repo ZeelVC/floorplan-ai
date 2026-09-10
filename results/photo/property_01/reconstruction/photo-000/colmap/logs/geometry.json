@@ -1,0 +1,25 @@
+{
+  "calibrated_pair_count": 1,
+  "sfm_readiness": "DEGENERATE_OR_UNCALIBRATED",
+  "verified_pair_count": 3,
+  "verified_pairs": [
+    {
+      "config": 6,
+      "image1": "1.jpeg",
+      "image2": "2.jpeg",
+      "inliers": 42
+    },
+    {
+      "config": 3,
+      "image1": "1.jpeg",
+      "image2": "4.jpeg",
+      "inliers": 32
+    },
+    {
+      "config": 3,
+      "image1": "2.jpeg",
+      "image2": "3.jpeg",
+      "inliers": 31
+    }
+  ]
+}

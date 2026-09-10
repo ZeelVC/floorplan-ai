@@ -1,0 +1,14 @@
+[
+  {
+    "camera_id": 1,
+    "height": 960,
+    "model": "SIMPLE_RADIAL",
+    "params": [
+      1536.0,
+      640.0,
+      480.0,
+      0.0
+    ],
+    "width": 1280
+  }
+]

@@ -1,0 +1,3938 @@
+{
+  "model_id": "ddd00a50-e0cc-4b69-9d34-3f4aeeab4b44",
+  "frames": [
+    {
+      "frame_id": "9d508333-e367-571f-af71-6b08d878d2f8",
+      "frame_type": "local",
+      "units": "m",
+      "up_vector": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "convention": "right_handed_z_up"
+    },
+    {
+      "frame_id": "214f4e5b-450c-5834-af63-83b400b4b81c",
+      "frame_type": "local",
+      "units": "m",
+      "up_vector": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "convention": "right_handed_z_up"
+    },
+    {
+      "frame_id": "9a3ec24f-1720-5fcb-8d44-9032e3d4a16c",
+      "frame_type": "local",
+      "units": "m",
+      "up_vector": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "convention": "right_handed_z_up"
+    }
+  ],
+  "captures": [
+    {
+      "capture_id": "8a50c41c-8740-5eef-aa56-3dfe96090149",
+      "capture_type": "photo",
+      "payload_reference": "1.jpeg",
+      "metadata": {
+        "room_group_id": "room_1",
+        "width": 1280,
+        "height": 960
+      }
+    },
+    {
+      "capture_id": "a559b74e-6c5b-56aa-b1f6-c1be0f125860",
+      "capture_type": "photo",
+      "payload_reference": "2.jpeg",
+      "metadata": {
+        "room_group_id": "room_1",
+        "width": 1280,
+        "height": 960
+      }
+    },
+    {
+      "capture_id": "dfe3b524-5f7e-5a65-a998-16d4112844e2",
+      "capture_type": "photo",
+      "payload_reference": "3.jpeg",
+      "metadata": {
+        "room_group_id": "room_1",
+        "width": 1280,
+        "height": 960
+      }
+    },
+    {
+      "capture_id": "966d7341-e1ac-59dd-bb46-8d392d255e90",
+      "capture_type": "photo",
+      "payload_reference": "4.jpeg",
+      "metadata": {
+        "room_group_id": "room_1",
+        "width": 1280,
+        "height": 960
+      }
+    },
+    {
+      "capture_id": "31ad7b12-64d7-5a05-b397-046d9654c601",
+      "capture_type": "photo",
+      "payload_reference": "5.jpeg",
+      "metadata": {
+        "room_group_id": "room_2",
+        "width": 1600,
+        "height": 1200
+      }
+    },
+    {
+      "capture_id": "6c861f25-fc73-53a9-a1d6-6e17a7cc676e",
+      "capture_type": "photo",
+      "payload_reference": "6.jpeg",
+      "metadata": {
+        "room_group_id": "room_2",
+        "width": 1600,
+        "height": 1200
+      }
+    },
+    {
+      "capture_id": "5847bc29-667c-54fa-9cbd-a3195236a0c3",
+      "capture_type": "photo",
+      "payload_reference": "7.jpeg",
+      "metadata": {
+        "room_group_id": "room_2",
+        "width": 1600,
+        "height": 1200
+      }
+    },
+    {
+      "capture_id": "6b7845b2-2f53-55a8-897d-585ff18e98b5",
+      "capture_type": "photo",
+      "payload_reference": "8.jpeg",
+      "metadata": {
+        "room_group_id": "room_2",
+        "width": 1600,
+        "height": 1200
+      }
+    },
+    {
+      "capture_id": "8edded90-fc00-588f-aea0-1cb135fec78f",
+      "capture_type": "photo",
+      "payload_reference": "10.jpeg",
+      "metadata": {
+        "room_group_id": "room_3",
+        "width": 1600,
+        "height": 1200
+      }
+    },
+    {
+      "capture_id": "3bafbbbc-3000-536e-a6b1-d6f1fbb5b396",
+      "capture_type": "photo",
+      "payload_reference": "11.jpeg",
+      "metadata": {
+        "room_group_id": "room_3",
+        "width": 1600,
+        "height": 1200
+      }
+    },
+    {
+      "capture_id": "898e3a71-a898-52c1-b25e-3e4bfbfa1303",
+      "capture_type": "photo",
+      "payload_reference": "12.jpeg",
+      "metadata": {
+        "room_group_id": "room_3",
+        "width": 1600,
+        "height": 1200
+      }
+    },
+    {
+      "capture_id": "aa8c7a62-e333-5364-a492-eb5796274636",
+      "capture_type": "photo",
+      "payload_reference": "9.jpeg",
+      "metadata": {
+        "room_group_id": "room_3",
+        "width": 1600,
+        "height": 1200
+      }
+    }
+  ],
+  "cameras": [
+    {
+      "camera_id": "e1e39f9d-b262-5719-92bb-3084330a9c03",
+      "capture_id": "8a50c41c-8740-5eef-aa56-3dfe96090149",
+      "focal_length": [
+        1536.0,
+        1536.0
+      ],
+      "principal_point": [
+        640.0,
+        480.0
+      ],
+      "distortion_coefficients": [
+        0.0
+      ],
+      "resolution": [
+        1280,
+        960
+      ],
+      "prior_source": "reconstruction"
+    },
+    {
+      "camera_id": "e101aede-ee15-5e77-a966-2e24b99cf755",
+      "capture_id": "31ad7b12-64d7-5a05-b397-046d9654c601",
+      "focal_length": [
+        1920.0,
+        1920.0
+      ],
+      "principal_point": [
+        800.0,
+        600.0
+      ],
+      "distortion_coefficients": [
+        0.0
+      ],
+      "resolution": [
+        1600,
+        1200
+      ],
+      "prior_source": "reconstruction"
+    },
+    {
+      "camera_id": "34a10c33-8bed-58d2-87ef-d1f272c9053c",
+      "capture_id": "8edded90-fc00-588f-aea0-1cb135fec78f",
+      "focal_length": [
+        1920.0,
+        1920.0
+      ],
+      "principal_point": [
+        800.0,
+        600.0
+      ],
+      "distortion_coefficients": [
+        0.0
+      ],
+      "resolution": [
+        1600,
+        1200
+      ],
+      "prior_source": "reconstruction"
+    }
+  ],
+  "poses": [
+    {
+      "pose_id": "93c7689f-ac22-5231-9e12-e26e0d72bd13",
+      "frame_id": "9d508333-e367-571f-af71-6b08d878d2f8",
+      "camera_to_frame": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "pose_id": "12cfcec8-1fd8-5ce6-8d08-2e1da20e7d1a",
+      "frame_id": "9d508333-e367-571f-af71-6b08d878d2f8",
+      "camera_to_frame": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "pose_id": "8bd54729-8d13-581b-9b29-87761b31440b",
+      "frame_id": "9d508333-e367-571f-af71-6b08d878d2f8",
+      "camera_to_frame": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "pose_id": "563bab03-5fe5-53f7-bd4a-e37ae96fcf68",
+      "frame_id": "9d508333-e367-571f-af71-6b08d878d2f8",
+      "camera_to_frame": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "pose_id": "4f0cf15b-af87-5239-b24b-6009664e4b71",
+      "frame_id": "214f4e5b-450c-5834-af63-83b400b4b81c",
+      "camera_to_frame": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "pose_id": "340b597e-ee5f-571b-bc88-4a9c2a69d693",
+      "frame_id": "214f4e5b-450c-5834-af63-83b400b4b81c",
+      "camera_to_frame": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "pose_id": "e2b3563b-d23f-5b4b-9867-2b14e8aec292",
+      "frame_id": "214f4e5b-450c-5834-af63-83b400b4b81c",
+      "camera_to_frame": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "pose_id": "ba2a0d34-7b14-5ec3-8aa4-8c6e675f2adc",
+      "frame_id": "214f4e5b-450c-5834-af63-83b400b4b81c",
+      "camera_to_frame": [
+        [
+          0.771993790163189,
+          -0.040750857468298665,
+          0.6343224381693213,
+          -0.9683733852013869
+        ],
+        [
+          0.04411483531524393,
+          0.9989714160744104,
+          0.010487667586081717,
+          0.058212988401678295
+        ],
+        [
+          -0.6340973657527549,
+          0.019886615646852766,
+          0.7729974471261412,
+          2.7171296236673492
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "pose_id": "66fc25bd-05f8-5777-ab6a-98aa489250c6",
+      "frame_id": "9a3ec24f-1720-5fcb-8d44-9032e3d4a16c",
+      "camera_to_frame": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "pose_id": "b3721409-6298-523f-be07-e3c91281004b",
+      "frame_id": "9a3ec24f-1720-5fcb-8d44-9032e3d4a16c",
+      "camera_to_frame": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "pose_id": "efa9b7a2-87a5-5076-aca1-cd6a8e7e5042",
+      "frame_id": "9a3ec24f-1720-5fcb-8d44-9032e3d4a16c",
+      "camera_to_frame": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "pose_id": "32ae9240-329f-5501-9210-4d25619bc9b4",
+      "frame_id": "9a3ec24f-1720-5fcb-8d44-9032e3d4a16c",
+      "camera_to_frame": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "observation_id": "366daff6-1a20-5ed9-9d65-2730106052b4",
+      "pose_id": "93c7689f-ac22-5231-9e12-e26e0d72bd13",
+      "camera_id": "e1e39f9d-b262-5719-92bb-3084330a9c03",
+      "observation_type": "image",
+      "payload_reference": "1.jpeg"
+    },
+    {
+      "observation_id": "8054632e-181f-5799-b041-320595ff3012",
+      "pose_id": "12cfcec8-1fd8-5ce6-8d08-2e1da20e7d1a",
+      "camera_id": "e1e39f9d-b262-5719-92bb-3084330a9c03",
+      "observation_type": "image",
+      "payload_reference": "2.jpeg"
+    },
+    {
+      "observation_id": "33737752-b528-5985-8b6a-edbdc5d2c865",
+      "pose_id": "8bd54729-8d13-581b-9b29-87761b31440b",
+      "camera_id": "e1e39f9d-b262-5719-92bb-3084330a9c03",
+      "observation_type": "image",
+      "payload_reference": "3.jpeg"
+    },
+    {
+      "observation_id": "fe707585-b7fa-5936-bddd-9f68e0b4121a",
+      "pose_id": "563bab03-5fe5-53f7-bd4a-e37ae96fcf68",
+      "camera_id": "e1e39f9d-b262-5719-92bb-3084330a9c03",
+      "observation_type": "image",
+      "payload_reference": "4.jpeg"
+    },
+    {
+      "observation_id": "36372857-8c47-56bc-8fc6-5c4aeec13ec6",
+      "observation_type": "feature_correspondence",
+      "payload_reference": "observations/correspondences.json"
+    },
+    {
+      "observation_id": "8ee7c771-f2f6-50cd-b718-5bf875af319c",
+      "pose_id": "93c7689f-ac22-5231-9e12-e26e0d72bd13",
+      "camera_id": "e1e39f9d-b262-5719-92bb-3084330a9c03",
+      "observation_type": "depth",
+      "payload_reference": "depth/1.depth.npy",
+      "confidence_mask": "depth/1.confidence.npy"
+    },
+    {
+      "observation_id": "321bc69e-89b6-535f-a6d7-42fe0cb801d5",
+      "pose_id": "12cfcec8-1fd8-5ce6-8d08-2e1da20e7d1a",
+      "camera_id": "e1e39f9d-b262-5719-92bb-3084330a9c03",
+      "observation_type": "depth",
+      "payload_reference": "depth/2.depth.npy",
+      "confidence_mask": "depth/2.confidence.npy"
+    },
+    {
+      "observation_id": "99e6a4de-0942-5755-9867-b822526c6ace",
+      "pose_id": "8bd54729-8d13-581b-9b29-87761b31440b",
+      "camera_id": "e1e39f9d-b262-5719-92bb-3084330a9c03",
+      "observation_type": "depth",
+      "payload_reference": "depth/3.depth.npy",
+      "confidence_mask": "depth/3.confidence.npy"
+    },
+    {
+      "observation_id": "d98d2caa-369c-5713-a10a-d03163a776ac",
+      "pose_id": "563bab03-5fe5-53f7-bd4a-e37ae96fcf68",
+      "camera_id": "e1e39f9d-b262-5719-92bb-3084330a9c03",
+      "observation_type": "depth",
+      "payload_reference": "depth/4.depth.npy",
+      "confidence_mask": "depth/4.confidence.npy"
+    },
+    {
+      "observation_id": "af46a365-2c54-56bf-9c5e-26e6bf136cd5",
+      "pose_id": "4f0cf15b-af87-5239-b24b-6009664e4b71",
+      "camera_id": "e101aede-ee15-5e77-a966-2e24b99cf755",
+      "observation_type": "image",
+      "payload_reference": "5.jpeg"
+    },
+    {
+      "observation_id": "b36889f0-ea42-5a68-9a6b-1adfd543da6d",
+      "pose_id": "340b597e-ee5f-571b-bc88-4a9c2a69d693",
+      "camera_id": "e101aede-ee15-5e77-a966-2e24b99cf755",
+      "observation_type": "image",
+      "payload_reference": "6.jpeg"
+    },
+    {
+      "observation_id": "5eff66ff-ff51-5acc-87ce-9584661417fd",
+      "pose_id": "e2b3563b-d23f-5b4b-9867-2b14e8aec292",
+      "camera_id": "e101aede-ee15-5e77-a966-2e24b99cf755",
+      "observation_type": "image",
+      "payload_reference": "7.jpeg"
+    },
+    {
+      "observation_id": "70077de6-1391-543b-9327-8b4df38a266f",
+      "pose_id": "ba2a0d34-7b14-5ec3-8aa4-8c6e675f2adc",
+      "camera_id": "e101aede-ee15-5e77-a966-2e24b99cf755",
+      "observation_type": "image",
+      "payload_reference": "8.jpeg"
+    },
+    {
+      "observation_id": "d1ae2e98-3121-5b21-bbd2-437c995668fe",
+      "observation_type": "feature_correspondence",
+      "payload_reference": "observations/correspondences.json"
+    },
+    {
+      "observation_id": "c0246f65-aa41-5b7a-95d3-624a9e0fed34",
+      "pose_id": "4f0cf15b-af87-5239-b24b-6009664e4b71",
+      "camera_id": "e101aede-ee15-5e77-a966-2e24b99cf755",
+      "observation_type": "depth",
+      "payload_reference": "depth/5.depth.npy",
+      "confidence_mask": "depth/5.confidence.npy"
+    },
+    {
+      "observation_id": "99fb4dbb-dfec-5de0-b3f0-760b80844c49",
+      "pose_id": "340b597e-ee5f-571b-bc88-4a9c2a69d693",
+      "camera_id": "e101aede-ee15-5e77-a966-2e24b99cf755",
+      "observation_type": "depth",
+      "payload_reference": "depth/6.depth.npy",
+      "confidence_mask": "depth/6.confidence.npy"
+    },
+    {
+      "observation_id": "c17e5406-9c0e-52a5-ae5b-52c11a893a87",
+      "pose_id": "e2b3563b-d23f-5b4b-9867-2b14e8aec292",
+      "camera_id": "e101aede-ee15-5e77-a966-2e24b99cf755",
+      "observation_type": "depth",
+      "payload_reference": "depth/7.depth.npy",
+      "confidence_mask": "depth/7.confidence.npy"
+    },
+    {
+      "observation_id": "46855b5f-a685-54f7-9ea5-0796be3d3296",
+      "pose_id": "ba2a0d34-7b14-5ec3-8aa4-8c6e675f2adc",
+      "camera_id": "e101aede-ee15-5e77-a966-2e24b99cf755",
+      "observation_type": "depth",
+      "payload_reference": "depth/8.depth.npy",
+      "confidence_mask": "depth/8.confidence.npy"
+    },
+    {
+      "observation_id": "503ec4d2-e880-5ed8-a57c-40f77178c8db",
+      "pose_id": "66fc25bd-05f8-5777-ab6a-98aa489250c6",
+      "camera_id": "34a10c33-8bed-58d2-87ef-d1f272c9053c",
+      "observation_type": "image",
+      "payload_reference": "10.jpeg"
+    },
+    {
+      "observation_id": "daf902f7-f703-54d8-b9b6-9078994d7131",
+      "pose_id": "b3721409-6298-523f-be07-e3c91281004b",
+      "camera_id": "34a10c33-8bed-58d2-87ef-d1f272c9053c",
+      "observation_type": "image",
+      "payload_reference": "11.jpeg"
+    },
+    {
+      "observation_id": "b60854ea-8dbe-5f3b-bb6e-7859dcd1a6fa",
+      "pose_id": "efa9b7a2-87a5-5076-aca1-cd6a8e7e5042",
+      "camera_id": "34a10c33-8bed-58d2-87ef-d1f272c9053c",
+      "observation_type": "image",
+      "payload_reference": "12.jpeg"
+    },
+    {
+      "observation_id": "1de8258b-5269-5280-b1c6-335da06d9ada",
+      "pose_id": "32ae9240-329f-5501-9210-4d25619bc9b4",
+      "camera_id": "34a10c33-8bed-58d2-87ef-d1f272c9053c",
+      "observation_type": "image",
+      "payload_reference": "9.jpeg"
+    },
+    {
+      "observation_id": "23383cde-c34f-5e97-82dd-a600ce068fb5",
+      "observation_type": "feature_correspondence",
+      "payload_reference": "observations/correspondences.json"
+    },
+    {
+      "observation_id": "c637a987-c0db-5cb6-a270-e2600d00b3b8",
+      "pose_id": "66fc25bd-05f8-5777-ab6a-98aa489250c6",
+      "camera_id": "34a10c33-8bed-58d2-87ef-d1f272c9053c",
+      "observation_type": "depth",
+      "payload_reference": "depth/10.depth.npy",
+      "confidence_mask": "depth/10.confidence.npy"
+    },
+    {
+      "observation_id": "688dc098-b399-54a1-b66b-78b4a64d9de7",
+      "pose_id": "b3721409-6298-523f-be07-e3c91281004b",
+      "camera_id": "34a10c33-8bed-58d2-87ef-d1f272c9053c",
+      "observation_type": "depth",
+      "payload_reference": "depth/11.depth.npy",
+      "confidence_mask": "depth/11.confidence.npy"
+    },
+    {
+      "observation_id": "ad2d5a35-53c8-59f8-a667-e732b6bae0a7",
+      "pose_id": "efa9b7a2-87a5-5076-aca1-cd6a8e7e5042",
+      "camera_id": "34a10c33-8bed-58d2-87ef-d1f272c9053c",
+      "observation_type": "depth",
+      "payload_reference": "depth/12.depth.npy",
+      "confidence_mask": "depth/12.confidence.npy"
+    },
+    {
+      "observation_id": "13e95d2c-fbc0-5a8d-be78-4c9237139ede",
+      "pose_id": "32ae9240-329f-5501-9210-4d25619bc9b4",
+      "camera_id": "34a10c33-8bed-58d2-87ef-d1f272c9053c",
+      "observation_type": "depth",
+      "payload_reference": "depth/9.depth.npy",
+      "confidence_mask": "depth/9.confidence.npy"
+    }
+  ],
+  "geometries": [
+    {
+      "geometry_id": "10586d0e-8a6e-5fc7-956a-c6c45dc7d9fe",
+      "frame_id": "9d508333-e367-571f-af71-6b08d878d2f8",
+      "geometry_type": "point_cloud",
+      "vertex_buffer_reference": "depth/metric_fused_points.xyz",
+      "bounding_box": [
+        [
+          -2.6771708329518638,
+          -1.2593673666318257,
+          1.5957361459732056
+        ],
+        [
+          1.7403830997645855,
+          1.4910319062570732,
+          10.394552230834961
+        ]
+      ],
+      "point_density": 0.0
+    },
+    {
+      "geometry_id": "e535209f-6147-57c1-9713-39dd7acc50c2",
+      "frame_id": "214f4e5b-450c-5834-af63-83b400b4b81c",
+      "geometry_type": "point_cloud",
+      "vertex_buffer_reference": "depth/metric_fused_points.xyz",
+      "bounding_box": [
+        [
+          -2.966461181640625,
+          -1.0356394946575165,
+          1.250268578529358
+        ],
+        [
+          3.218824403298619,
+          1.72256966928641,
+          10.06735897064209
+        ]
+      ],
+      "point_density": 0.0
+    },
+    {
+      "geometry_id": "eaca8cc7-28ba-5831-902c-9314f6b62147",
+      "frame_id": "9a3ec24f-1720-5fcb-8d44-9032e3d4a16c",
+      "geometry_type": "point_cloud",
+      "vertex_buffer_reference": "depth/metric_fused_points.xyz",
+      "bounding_box": [
+        [
+          -3.1578394174575806,
+          -1.0444483160972595,
+          2.3206448554992676
+        ],
+        [
+          1.8895473976929982,
+          1.6355766296386718,
+          10.12753677368164
+        ]
+      ],
+      "point_density": 0.0
+    }
+  ],
+  "planes": [
+    {
+      "plane_id": "d5f46f32-7389-5deb-ac29-b2681bcfbb46",
+      "frame_id": "9d508333-e367-571f-af71-6b08d878d2f8",
+      "normal_vector": [
+        -0.00047697078323188734,
+        -0.999975314849249,
+        0.0070101491437440785
+      ],
+      "distance_offset": -0.9171238338582619,
+      "boundary_polygon_3d": [
+        [
+          -1.7028554280598958,
+          -0.9297292778889338,
+          2.6502695083618164
+        ],
+        [
+          1.7158862762153149,
+          -0.8246280774474144,
+          7.287059783935547
+        ]
+      ],
+      "inlier_count": 10986,
+      "rmse": 0.022595003315355668,
+      "uncertainty": {
+        "uncertainty_id": "609ad194-64e8-4e31-b188-ab9cfec1f55d",
+        "distribution_type": "plane_fit",
+        "confidence_bounds": [
+          0.011297501657677834,
+          0.033892504973033505
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "8a50c41c-8740-5eef-aa56-3dfe96090149",
+          "a559b74e-6c5b-56aa-b1f6-c1be0f125860",
+          "dfe3b524-5f7e-5a65-a998-16d4112844e2",
+          "966d7341-e1ac-59dd-bb46-8d392d255e90"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:50:28.217122Z"
+      }
+    },
+    {
+      "plane_id": "1f5f7c4f-f6b5-5549-8ccf-914b21c2467f",
+      "frame_id": "9d508333-e367-571f-af71-6b08d878d2f8",
+      "normal_vector": [
+        0.010496556883486502,
+        0.9942795331221831,
+        0.10629220247941723
+      ],
+      "distance_offset": -1.2370927172733581,
+      "boundary_polygon_3d": [
+        [
+          -2.6682114601135254,
+          0.17158228158950806,
+          2.8484420776367188
+        ],
+        [
+          1.7172184586524963,
+          0.9560016157726446,
+          9.568108558654785
+        ]
+      ],
+      "inlier_count": 9510,
+      "rmse": 0.028186618653724984,
+      "uncertainty": {
+        "uncertainty_id": "40d3b7bc-2349-4e59-8e8d-98adfc67eb07",
+        "distribution_type": "plane_fit",
+        "confidence_bounds": [
+          0.014093309326862492,
+          0.042279927980587474
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "8a50c41c-8740-5eef-aa56-3dfe96090149",
+          "a559b74e-6c5b-56aa-b1f6-c1be0f125860",
+          "dfe3b524-5f7e-5a65-a998-16d4112844e2",
+          "966d7341-e1ac-59dd-bb46-8d392d255e90"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:50:28.217172Z"
+      }
+    },
+    {
+      "plane_id": "a6a62322-9163-5fa6-b9a0-d693a6d92ecb",
+      "frame_id": "9d508333-e367-571f-af71-6b08d878d2f8",
+      "normal_vector": [
+        0.9983757982072949,
+        0.021991980280748214,
+        0.052555859400051905
+      ],
+      "distance_offset": -1.4270129692296403,
+      "boundary_polygon_3d": [
+        [
+          0.8908541202545166,
+          -1.2241305969655514,
+          2.8982954025268555
+        ],
+        [
+          1.3084331961969535,
+          1.4401959752043088,
+          10.390849113464355
+        ]
+      ],
+      "inlier_count": 9553,
+      "rmse": 0.02106932139420896,
+      "uncertainty": {
+        "uncertainty_id": "7d2ea5eb-72f9-4c64-b1bf-458ef154b080",
+        "distribution_type": "plane_fit",
+        "confidence_bounds": [
+          0.01053466069710448,
+          0.03160398209131344
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "8a50c41c-8740-5eef-aa56-3dfe96090149",
+          "a559b74e-6c5b-56aa-b1f6-c1be0f125860",
+          "dfe3b524-5f7e-5a65-a998-16d4112844e2",
+          "966d7341-e1ac-59dd-bb46-8d392d255e90"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:50:28.217188Z"
+      }
+    },
+    {
+      "plane_id": "4bb30ce0-03fb-53ee-a113-5b5bec7a9a9c",
+      "frame_id": "9d508333-e367-571f-af71-6b08d878d2f8",
+      "normal_vector": [
+        0.1455458104529703,
+        5.823643803516887e-7,
+        0.9893515133961482
+      ],
+      "distance_offset": -4.059373528806829,
+      "boundary_polygon_3d": [
+        [
+          -1.8398425976435344,
+          -1.2408487585683663,
+          3.8230059146881104
+        ],
+        [
+          1.6135438419878483,
+          1.3529349242647488,
+          4.428778171539307
+        ]
+      ],
+      "inlier_count": 8812,
+      "rmse": 0.022214841163158527,
+      "uncertainty": {
+        "uncertainty_id": "6dc73637-255e-474a-a82d-4298513ebd71",
+        "distribution_type": "plane_fit",
+        "confidence_bounds": [
+          0.011107420581579264,
+          0.03332226174473779
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "8a50c41c-8740-5eef-aa56-3dfe96090149",
+          "a559b74e-6c5b-56aa-b1f6-c1be0f125860",
+          "dfe3b524-5f7e-5a65-a998-16d4112844e2",
+          "966d7341-e1ac-59dd-bb46-8d392d255e90"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:50:28.217201Z"
+      }
+    },
+    {
+      "plane_id": "77742e98-4ef0-5822-a6d7-cdd73f3880bc",
+      "frame_id": "9d508333-e367-571f-af71-6b08d878d2f8",
+      "normal_vector": [
+        0.9983693616724884,
+        -0.013288432290151671,
+        0.055516080922002164
+      ],
+      "distance_offset": 0.5669513977541806,
+      "boundary_polygon_3d": [
+        [
+          -0.979075255493323,
+          -1.2543808321158092,
+          1.5957361459732056
+        ],
+        [
+          -0.6433121301233768,
+          1.4332225086788337,
+          6.564359188079834
+        ]
+      ],
+      "inlier_count": 8782,
+      "rmse": 0.020338907294122844,
+      "uncertainty": {
+        "uncertainty_id": "c9cf1b76-9c57-4f6f-8d22-cf84b4675c4f",
+        "distribution_type": "plane_fit",
+        "confidence_bounds": [
+          0.010169453647061422,
+          0.030508360941184268
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "8a50c41c-8740-5eef-aa56-3dfe96090149",
+          "a559b74e-6c5b-56aa-b1f6-c1be0f125860",
+          "dfe3b524-5f7e-5a65-a998-16d4112844e2",
+          "966d7341-e1ac-59dd-bb46-8d392d255e90"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:50:28.217212Z"
+      }
+    },
+    {
+      "plane_id": "91c4ff09-4098-5e7f-8fe3-db3368c48d1f",
+      "frame_id": "9d508333-e367-571f-af71-6b08d878d2f8",
+      "normal_vector": [
+        -0.07726741785795604,
+        -0.231323093112669,
+        0.9698037805300367
+      ],
+      "distance_offset": -6.273718614473371,
+      "boundary_polygon_3d": [
+        [
+          -2.6771708329518638,
+          -1.2593673666318257,
+          6.009139537811279
+        ],
+        [
+          1.468259507169326,
+          1.3352184556424618,
+          6.88077974319458
+        ]
+      ],
+      "inlier_count": 9453,
+      "rmse": 0.02253748633693507,
+      "uncertainty": {
+        "uncertainty_id": "28eaea48-0ac6-4c89-966f-ee47cfff5c16",
+        "distribution_type": "plane_fit",
+        "confidence_bounds": [
+          0.011268743168467535,
+          0.0338062295054026
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "8a50c41c-8740-5eef-aa56-3dfe96090149",
+          "a559b74e-6c5b-56aa-b1f6-c1be0f125860",
+          "dfe3b524-5f7e-5a65-a998-16d4112844e2",
+          "966d7341-e1ac-59dd-bb46-8d392d255e90"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:50:28.217223Z"
+      }
+    },
+    {
+      "plane_id": "24eb8483-779e-5ff2-9d83-b555fb94e878",
+      "frame_id": "9d508333-e367-571f-af71-6b08d878d2f8",
+      "normal_vector": [
+        0.9982740745379194,
+        0.0451565243697728,
+        0.037546776323709244
+      ],
+      "distance_offset": -1.4991470607340192,
+      "boundary_polygon_3d": [
+        [
+          1.0642995436986287,
+          -1.2211821873982747,
+          3.1950509548187256
+        ],
+        [
+          1.4746044104297955,
+          1.18825888261199,
+          10.351935386657715
+        ]
+      ],
+      "inlier_count": 8543,
+      "rmse": 0.019225899789395706,
+      "uncertainty": {
+        "uncertainty_id": "138cb4ff-31a9-4704-a9fa-3dfd2063e5c5",
+        "distribution_type": "plane_fit",
+        "confidence_bounds": [
+          0.009612949894697853,
+          0.02883884968409356
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "8a50c41c-8740-5eef-aa56-3dfe96090149",
+          "a559b74e-6c5b-56aa-b1f6-c1be0f125860",
+          "dfe3b524-5f7e-5a65-a998-16d4112844e2",
+          "966d7341-e1ac-59dd-bb46-8d392d255e90"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:50:28.217233Z"
+      }
+    },
+    {
+      "plane_id": "0f76f95a-745e-5bec-b380-7143c5adf12c",
+      "frame_id": "9d508333-e367-571f-af71-6b08d878d2f8",
+      "normal_vector": [
+        0.9950661576625496,
+        -0.012168641805053702,
+        0.09846454200020638
+      ],
+      "distance_offset": -2.0811300965262767,
+      "boundary_polygon_3d": [
+        [
+          0.9959984918435415,
+          -1.0836847126483917,
+          3.956987142562866
+        ],
+        [
+          1.717276256531477,
+          1.1664397716522217,
+          10.384565353393555
+        ]
+      ],
+      "inlier_count": 7533,
+      "rmse": 0.013761404539373523,
+      "uncertainty": {
+        "uncertainty_id": "2d4ca675-c6fe-4bc0-bf74-5439ee6a7248",
+        "distribution_type": "plane_fit",
+        "confidence_bounds": [
+          0.0068807022696867615,
+          0.020642106809060284
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "8a50c41c-8740-5eef-aa56-3dfe96090149",
+          "a559b74e-6c5b-56aa-b1f6-c1be0f125860",
+          "dfe3b524-5f7e-5a65-a998-16d4112844e2",
+          "966d7341-e1ac-59dd-bb46-8d392d255e90"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:50:28.217243Z"
+      }
+    },
+    {
+      "plane_id": "53ec05c0-dc1b-5359-8e3d-02619127d9e7",
+      "frame_id": "214f4e5b-450c-5834-af63-83b400b4b81c",
+      "normal_vector": [
+        0.9952310040389064,
+        0.038171574729649264,
+        0.08976736312474008
+      ],
+      "distance_offset": -0.9939965508650259,
+      "boundary_polygon_3d": [
+        [
+          0.02087061603864034,
+          -1.0154452919960022,
+          1.8522919416427612
+        ],
+        [
+          0.8680993318557739,
+          1.5458485106627147,
+          10.066352844238281
+        ]
+      ],
+      "inlier_count": 10057,
+      "rmse": 0.016256274577063825,
+      "uncertainty": {
+        "uncertainty_id": "45144d50-c644-4b06-8a71-06175a8cd0b7",
+        "distribution_type": "plane_fit",
+        "confidence_bounds": [
+          0.008128137288531912,
+          0.024384411865595736
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "31ad7b12-64d7-5a05-b397-046d9654c601",
+          "6c861f25-fc73-53a9-a1d6-6e17a7cc676e",
+          "5847bc29-667c-54fa-9cbd-a3195236a0c3",
+          "6b7845b2-2f53-55a8-897d-585ff18e98b5"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:51:52.393321Z"
+      }
+    },
+    {
+      "plane_id": "fb40f2c7-3752-51d7-b65b-b7448e11fb96",
+      "frame_id": "214f4e5b-450c-5834-af63-83b400b4b81c",
+      "normal_vector": [
+        -0.9935923131526162,
+        0.10075512820755518,
+        0.05121249245948347
+      ],
+      "distance_offset": -0.7222618288231104,
+      "boundary_polygon_3d": [
+        [
+          -0.7226289808750153,
+          -1.0356394946575165,
+          1.436877727508545
+        ],
+        [
+          -0.04174192349116008,
+          1.5631759524345399,
+          10.06690502166748
+        ]
+      ],
+      "inlier_count": 6978,
+      "rmse": 0.02760465121107786,
+      "uncertainty": {
+        "uncertainty_id": "95fab663-11f9-4342-b7b0-802450f21bcf",
+        "distribution_type": "plane_fit",
+        "confidence_bounds": [
+          0.01380232560553893,
+          0.04140697681661679
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "31ad7b12-64d7-5a05-b397-046d9654c601",
+          "6c861f25-fc73-53a9-a1d6-6e17a7cc676e",
+          "5847bc29-667c-54fa-9cbd-a3195236a0c3",
+          "6b7845b2-2f53-55a8-897d-585ff18e98b5"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:51:52.393549Z"
+      }
+    },
+    {
+      "plane_id": "068abdd5-55d2-5921-8866-6390864d4d7a",
+      "frame_id": "214f4e5b-450c-5834-af63-83b400b4b81c",
+      "normal_vector": [
+        0.32873155458979547,
+        -0.14988310013004386,
+        0.9324540853641983
+      ],
+      "distance_offset": -5.585744124625962,
+      "boundary_polygon_3d": [
+        [
+          -2.9571674267450967,
+          -0.863761110394047,
+          4.831846384505856
+        ],
+        [
+          3.218824403298619,
+          1.6728377491235733,
+          7.128829002380371
+        ]
+      ],
+      "inlier_count": 7105,
+      "rmse": 0.02520075509102517,
+      "uncertainty": {
+        "uncertainty_id": "ca567d19-f70e-412b-b3bb-ec2dee9e78b2",
+        "distribution_type": "plane_fit",
+        "confidence_bounds": [
+          0.012600377545512584,
+          0.037801132636537754
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "31ad7b12-64d7-5a05-b397-046d9654c601",
+          "6c861f25-fc73-53a9-a1d6-6e17a7cc676e",
+          "5847bc29-667c-54fa-9cbd-a3195236a0c3",
+          "6b7845b2-2f53-55a8-897d-585ff18e98b5"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:51:52.393563Z"
+      }
+    },
+    {
+      "plane_id": "999c83b8-10c8-53d5-bda6-13cadcc099d6",
+      "frame_id": "214f4e5b-450c-5834-af63-83b400b4b81c",
+      "normal_vector": [
+        0.9804213625642882,
+        -0.15260506593695264,
+        0.12444133428231477
+      ],
+      "distance_offset": -0.7735392905308447,
+      "boundary_polygon_3d": [
+        [
+          -0.5294526636600494,
+          -1.0200666636228561,
+          1.3236383199691772
+        ],
+        [
+          0.6976788888374964,
+          1.5458545794089635,
+          10.011550903320312
+        ]
+      ],
+      "inlier_count": 6732,
+      "rmse": 0.028232587601073215,
+      "uncertainty": {
+        "uncertainty_id": "ddf792b8-8d4c-4d8a-9fea-8214c79793ff",
+        "distribution_type": "plane_fit",
+        "confidence_bounds": [
+          0.014116293800536608,
+          0.04234888140160982
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "31ad7b12-64d7-5a05-b397-046d9654c601",
+          "6c861f25-fc73-53a9-a1d6-6e17a7cc676e",
+          "5847bc29-667c-54fa-9cbd-a3195236a0c3",
+          "6b7845b2-2f53-55a8-897d-585ff18e98b5"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:51:52.393573Z"
+      }
+    },
+    {
+      "plane_id": "21f20b81-67a6-5f4f-bf06-a1618c9f6d98",
+      "frame_id": "214f4e5b-450c-5834-af63-83b400b4b81c",
+      "normal_vector": [
+        -0.7475879223350843,
+        0.017602011145555364,
+        0.6639295652268725
+      ],
+      "distance_offset": -3.1860585962709456,
+      "boundary_polygon_3d": [
+        [
+          -1.0537352859973907,
+          -0.47829119364420575,
+          3.587183952331543
+        ],
+        [
+          1.2460578112920544,
+          1.5434799234072367,
+          6.119215796383993
+        ]
+      ],
+      "inlier_count": 5260,
+      "rmse": 0.023337868118206397,
+      "uncertainty": {
+        "uncertainty_id": "5ae42a03-b1a8-47ec-b884-260e0a420e8a",
+        "distribution_type": "plane_fit",
+        "confidence_bounds": [
+          0.011668934059103199,
+          0.035006802177309594
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "31ad7b12-64d7-5a05-b397-046d9654c601",
+          "6c861f25-fc73-53a9-a1d6-6e17a7cc676e",
+          "5847bc29-667c-54fa-9cbd-a3195236a0c3",
+          "6b7845b2-2f53-55a8-897d-585ff18e98b5"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:51:52.393583Z"
+      }
+    },
+    {
+      "plane_id": "561195de-a0ab-5064-9c67-20278396bba2",
+      "frame_id": "214f4e5b-450c-5834-af63-83b400b4b81c",
+      "normal_vector": [
+        -0.9756191338379008,
+        -0.029739403445776285,
+        0.21744625444480198
+      ],
+      "distance_offset": -0.993712550627362,
+      "boundary_polygon_3d": [
+        [
+          -0.6773054614663124,
+          -1.0249793529510498,
+          1.4964675903320312
+        ],
+        [
+          1.256193995475769,
+          1.5453871379295985,
+          10.057760238647461
+        ]
+      ],
+      "inlier_count": 4870,
+      "rmse": 0.027873516927117852,
+      "uncertainty": {
+        "uncertainty_id": "b54f1e8d-7c90-4f5e-adbf-9bf785482b6c",
+        "distribution_type": "plane_fit",
+        "confidence_bounds": [
+          0.013936758463558926,
+          0.04181027539067678
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "31ad7b12-64d7-5a05-b397-046d9654c601",
+          "6c861f25-fc73-53a9-a1d6-6e17a7cc676e",
+          "5847bc29-667c-54fa-9cbd-a3195236a0c3",
+          "6b7845b2-2f53-55a8-897d-585ff18e98b5"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:51:52.393594Z"
+      }
+    },
+    {
+      "plane_id": "dabcf40f-994f-5313-8a85-0c4e204cdd54",
+      "frame_id": "214f4e5b-450c-5834-af63-83b400b4b81c",
+      "normal_vector": [
+        -0.014862894593560504,
+        0.9994132633646066,
+        0.030858116844815812
+      ],
+      "distance_offset": 0.22458169865428654,
+      "boundary_polygon_3d": [
+        [
+          -2.9464993874231973,
+          -0.5603082180023193,
+          1.2519201040267944
+        ],
+        [
+          2.9989069384776896,
+          -0.21623859778046609,
+          9.785544395446777
+        ]
+      ],
+      "inlier_count": 4584,
+      "rmse": 0.027033934342710342,
+      "uncertainty": {
+        "uncertainty_id": "46946e35-9433-4d62-aee0-f4a293eabdfd",
+        "distribution_type": "plane_fit",
+        "confidence_bounds": [
+          0.013516967171355171,
+          0.04055090151406551
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "31ad7b12-64d7-5a05-b397-046d9654c601",
+          "6c861f25-fc73-53a9-a1d6-6e17a7cc676e",
+          "5847bc29-667c-54fa-9cbd-a3195236a0c3",
+          "6b7845b2-2f53-55a8-897d-585ff18e98b5"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:51:52.393603Z"
+      }
+    },
+    {
+      "plane_id": "4116fe54-c801-57d1-84e2-114fa4a1df36",
+      "frame_id": "214f4e5b-450c-5834-af63-83b400b4b81c",
+      "normal_vector": [
+        0.9997623994731114,
+        -0.010435557910825816,
+        0.0191374954175492
+      ],
+      "distance_offset": -0.49794446061020947,
+      "boundary_polygon_3d": [
+        [
+          0.2618008633454641,
+          -1.0225749015808105,
+          1.250268578529358
+        ],
+        [
+          0.5201078357795874,
+          1.520725957552592,
+          10.06735897064209
+        ]
+      ],
+      "inlier_count": 3984,
+      "rmse": 0.020848045700573185,
+      "uncertainty": {
+        "uncertainty_id": "4783c6d3-1e60-4b1d-a71f-843304cc3392",
+        "distribution_type": "plane_fit",
+        "confidence_bounds": [
+          0.010424022850286593,
+          0.031272068550859775
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "31ad7b12-64d7-5a05-b397-046d9654c601",
+          "6c861f25-fc73-53a9-a1d6-6e17a7cc676e",
+          "5847bc29-667c-54fa-9cbd-a3195236a0c3",
+          "6b7845b2-2f53-55a8-897d-585ff18e98b5"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:51:52.393613Z"
+      }
+    },
+    {
+      "plane_id": "970578cf-ef99-57ee-bed5-f6e03ca46f70",
+      "frame_id": "9a3ec24f-1720-5fcb-8d44-9032e3d4a16c",
+      "normal_vector": [
+        -0.005159450195778735,
+        -0.999428663639238,
+        0.03340249047547804
+      ],
+      "distance_offset": -1.0960118700049297,
+      "boundary_polygon_3d": [
+        [
+          -3.1578394174575806,
+          -1.0343962907791138,
+          2.9477977752685547
+        ],
+        [
+          1.7706804513931274,
+          -0.7517504851023357,
+          8.420905113220215
+        ]
+      ],
+      "inlier_count": 28939,
+      "rmse": 0.022424925532204196,
+      "uncertainty": {
+        "uncertainty_id": "40b967fd-5e70-4dfd-93f0-d7e340799525",
+        "distribution_type": "plane_fit",
+        "confidence_bounds": [
+          0.011212462766102098,
+          0.033637388298306294
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "8edded90-fc00-588f-aea0-1cb135fec78f",
+          "3bafbbbc-3000-536e-a6b1-d6f1fbb5b396",
+          "898e3a71-a898-52c1-b25e-3e4bfbfa1303",
+          "aa8c7a62-e333-5364-a492-eb5796274636"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:53:47.058967Z"
+      }
+    },
+    {
+      "plane_id": "96774ce0-2060-5e51-bcfc-c41a590dc827",
+      "frame_id": "9a3ec24f-1720-5fcb-8d44-9032e3d4a16c",
+      "normal_vector": [
+        0.9989520407823624,
+        0.016660623130200485,
+        0.042629143243405415
+      ],
+      "distance_offset": -1.6050754476063682,
+      "boundary_polygon_3d": [
+        [
+          1.1201218128204347,
+          -0.9395124028126399,
+          3.353893280029297
+        ],
+        [
+          1.5013116583228112,
+          1.5395857989788055,
+          10.127501487731934
+        ]
+      ],
+      "inlier_count": 19537,
+      "rmse": 0.019681612490390497,
+      "uncertainty": {
+        "uncertainty_id": "0618f244-8df8-4557-9ee0-0b73c023bbbb",
+        "distribution_type": "plane_fit",
+        "confidence_bounds": [
+          0.009840806245195248,
+          0.029522418735585747
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "8edded90-fc00-588f-aea0-1cb135fec78f",
+          "3bafbbbc-3000-536e-a6b1-d6f1fbb5b396",
+          "898e3a71-a898-52c1-b25e-3e4bfbfa1303",
+          "aa8c7a62-e333-5364-a492-eb5796274636"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:53:47.059026Z"
+      }
+    },
+    {
+      "plane_id": "608011ce-c2bf-58a6-8e66-1b4d71a2d908",
+      "frame_id": "9a3ec24f-1720-5fcb-8d44-9032e3d4a16c",
+      "normal_vector": [
+        -0.3984425893490242,
+        0.051760190677741694,
+        0.9157316122390058
+      ],
+      "distance_offset": -6.445324565435592,
+      "boundary_polygon_3d": [
+        [
+          -2.106554889678955,
+          -0.9386283069849014,
+          6.018728256225586
+        ],
+        [
+          1.3552511195341745,
+          1.6175332188606262,
+          7.680672645568848
+        ]
+      ],
+      "inlier_count": 12521,
+      "rmse": 0.021693985349741114,
+      "uncertainty": {
+        "uncertainty_id": "2af209cb-d2e1-487e-824b-6a9be6eddad6",
+        "distribution_type": "plane_fit",
+        "confidence_bounds": [
+          0.010846992674870557,
+          0.03254097802461167
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "8edded90-fc00-588f-aea0-1cb135fec78f",
+          "3bafbbbc-3000-536e-a6b1-d6f1fbb5b396",
+          "898e3a71-a898-52c1-b25e-3e4bfbfa1303",
+          "aa8c7a62-e333-5364-a492-eb5796274636"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:53:47.059040Z"
+      }
+    },
+    {
+      "plane_id": "9520b8b1-0e4a-540b-97f9-0328bf6ec2ba",
+      "frame_id": "9a3ec24f-1720-5fcb-8d44-9032e3d4a16c",
+      "normal_vector": [
+        -0.9998075902057235,
+        0.011515089606112128,
+        0.015880342514799597
+      ],
+      "distance_offset": -1.3386528203932664,
+      "boundary_polygon_3d": [
+        [
+          -1.3357278630137444,
+          -1.0410583019256592,
+          2.9432010650634766
+        ],
+        [
+          -1.1630576848983765,
+          1.5899003744125366,
+          7.173517227172852
+        ]
+      ],
+      "inlier_count": 11061,
+      "rmse": 0.01991544214876435,
+      "uncertainty": {
+        "uncertainty_id": "35f81ea3-4adc-49ac-b1b8-0c13be79b921",
+        "distribution_type": "plane_fit",
+        "confidence_bounds": [
+          0.009957721074382175,
+          0.029873163223146523
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "8edded90-fc00-588f-aea0-1cb135fec78f",
+          "3bafbbbc-3000-536e-a6b1-d6f1fbb5b396",
+          "898e3a71-a898-52c1-b25e-3e4bfbfa1303",
+          "aa8c7a62-e333-5364-a492-eb5796274636"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:53:47.059051Z"
+      }
+    },
+    {
+      "plane_id": "8b7f1296-2205-5349-bbab-2097e71db246",
+      "frame_id": "9a3ec24f-1720-5fcb-8d44-9032e3d4a16c",
+      "normal_vector": [
+        -0.03228991329305349,
+        0.999439258462759,
+        0.008861723474441746
+      ],
+      "distance_offset": -1.5270281276483446,
+      "boundary_polygon_3d": [
+        [
+          -2.5849643260240556,
+          1.3203678011894227,
+          4.381979942321777
+        ],
+        [
+          1.8809978663921356,
+          1.5540454735358555,
+          8.199906349182129
+        ]
+      ],
+      "inlier_count": 8771,
+      "rmse": 0.024446152564324888,
+      "uncertainty": {
+        "uncertainty_id": "b9ad33d8-898d-4e46-9ad8-d869bb0e01f0",
+        "distribution_type": "plane_fit",
+        "confidence_bounds": [
+          0.012223076282162444,
+          0.03666922884648733
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "8edded90-fc00-588f-aea0-1cb135fec78f",
+          "3bafbbbc-3000-536e-a6b1-d6f1fbb5b396",
+          "898e3a71-a898-52c1-b25e-3e4bfbfa1303",
+          "aa8c7a62-e333-5364-a492-eb5796274636"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:53:47.059062Z"
+      }
+    },
+    {
+      "plane_id": "c1571d77-7ba8-5d85-8091-493738a68fce",
+      "frame_id": "9a3ec24f-1720-5fcb-8d44-9032e3d4a16c",
+      "normal_vector": [
+        -0.02538851649142719,
+        0.998428067068769,
+        0.04996817106605145
+      ],
+      "distance_offset": -0.9811282589766033,
+      "boundary_polygon_3d": [
+        [
+          -2.8445663452148438,
+          0.4591313044230143,
+          2.5594935417175293
+        ],
+        [
+          1.8515731930732726,
+          0.9021370400985081,
+          10.127047538757324
+        ]
+      ],
+      "inlier_count": 7770,
+      "rmse": 0.026488164635580947,
+      "uncertainty": {
+        "uncertainty_id": "92019d0d-2960-4649-9e02-e8041aa5c0c9",
+        "distribution_type": "plane_fit",
+        "confidence_bounds": [
+          0.013244082317790474,
+          0.03973224695337142
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "8edded90-fc00-588f-aea0-1cb135fec78f",
+          "3bafbbbc-3000-536e-a6b1-d6f1fbb5b396",
+          "898e3a71-a898-52c1-b25e-3e4bfbfa1303",
+          "aa8c7a62-e333-5364-a492-eb5796274636"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:53:47.059072Z"
+      }
+    },
+    {
+      "plane_id": "68936708-6a93-5915-959a-3d5714ec88dd",
+      "frame_id": "9a3ec24f-1720-5fcb-8d44-9032e3d4a16c",
+      "normal_vector": [
+        0.12446190664299885,
+        -0.9920206546664067,
+        0.020106081418899
+      ],
+      "distance_offset": -0.7598103015650609,
+      "boundary_polygon_3d": [
+        [
+          -1.6114858786265056,
+          -0.9108619451522827,
+          2.3227806091308594
+        ],
+        [
+          1.8183778355518976,
+          -0.33656128247578937,
+          9.951765060424805
+        ]
+      ],
+      "inlier_count": 5085,
+      "rmse": 0.027925589380858568,
+      "uncertainty": {
+        "uncertainty_id": "94f8b996-7be6-4a3b-9d11-0e33f064a4da",
+        "distribution_type": "plane_fit",
+        "confidence_bounds": [
+          0.013962794690429284,
+          0.04188838407128785
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "8edded90-fc00-588f-aea0-1cb135fec78f",
+          "3bafbbbc-3000-536e-a6b1-d6f1fbb5b396",
+          "898e3a71-a898-52c1-b25e-3e4bfbfa1303",
+          "aa8c7a62-e333-5364-a492-eb5796274636"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:53:47.059083Z"
+      }
+    },
+    {
+      "plane_id": "95932bbd-2193-5883-b835-15e4c6e19f2a",
+      "frame_id": "9a3ec24f-1720-5fcb-8d44-9032e3d4a16c",
+      "normal_vector": [
+        0.07423018076060371,
+        -0.9970135426536113,
+        0.021304366443147604
+      ],
+      "distance_offset": 0.8097121459089194,
+      "boundary_polygon_3d": [
+        [
+          -2.7721999883651733,
+          0.7155205070972442,
+          2.5351641178131104
+        ],
+        [
+          1.8605104058980941,
+          1.1461319824059804,
+          10.002606391906738
+        ]
+      ],
+      "inlier_count": 4827,
+      "rmse": 0.028028109160428694,
+      "uncertainty": {
+        "uncertainty_id": "3f9067cb-a524-4e11-b591-9977839e1972",
+        "distribution_type": "plane_fit",
+        "confidence_bounds": [
+          0.014014054580214347,
+          0.04204216374064304
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "8edded90-fc00-588f-aea0-1cb135fec78f",
+          "3bafbbbc-3000-536e-a6b1-d6f1fbb5b396",
+          "898e3a71-a898-52c1-b25e-3e4bfbfa1303",
+          "aa8c7a62-e333-5364-a492-eb5796274636"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:53:47.059093Z"
+      }
+    }
+  ],
+  "rooms": [
+    {
+      "room_id": "29a5011a-b63d-4edc-972a-1425d809d857",
+      "room_type": "unknown",
+      "boundary_polygon_2d": [
+        [
+          1.1183124685581076,
+          -0.8776658791365897
+        ],
+        [
+          -0.8215496374335498,
+          -0.876740598747847
+        ],
+        [
+          -0.8024140434794381,
+          0.5609301741505495
+        ],
+        [
+          1.0870628131834623,
+          0.540983066073493
+        ],
+        [
+          1.1183124685581076,
+          -0.8776658791365897
+        ]
+      ],
+      "floor_plane_id": "4bb30ce0-03fb-53ee-a113-5b5bec7a9a9c",
+      "ceiling_plane_id": "91c4ff09-4098-5e7f-8fe3-db3368c48d1f",
+      "wall_ids": [
+        "eee2fe11-7223-40cb-a879-93c3b174be95",
+        "d70d4b0b-4f21-45d9-8862-f2b703aee795",
+        "2c81b3df-be6e-49b9-b75a-25491cbc2e77",
+        "ee23d5d5-30c9-470b-af24-283cba763a59"
+      ],
+      "opening_ids": [
+        "cb5e1cee-f819-447e-a397-313a30aa3b09",
+        "d5cb7bf5-1494-4ed4-9b7a-853cf069ebea",
+        "7d2c4b4f-728d-4651-adb1-c5a53dcf6d74",
+        "b9e5ee4c-1f74-4d96-a3fd-1ecf58671c87",
+        "70090526-65b5-442d-92e2-de2deed0275a",
+        "979102f8-0bdb-401d-ba88-60b47e1dd331",
+        "977608ea-e756-408f-9660-5e3802c22c53",
+        "2a6df888-3969-45d7-a396-04f7e8ddbaf2",
+        "08453d0c-3f2f-490e-84de-35ea13c8501e",
+        "6ee43f15-63ad-4245-9aba-b9941bb1ca41"
+      ]
+    },
+    {
+      "room_id": "7b0d5f5e-f37d-4116-b7f3-e22c075bb07d",
+      "room_type": "unknown",
+      "boundary_polygon_2d": [
+        [
+          1.2956378183742607,
+          1.060790672676414
+        ],
+        [
+          -1.2421962127438435,
+          0.8718425081721352
+        ],
+        [
+          -1.2360150009472666,
+          1.4085315555249631
+        ],
+        [
+          1.2884778716514846,
+          1.4900929463497787
+        ],
+        [
+          1.2956378183742607,
+          1.060790672676414
+        ]
+      ],
+      "floor_plane_id": "608011ce-c2bf-58a6-8e66-1b4d71a2d908",
+      "wall_ids": [
+        "441d8fb5-40a0-4987-ba05-f8930a2c8ccb",
+        "a0f4cff5-ab1c-4bad-9f36-39af89d47591",
+        "8fe64217-be8d-46a3-afe1-c366d70b7ada",
+        "f6b0ac6d-4c61-4d94-8cea-8b0cf23307e6"
+      ],
+      "opening_ids": []
+    },
+    {
+      "room_id": "a1d62bf9-eb7a-446c-a95e-962eed5fb4d4",
+      "room_type": "unknown",
+      "boundary_polygon_2d": [
+        [
+          1.3211797355943027,
+          -0.47067367490876216
+        ],
+        [
+          -1.2613901850177736,
+          -0.7946906949639818
+        ],
+        [
+          -1.2446374596638603,
+          0.6598791380474633
+        ],
+        [
+          1.3012445557190808,
+          0.7246170692662236
+        ],
+        [
+          1.3211797355943027,
+          -0.47067367490876216
+        ]
+      ],
+      "floor_plane_id": "608011ce-c2bf-58a6-8e66-1b4d71a2d908",
+      "wall_ids": [
+        "a0dd13d4-1d8b-4483-a21c-b20bc9cb2aaf",
+        "a0f4cff5-ab1c-4bad-9f36-39af89d47591",
+        "8fe64217-be8d-46a3-afe1-c366d70b7ada",
+        "a1b7d10c-74d8-4b01-99d6-dd93f5412d7b"
+      ],
+      "opening_ids": []
+    },
+    {
+      "room_id": "0767fc81-907d-4ba2-b448-79d9779ea94f",
+      "room_type": "unknown",
+      "boundary_polygon_2d": [
+        [
+          -1.2421962127438435,
+          0.8718425081721352
+        ],
+        [
+          1.2956378183742607,
+          1.060790672676414
+        ],
+        [
+          1.3012445557190808,
+          0.7246170692662236
+        ],
+        [
+          -1.2446374596638603,
+          0.6598791380474633
+        ],
+        [
+          -1.2421962127438435,
+          0.8718425081721352
+        ]
+      ],
+      "floor_plane_id": "608011ce-c2bf-58a6-8e66-1b4d71a2d908",
+      "wall_ids": [
+        "441d8fb5-40a0-4987-ba05-f8930a2c8ccb",
+        "a0f4cff5-ab1c-4bad-9f36-39af89d47591",
+        "8fe64217-be8d-46a3-afe1-c366d70b7ada",
+        "a1b7d10c-74d8-4b01-99d6-dd93f5412d7b"
+      ],
+      "opening_ids": []
+    },
+    {
+      "room_id": "1875caf5-6baa-4e8b-9837-9393f3de5d06",
+      "room_type": "unknown",
+      "boundary_polygon_2d": [
+        [
+          1.3283819645060095,
+          -0.9025111406089247
+        ],
+        [
+          -1.2624779414569425,
+          -0.8891360863050178
+        ],
+        [
+          -1.2613901850177736,
+          -0.7946906949639818
+        ],
+        [
+          1.3211797355943027,
+          -0.47067367490876216
+        ],
+        [
+          1.3283819645060095,
+          -0.9025111406089247
+        ]
+      ],
+      "floor_plane_id": "608011ce-c2bf-58a6-8e66-1b4d71a2d908",
+      "wall_ids": [
+        "92ed4527-481f-4cb5-a050-46284a860636",
+        "a0dd13d4-1d8b-4483-a21c-b20bc9cb2aaf",
+        "a0f4cff5-ab1c-4bad-9f36-39af89d47591",
+        "8fe64217-be8d-46a3-afe1-c366d70b7ada"
+      ],
+      "opening_ids": []
+    }
+  ],
+  "walls": [
+    {
+      "wall_id": "eee2fe11-7223-40cb-a879-93c3b174be95",
+      "supporting_plane_id": "d5f46f32-7389-5deb-ac29-b2681bcfbb46",
+      "start_point_2d": [
+        -1.702746292647167,
+        -0.8763202833134787
+      ],
+      "end_point_2d": [
+        1.715776500438157,
+        -0.8779508590586007
+      ],
+      "height": 2.365994801756665,
+      "room_ids": [
+        "29a5011a-b63d-4edc-972a-1425d809d857"
+      ],
+      "manhattan_deviation": 0.027329085380316087,
+      "uncertainty": {
+        "uncertainty_id": "d18ae75e-aea3-49e0-b099-33b439c02870",
+        "distribution_type": "plane_residual",
+        "confidence_bounds": [
+          0.0,
+          0.022595003315355668
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "8a50c41c-8740-5eef-aa56-3dfe96090149",
+          "a559b74e-6c5b-56aa-b1f6-c1be0f125860",
+          "dfe3b524-5f7e-5a65-a998-16d4112844e2",
+          "966d7341-e1ac-59dd-bb46-8d392d255e90"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:50:28.217122Z"
+      }
+    },
+    {
+      "wall_id": "d70d4b0b-4f21-45d9-8862-f2b703aee795",
+      "supporting_plane_id": "77742e98-4ef0-5822-a6d7-cdd73f3880bc",
+      "start_point_2d": [
+        -0.8265511093659403,
+        -1.252504739433147
+      ],
+      "end_point_2d": [
+        -0.7908360211538351,
+        1.4307952196464557
+      ],
+      "height": 2.365994801756665,
+      "room_ids": [
+        "29a5011a-b63d-4edc-972a-1425d809d857"
+      ],
+      "manhattan_deviation": 0.7625696051435256,
+      "uncertainty": {
+        "uncertainty_id": "9c95926a-bf77-44e7-a8c6-6a1e8cb4f76f",
+        "distribution_type": "plane_residual",
+        "confidence_bounds": [
+          0.0,
+          0.020338907294122844
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "8a50c41c-8740-5eef-aa56-3dfe96090149",
+          "a559b74e-6c5b-56aa-b1f6-c1be0f125860",
+          "dfe3b524-5f7e-5a65-a998-16d4112844e2",
+          "966d7341-e1ac-59dd-bb46-8d392d255e90"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:50:28.217212Z"
+      }
+    },
+    {
+      "wall_id": "2c81b3df-be6e-49b9-b75a-25491cbc2e77",
+      "supporting_plane_id": "a6a62322-9163-5fa6-b9a0-d693a6d92ecb",
+      "start_point_2d": [
+        1.1257546564428076,
+        -1.215520868771161
+      ],
+      "end_point_2d": [
+        1.0674579681389635,
+        1.430989448862313
+      ],
+      "height": 2.365994801756665,
+      "room_ids": [
+        "29a5011a-b63d-4edc-972a-1425d809d857"
+      ],
+      "manhattan_deviation": 1.2618934811935674,
+      "uncertainty": {
+        "uncertainty_id": "b42770db-1340-448d-9669-32a3d8a356ba",
+        "distribution_type": "plane_residual",
+        "confidence_bounds": [
+          0.0,
+          0.02106932139420896
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "8a50c41c-8740-5eef-aa56-3dfe96090149",
+          "a559b74e-6c5b-56aa-b1f6-c1be0f125860",
+          "dfe3b524-5f7e-5a65-a998-16d4112844e2",
+          "966d7341-e1ac-59dd-bb46-8d392d255e90"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:50:28.217188Z"
+      }
+    },
+    {
+      "wall_id": "9b77e097-a958-4678-a70c-76857073f6df",
+      "supporting_plane_id": "24eb8483-779e-5ff2-9d83-b555fb94e878",
+      "start_point_2d": [
+        1.3215511253360006,
+        -1.2077560714307454
+      ],
+      "end_point_2d": [
+        1.2137735825072549,
+        1.1748791806161907
+      ],
+      "height": 2.365994801756665,
+      "room_ids": [],
+      "manhattan_deviation": 2.589985880531472,
+      "uncertainty": {
+        "uncertainty_id": "6bc063ea-dfda-4b1d-bce7-b83755ccf188",
+        "distribution_type": "plane_residual",
+        "confidence_bounds": [
+          0.0,
+          0.019225899789395706
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "8a50c41c-8740-5eef-aa56-3dfe96090149",
+          "a559b74e-6c5b-56aa-b1f6-c1be0f125860",
+          "dfe3b524-5f7e-5a65-a998-16d4112844e2",
+          "966d7341-e1ac-59dd-bb46-8d392d255e90"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:50:28.217233Z"
+      }
+    },
+    {
+      "wall_id": "ee23d5d5-30c9-470b-af24-283cba763a59",
+      "supporting_plane_id": "1f5f7c4f-f6b5-5549-8ccf-914b21c2467f",
+      "start_point_2d": [
+        1.6934823799512118,
+        0.5345811265124433
+      ],
+      "end_point_2d": [
+        -2.633731031757123,
+        0.5802632915474151
+      ],
+      "height": 2.365994801756665,
+      "room_ids": [
+        "29a5011a-b63d-4edc-972a-1425d809d857"
+      ],
+      "manhattan_deviation": 0.6048460700965279,
+      "uncertainty": {
+        "uncertainty_id": "d4a2db72-ec99-4066-aa76-a744672e6a75",
+        "distribution_type": "plane_residual",
+        "confidence_bounds": [
+          0.0,
+          0.028186618653724984
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "8a50c41c-8740-5eef-aa56-3dfe96090149",
+          "a559b74e-6c5b-56aa-b1f6-c1be0f125860",
+          "dfe3b524-5f7e-5a65-a998-16d4112844e2",
+          "966d7341-e1ac-59dd-bb46-8d392d255e90"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:50:28.217172Z"
+      }
+    },
+    {
+      "wall_id": "8bae420f-4d79-4886-af99-bcc5afadd6d7",
+      "supporting_plane_id": "fb40f2c7-3752-51d7-b65b-b7448e11fb96",
+      "start_point_2d": [
+        -0.2476439572179168,
+        1.5799667570467475
+      ],
+      "end_point_2d": [
+        -0.5147222167608786,
+        -1.0538138793632565
+      ],
+      "room_ids": [],
+      "manhattan_deviation": 5.790279809649576,
+      "uncertainty": {
+        "uncertainty_id": "faab18d0-e032-4ecf-8e07-427baeda4945",
+        "distribution_type": "plane_residual",
+        "confidence_bounds": [
+          0.0,
+          0.02760465121107786
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "31ad7b12-64d7-5a05-b397-046d9654c601",
+          "6c861f25-fc73-53a9-a1d6-6e17a7cc676e",
+          "5847bc29-667c-54fa-9cbd-a3195236a0c3",
+          "6b7845b2-2f53-55a8-897d-585ff18e98b5"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:51:52.393549Z"
+      }
+    },
+    {
+      "wall_id": "94d566f1-0b17-49af-b42e-e492a7984289",
+      "supporting_plane_id": "999c83b8-10c8-53d5-bda6-13cadcc099d6",
+      "start_point_2d": [
+        -0.12343140235934635,
+        -1.0661923273411271
+      ],
+      "end_point_2d": [
+        0.2890525358199542,
+        1.5838380777616163
+      ],
+      "room_ids": [],
+      "manhattan_deviation": 8.847239458251153,
+      "uncertainty": {
+        "uncertainty_id": "7ea2b3b9-63d8-4fac-9a44-0e7ed37fea8d",
+        "distribution_type": "plane_residual",
+        "confidence_bounds": [
+          0.0,
+          0.028232587601073215
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "31ad7b12-64d7-5a05-b397-046d9654c601",
+          "6c861f25-fc73-53a9-a1d6-6e17a7cc676e",
+          "5847bc29-667c-54fa-9cbd-a3195236a0c3",
+          "6b7845b2-2f53-55a8-897d-585ff18e98b5"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:51:52.393573Z"
+      }
+    },
+    {
+      "wall_id": "5262e0ff-9615-4d25-98c2-477bb1ed893d",
+      "supporting_plane_id": "4116fe54-c801-57d1-84e2-114fa4a1df36",
+      "start_point_2d": [
+        0.3775298714056896,
+        -1.023409374546547
+      ],
+      "end_point_2d": [
+        0.40409245856020504,
+        1.521377985817059
+      ],
+      "room_ids": [],
+      "manhattan_deviation": 0.5980338049730989,
+      "uncertainty": {
+        "uncertainty_id": "a1293ca0-3d20-4d2c-816e-7afb4f6dcb38",
+        "distribution_type": "plane_residual",
+        "confidence_bounds": [
+          0.0,
+          0.020848045700573185
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "31ad7b12-64d7-5a05-b397-046d9654c601",
+          "6c861f25-fc73-53a9-a1d6-6e17a7cc676e",
+          "5847bc29-667c-54fa-9cbd-a3195236a0c3",
+          "6b7845b2-2f53-55a8-897d-585ff18e98b5"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:51:52.393613Z"
+      }
+    },
+    {
+      "wall_id": "401449e1-4dbf-4b82-a44e-c52732ab7749",
+      "supporting_plane_id": "dabcf40f-994f-5313-8a85-0c4e204cdd54",
+      "start_point_2d": [
+        2.9979500573103572,
+        -0.34370863141783126
+      ],
+      "end_point_2d": [
+        -2.945592409951016,
+        -0.43209873833502227
+      ],
+      "room_ids": [],
+      "manhattan_deviation": 0.8520182702153818,
+      "uncertainty": {
+        "uncertainty_id": "0f0c6114-162e-49cc-ae5f-69cc448b686f",
+        "distribution_type": "plane_residual",
+        "confidence_bounds": [
+          0.0,
+          0.027033934342710342
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "31ad7b12-64d7-5a05-b397-046d9654c601",
+          "6c861f25-fc73-53a9-a1d6-6e17a7cc676e",
+          "5847bc29-667c-54fa-9cbd-a3195236a0c3",
+          "6b7845b2-2f53-55a8-897d-585ff18e98b5"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:51:52.393603Z"
+      }
+    },
+    {
+      "wall_id": "92ed4527-481f-4cb5-a050-46284a860636",
+      "supporting_plane_id": "970578cf-ef99-57ee-bed5-f6e03ca46f70",
+      "start_point_2d": [
+        -3.1535218024398373,
+        -0.8793737621154685
+      ],
+      "end_point_2d": [
+        1.767910526213154,
+        -0.9047801627075033
+      ],
+      "room_ids": [
+        "1875caf5-6baa-4e8b-9837-9393f3de5d06"
+      ],
+      "manhattan_deviation": 0.2957810852763174,
+      "uncertainty": {
+        "uncertainty_id": "5416f054-9743-4cb0-a0ca-6ac7ac299ce5",
+        "distribution_type": "plane_residual",
+        "confidence_bounds": [
+          0.0,
+          0.022424925532204196
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "8edded90-fc00-588f-aea0-1cb135fec78f",
+          "3bafbbbc-3000-536e-a6b1-d6f1fbb5b396",
+          "898e3a71-a898-52c1-b25e-3e4bfbfa1303",
+          "aa8c7a62-e333-5364-a492-eb5796274636"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:53:47.058967Z"
+      }
+    },
+    {
+      "wall_id": "441d8fb5-40a0-4987-ba05-f8930a2c8ccb",
+      "supporting_plane_id": "95932bbd-2193-5883-b835-15e4c6e19f2a",
+      "start_point_2d": [
+        -2.7741128124692103,
+        0.7577874414725139
+      ],
+      "end_point_2d": [
+        1.8628370240499978,
+        1.103020088590385
+      ],
+      "room_ids": [
+        "7b0d5f5e-f37d-4116-b7f3-e22c075bb07d",
+        "0767fc81-907d-4ba2-b448-79d9779ea94f"
+      ],
+      "manhattan_deviation": 4.2579597980847,
+      "uncertainty": {
+        "uncertainty_id": "588617ea-2113-46fd-9f7b-97f1a1347daa",
+        "distribution_type": "plane_residual",
+        "confidence_bounds": [
+          0.0,
+          0.028028109160428694
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "8edded90-fc00-588f-aea0-1cb135fec78f",
+          "3bafbbbc-3000-536e-a6b1-d6f1fbb5b396",
+          "898e3a71-a898-52c1-b25e-3e4bfbfa1303",
+          "aa8c7a62-e333-5364-a492-eb5796274636"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:53:47.059093Z"
+      }
+    },
+    {
+      "wall_id": "a0dd13d4-1d8b-4483-a21c-b20bc9cb2aaf",
+      "supporting_plane_id": "68936708-6a93-5915-959a-3d5714ec88dd",
+      "start_point_2d": [
+        -1.6197229214287294,
+        -0.8396482020244656
+      ],
+      "end_point_2d": [
+        1.8265312413474468,
+        -0.40727074913792977
+      ],
+      "room_ids": [
+        "a1d62bf9-eb7a-446c-a95e-962eed5fb4d4",
+        "1875caf5-6baa-4e8b-9837-9393f3de5d06"
+      ],
+      "manhattan_deviation": 7.151135776810531,
+      "uncertainty": {
+        "uncertainty_id": "353e915e-5c7a-40ae-8f5c-ff8df039ac53",
+        "distribution_type": "plane_residual",
+        "confidence_bounds": [
+          0.0,
+          0.027925589380858568
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "8edded90-fc00-588f-aea0-1cb135fec78f",
+          "3bafbbbc-3000-536e-a6b1-d6f1fbb5b396",
+          "898e3a71-a898-52c1-b25e-3e4bfbfa1303",
+          "aa8c7a62-e333-5364-a492-eb5796274636"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:53:47.059083Z"
+      }
+    },
+    {
+      "wall_id": "a0f4cff5-ab1c-4bad-9f36-39af89d47591",
+      "supporting_plane_id": "9520b8b1-0e4a-540b-97f9-0328bf6ec2ba",
+      "start_point_2d": [
+        -1.2339212998359144,
+        1.5903189609517527
+      ],
+      "end_point_2d": [
+        -1.2642340911471763,
+        -1.041615298355716
+      ],
+      "room_ids": [
+        "7b0d5f5e-f37d-4116-b7f3-e22c075bb07d",
+        "a1d62bf9-eb7a-446c-a95e-962eed5fb4d4",
+        "0767fc81-907d-4ba2-b448-79d9779ea94f",
+        "1875caf5-6baa-4e8b-9837-9393f3de5d06"
+      ],
+      "manhattan_deviation": 0.6598638294429833,
+      "uncertainty": {
+        "uncertainty_id": "324cebc5-d6df-4fc8-a5a6-b6b80cd4fedb",
+        "distribution_type": "plane_residual",
+        "confidence_bounds": [
+          0.0,
+          0.01991544214876435
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "8edded90-fc00-588f-aea0-1cb135fec78f",
+          "3bafbbbc-3000-536e-a6b1-d6f1fbb5b396",
+          "898e3a71-a898-52c1-b25e-3e4bfbfa1303",
+          "aa8c7a62-e333-5364-a492-eb5796274636"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:53:47.059051Z"
+      }
+    },
+    {
+      "wall_id": "8fe64217-be8d-46a3-afe1-c366d70b7ada",
+      "supporting_plane_id": "96774ce0-2060-5e51-bcfc-c41a590dc827",
+      "start_point_2d": [
+        1.3289119573180315,
+        -0.9342889076847295
+      ],
+      "end_point_2d": [
+        1.2877577299619827,
+        1.5332718241599632
+      ],
+      "room_ids": [
+        "7b0d5f5e-f37d-4116-b7f3-e22c075bb07d",
+        "a1d62bf9-eb7a-446c-a95e-962eed5fb4d4",
+        "0767fc81-907d-4ba2-b448-79d9779ea94f",
+        "1875caf5-6baa-4e8b-9837-9393f3de5d06"
+      ],
+      "manhattan_deviation": 0.9554962165832848,
+      "uncertainty": {
+        "uncertainty_id": "bb726dda-4806-43eb-9b2a-6fac2758be74",
+        "distribution_type": "plane_residual",
+        "confidence_bounds": [
+          0.0,
+          0.019681612490390497
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "8edded90-fc00-588f-aea0-1cb135fec78f",
+          "3bafbbbc-3000-536e-a6b1-d6f1fbb5b396",
+          "898e3a71-a898-52c1-b25e-3e4bfbfa1303",
+          "aa8c7a62-e333-5364-a492-eb5796274636"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:53:47.059026Z"
+      }
+    },
+    {
+      "wall_id": "a1b7d10c-74d8-4b01-99d6-dd93f5412d7b",
+      "supporting_plane_id": "c1571d77-7ba8-5d85-8091-493738a68fce",
+      "start_point_2d": [
+        1.8510514295932525,
+        0.7385978269641069
+      ],
+      "end_point_2d": [
+        -2.8415652584398323,
+        0.6192716780890588
+      ],
+      "room_ids": [
+        "a1d62bf9-eb7a-446c-a95e-962eed5fb4d4",
+        "0767fc81-907d-4ba2-b448-79d9779ea94f"
+      ],
+      "manhattan_deviation": 1.4566311606334637,
+      "uncertainty": {
+        "uncertainty_id": "8b6881fd-9968-45da-b1f3-6c53e37c7474",
+        "distribution_type": "plane_residual",
+        "confidence_bounds": [
+          0.0,
+          0.026488164635580947
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "8edded90-fc00-588f-aea0-1cb135fec78f",
+          "3bafbbbc-3000-536e-a6b1-d6f1fbb5b396",
+          "898e3a71-a898-52c1-b25e-3e4bfbfa1303",
+          "aa8c7a62-e333-5364-a492-eb5796274636"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:53:47.059072Z"
+      }
+    },
+    {
+      "wall_id": "f6b0ac6d-4c61-4d94-8cea-8b0cf23307e6",
+      "supporting_plane_id": "8b7f1296-2205-5349-bbab-2097e71db246",
+      "start_point_2d": [
+        1.8822925596698752,
+        1.509277928954672
+      ],
+      "end_point_2d": [
+        -2.586203736715097,
+        1.3649096176852806
+      ],
+      "room_ids": [
+        "7b0d5f5e-f37d-4116-b7f3-e22c075bb07d"
+      ],
+      "manhattan_deviation": 1.8504700823768871,
+      "uncertainty": {
+        "uncertainty_id": "e535d087-81a9-4d7c-afb6-ef309207d311",
+        "distribution_type": "plane_residual",
+        "confidence_bounds": [
+          0.0,
+          0.024446152564324888
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [
+          "8edded90-fc00-588f-aea0-1cb135fec78f",
+          "3bafbbbc-3000-536e-a6b1-d6f1fbb5b396",
+          "898e3a71-a898-52c1-b25e-3e4bfbfa1303",
+          "aa8c7a62-e333-5364-a492-eb5796274636"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "plane_extraction",
+        "timestamp": "2026-09-10T00:53:47.059062Z"
+      }
+    }
+  ],
+  "openings": [
+    {
+      "opening_id": "cb5e1cee-f819-447e-a397-313a30aa3b09",
+      "parent_wall_id": "eee2fe11-7223-40cb-a879-93c3b174be95",
+      "opening_type": "window",
+      "offset_along_wall": 0.6936133992389499,
+      "width": 0.5945257707762429,
+      "height": 0.49291558369930527,
+      "sill_height": 1.5280383094678465,
+      "connected_room_ids": [
+        "29a5011a-b63d-4edc-972a-1425d809d857"
+      ],
+      "uncertainty": {
+        "uncertainty_id": "604b47f9-f53c-4330-a283-0a8f46349b0e",
+        "distribution_type": "occupancy_grid",
+        "confidence_bounds": [
+          0.0,
+          0.05
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "opening_inference",
+        "timestamp": "2026-09-10T00:50:28.306282Z"
+      }
+    },
+    {
+      "opening_id": "d5cb7bf5-1494-4ed4-9b7a-853cf069ebea",
+      "parent_wall_id": "eee2fe11-7223-40cb-a879-93c3b174be95",
+      "opening_type": "window",
+      "offset_along_wall": 1.2881391700151927,
+      "width": 0.5945257707762429,
+      "height": 0.7393733755489579,
+      "sill_height": 1.3308720759881245,
+      "connected_room_ids": [
+        "29a5011a-b63d-4edc-972a-1425d809d857"
+      ],
+      "uncertainty": {
+        "uncertainty_id": "af82fa9d-aade-42e8-b391-05b533b9760a",
+        "distribution_type": "occupancy_grid",
+        "confidence_bounds": [
+          0.0,
+          0.05
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "opening_inference",
+        "timestamp": "2026-09-10T00:50:28.313007Z"
+      }
+    },
+    {
+      "opening_id": "7d2c4b4f-728d-4651-adb1-c5a53dcf6d74",
+      "parent_wall_id": "eee2fe11-7223-40cb-a879-93c3b174be95",
+      "opening_type": "window",
+      "offset_along_wall": 1.8826649407914358,
+      "width": 0.5945257707762429,
+      "height": 0.6900818171790274,
+      "sill_height": 1.4294551927279855,
+      "connected_room_ids": [
+        "29a5011a-b63d-4edc-972a-1425d809d857"
+      ],
+      "uncertainty": {
+        "uncertainty_id": "44b86718-588a-4b10-ada1-dae620196746",
+        "distribution_type": "occupancy_grid",
+        "confidence_bounds": [
+          0.0,
+          0.05
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "opening_inference",
+        "timestamp": "2026-09-10T00:50:28.321359Z"
+      }
+    },
+    {
+      "opening_id": "b9e5ee4c-1f74-4d96-a3fd-1ecf58671c87",
+      "parent_wall_id": "d70d4b0b-4f21-45d9-8862-f2b703aee795",
+      "opening_type": "window",
+      "offset_along_wall": 0.14908542416108947,
+      "width": 0.5963416966443579,
+      "height": 0.49291558369930527,
+      "sill_height": 1.5280383094678465,
+      "connected_room_ids": [
+        "29a5011a-b63d-4edc-972a-1425d809d857"
+      ],
+      "uncertainty": {
+        "uncertainty_id": "ce2ab05f-18dd-4668-a316-409f5a643f18",
+        "distribution_type": "occupancy_grid",
+        "confidence_bounds": [
+          0.0,
+          0.05
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "opening_inference",
+        "timestamp": "2026-09-10T00:50:28.332070Z"
+      }
+    },
+    {
+      "opening_id": "70090526-65b5-442d-92e2-de2deed0275a",
+      "parent_wall_id": "d70d4b0b-4f21-45d9-8862-f2b703aee795",
+      "opening_type": "archway",
+      "offset_along_wall": 0.7454271208054474,
+      "width": 0.5963416966443579,
+      "height": 0.93653960902868,
+      "sill_height": 0.0,
+      "connected_room_ids": [
+        "29a5011a-b63d-4edc-972a-1425d809d857"
+      ],
+      "uncertainty": {
+        "uncertainty_id": "c8fc64b6-f998-4a11-ba0a-db6b2b51fb74",
+        "distribution_type": "occupancy_grid",
+        "confidence_bounds": [
+          0.0,
+          0.05
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "opening_inference",
+        "timestamp": "2026-09-10T00:50:28.342281Z"
+      }
+    },
+    {
+      "opening_id": "979102f8-0bdb-401d-ba88-60b47e1dd331",
+      "parent_wall_id": "d70d4b0b-4f21-45d9-8862-f2b703aee795",
+      "opening_type": "archway",
+      "offset_along_wall": 1.3417688174498053,
+      "width": 0.5963416966443579,
+      "height": 0.6900818171790274,
+      "sill_height": 0.0,
+      "connected_room_ids": [
+        "29a5011a-b63d-4edc-972a-1425d809d857"
+      ],
+      "uncertainty": {
+        "uncertainty_id": "2f3363a4-8830-4400-a608-bc74d4006503",
+        "distribution_type": "occupancy_grid",
+        "confidence_bounds": [
+          0.0,
+          0.05
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "opening_inference",
+        "timestamp": "2026-09-10T00:50:28.346993Z"
+      }
+    },
+    {
+      "opening_id": "977608ea-e756-408f-9660-5e3802c22c53",
+      "parent_wall_id": "ee23d5d5-30c9-470b-af24-283cba763a59",
+      "opening_type": "window",
+      "offset_along_wall": 0.7958537079724861,
+      "width": 0.5968902809793645,
+      "height": 0.49291558369930527,
+      "sill_height": 0.9365396090286797,
+      "connected_room_ids": [
+        "29a5011a-b63d-4edc-972a-1425d809d857"
+      ],
+      "uncertainty": {
+        "uncertainty_id": "cf199e72-62c8-44b8-b6f6-320b4ebe8379",
+        "distribution_type": "occupancy_grid",
+        "confidence_bounds": [
+          0.0,
+          0.05
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "opening_inference",
+        "timestamp": "2026-09-10T00:50:28.428294Z"
+      }
+    },
+    {
+      "opening_id": "2a6df888-3969-45d7-a396-04f7e8ddbaf2",
+      "parent_wall_id": "ee23d5d5-30c9-470b-af24-283cba763a59",
+      "opening_type": "archway",
+      "offset_along_wall": 1.442484845700131,
+      "width": 0.5968902809793645,
+      "height": 1.2815805176181936,
+      "sill_height": 0.04929155836993093,
+      "connected_room_ids": [
+        "29a5011a-b63d-4edc-972a-1425d809d857"
+      ],
+      "uncertainty": {
+        "uncertainty_id": "60f86926-ab71-4f46-9dd8-878f67940183",
+        "distribution_type": "occupancy_grid",
+        "confidence_bounds": [
+          0.0,
+          0.05
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "opening_inference",
+        "timestamp": "2026-09-10T00:50:28.442318Z"
+      }
+    },
+    {
+      "opening_id": "08453d0c-3f2f-490e-84de-35ea13c8501e",
+      "parent_wall_id": "ee23d5d5-30c9-470b-af24-283cba763a59",
+      "opening_type": "archway",
+      "offset_along_wall": 2.0393751266794955,
+      "width": 0.5968902809793645,
+      "height": 0.5914987004391663,
+      "sill_height": 0.09858311673986098,
+      "connected_room_ids": [
+        "29a5011a-b63d-4edc-972a-1425d809d857"
+      ],
+      "uncertainty": {
+        "uncertainty_id": "a93a4f01-00b5-4e69-9508-981d6fef82a8",
+        "distribution_type": "occupancy_grid",
+        "confidence_bounds": [
+          0.0,
+          0.05
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "opening_inference",
+        "timestamp": "2026-09-10T00:50:28.456838Z"
+      }
+    },
+    {
+      "opening_id": "6ee43f15-63ad-4245-9aba-b9941bb1ca41",
+      "parent_wall_id": "ee23d5d5-30c9-470b-af24-283cba763a59",
+      "opening_type": "other",
+      "offset_along_wall": 3.3823782588830658,
+      "width": 0.7958537079724861,
+      "height": 0.5422071420692358,
+      "sill_height": 0.34504090858951386,
+      "connected_room_ids": [
+        "29a5011a-b63d-4edc-972a-1425d809d857"
+      ],
+      "uncertainty": {
+        "uncertainty_id": "16072bf1-8e4d-4267-a954-d0b52b0ab374",
+        "distribution_type": "occupancy_grid",
+        "confidence_bounds": [
+          0.0,
+          0.05
+        ]
+      },
+      "provenance": {
+        "source_capture_ids": [],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "opening_inference",
+        "timestamp": "2026-09-10T00:50:28.468477Z"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "edge_id": "c14b63e3-649b-42cd-9a3d-e906f184f35d",
+      "source_id": "29a5011a-b63d-4edc-972a-1425d809d857",
+      "target_id": "eee2fe11-7223-40cb-a879-93c3b174be95",
+      "relationship_type": "BOUNDED_BY",
+      "confidence": 1.0
+    },
+    {
+      "edge_id": "4303264e-1a75-409a-95f0-d30e0bd992a2",
+      "source_id": "29a5011a-b63d-4edc-972a-1425d809d857",
+      "target_id": "d70d4b0b-4f21-45d9-8862-f2b703aee795",
+      "relationship_type": "BOUNDED_BY",
+      "confidence": 1.0
+    },
+    {
+      "edge_id": "fad0a99c-1cbe-4d41-b08a-d42f57a275f8",
+      "source_id": "29a5011a-b63d-4edc-972a-1425d809d857",
+      "target_id": "2c81b3df-be6e-49b9-b75a-25491cbc2e77",
+      "relationship_type": "BOUNDED_BY",
+      "confidence": 1.0
+    },
+    {
+      "edge_id": "31177c43-a324-4c2c-888a-cb8077bd8018",
+      "source_id": "29a5011a-b63d-4edc-972a-1425d809d857",
+      "target_id": "ee23d5d5-30c9-470b-af24-283cba763a59",
+      "relationship_type": "BOUNDED_BY",
+      "confidence": 1.0
+    },
+    {
+      "edge_id": "1b8a89c4-3f34-4a6e-8aaa-cc4bb8df1cfd",
+      "source_id": "7b0d5f5e-f37d-4116-b7f3-e22c075bb07d",
+      "target_id": "441d8fb5-40a0-4987-ba05-f8930a2c8ccb",
+      "relationship_type": "BOUNDED_BY",
+      "confidence": 1.0
+    },
+    {
+      "edge_id": "a79833ae-def1-47eb-b5e6-0b32148c2bde",
+      "source_id": "7b0d5f5e-f37d-4116-b7f3-e22c075bb07d",
+      "target_id": "a0f4cff5-ab1c-4bad-9f36-39af89d47591",
+      "relationship_type": "BOUNDED_BY",
+      "confidence": 1.0
+    },
+    {
+      "edge_id": "40045fff-e43a-493a-995c-07e5fae3b103",
+      "source_id": "7b0d5f5e-f37d-4116-b7f3-e22c075bb07d",
+      "target_id": "8fe64217-be8d-46a3-afe1-c366d70b7ada",
+      "relationship_type": "BOUNDED_BY",
+      "confidence": 1.0
+    },
+    {
+      "edge_id": "246609ec-8b43-4636-ab77-fe75de3409ed",
+      "source_id": "7b0d5f5e-f37d-4116-b7f3-e22c075bb07d",
+      "target_id": "f6b0ac6d-4c61-4d94-8cea-8b0cf23307e6",
+      "relationship_type": "BOUNDED_BY",
+      "confidence": 1.0
+    },
+    {
+      "edge_id": "80e981f5-6ea5-4d43-96b7-72770ffd107e",
+      "source_id": "a1d62bf9-eb7a-446c-a95e-962eed5fb4d4",
+      "target_id": "a0dd13d4-1d8b-4483-a21c-b20bc9cb2aaf",
+      "relationship_type": "BOUNDED_BY",
+      "confidence": 1.0
+    },
+    {
+      "edge_id": "ec77263b-bd93-4a1f-95ee-713bdf770ff8",
+      "source_id": "a1d62bf9-eb7a-446c-a95e-962eed5fb4d4",
+      "target_id": "a0f4cff5-ab1c-4bad-9f36-39af89d47591",
+      "relationship_type": "BOUNDED_BY",
+      "confidence": 1.0
+    },
+    {
+      "edge_id": "fd8446ac-10cd-4731-9874-956fb38ac6c6",
+      "source_id": "a1d62bf9-eb7a-446c-a95e-962eed5fb4d4",
+      "target_id": "8fe64217-be8d-46a3-afe1-c366d70b7ada",
+      "relationship_type": "BOUNDED_BY",
+      "confidence": 1.0
+    },
+    {
+      "edge_id": "236e1c73-503f-4fbe-9cce-15829650099a",
+      "source_id": "a1d62bf9-eb7a-446c-a95e-962eed5fb4d4",
+      "target_id": "a1b7d10c-74d8-4b01-99d6-dd93f5412d7b",
+      "relationship_type": "BOUNDED_BY",
+      "confidence": 1.0
+    },
+    {
+      "edge_id": "fb508cf4-f0c3-4869-bd1f-35315354ed10",
+      "source_id": "0767fc81-907d-4ba2-b448-79d9779ea94f",
+      "target_id": "441d8fb5-40a0-4987-ba05-f8930a2c8ccb",
+      "relationship_type": "BOUNDED_BY",
+      "confidence": 1.0
+    },
+    {
+      "edge_id": "b7a72fa4-0012-4ac6-a571-9d8727c8126e",
+      "source_id": "0767fc81-907d-4ba2-b448-79d9779ea94f",
+      "target_id": "a0f4cff5-ab1c-4bad-9f36-39af89d47591",
+      "relationship_type": "BOUNDED_BY",
+      "confidence": 1.0
+    },
+    {
+      "edge_id": "c195b192-9443-4f33-a6b6-ed6758574ed4",
+      "source_id": "0767fc81-907d-4ba2-b448-79d9779ea94f",
+      "target_id": "8fe64217-be8d-46a3-afe1-c366d70b7ada",
+      "relationship_type": "BOUNDED_BY",
+      "confidence": 1.0
+    },
+    {
+      "edge_id": "9324bb81-57b8-45fc-a97c-9746bd51c11f",
+      "source_id": "0767fc81-907d-4ba2-b448-79d9779ea94f",
+      "target_id": "a1b7d10c-74d8-4b01-99d6-dd93f5412d7b",
+      "relationship_type": "BOUNDED_BY",
+      "confidence": 1.0
+    },
+    {
+      "edge_id": "64eae9f8-9422-4f89-8ebc-b5cb1d80356f",
+      "source_id": "1875caf5-6baa-4e8b-9837-9393f3de5d06",
+      "target_id": "92ed4527-481f-4cb5-a050-46284a860636",
+      "relationship_type": "BOUNDED_BY",
+      "confidence": 1.0
+    },
+    {
+      "edge_id": "adabb1bc-4d97-4714-80c7-5ee59adae861",
+      "source_id": "1875caf5-6baa-4e8b-9837-9393f3de5d06",
+      "target_id": "a0dd13d4-1d8b-4483-a21c-b20bc9cb2aaf",
+      "relationship_type": "BOUNDED_BY",
+      "confidence": 1.0
+    },
+    {
+      "edge_id": "ba03a293-89b2-4788-b69f-7a62016b5183",
+      "source_id": "1875caf5-6baa-4e8b-9837-9393f3de5d06",
+      "target_id": "a0f4cff5-ab1c-4bad-9f36-39af89d47591",
+      "relationship_type": "BOUNDED_BY",
+      "confidence": 1.0
+    },
+    {
+      "edge_id": "f5c76154-1625-4294-b058-0d597d66061d",
+      "source_id": "1875caf5-6baa-4e8b-9837-9393f3de5d06",
+      "target_id": "8fe64217-be8d-46a3-afe1-c366d70b7ada",
+      "relationship_type": "BOUNDED_BY",
+      "confidence": 1.0
+    },
+    {
+      "edge_id": "b1e4b549-c5b9-4087-8982-41e79d5b071a",
+      "source_id": "eee2fe11-7223-40cb-a879-93c3b174be95",
+      "target_id": "cb5e1cee-f819-447e-a397-313a30aa3b09",
+      "relationship_type": "HOSTS",
+      "confidence": 1.0
+    },
+    {
+      "edge_id": "a82cca5e-35ad-4893-9fa6-12b04783cd1a",
+      "source_id": "eee2fe11-7223-40cb-a879-93c3b174be95",
+      "target_id": "d5cb7bf5-1494-4ed4-9b7a-853cf069ebea",
+      "relationship_type": "HOSTS",
+      "confidence": 1.0
+    },
+    {
+      "edge_id": "8fe37af2-054f-4624-abd0-14baca8ae91b",
+      "source_id": "eee2fe11-7223-40cb-a879-93c3b174be95",
+      "target_id": "7d2c4b4f-728d-4651-adb1-c5a53dcf6d74",
+      "relationship_type": "HOSTS",
+      "confidence": 1.0
+    },
+    {
+      "edge_id": "0588e67a-7547-40d7-b565-0dbd9d602ad3",
+      "source_id": "d70d4b0b-4f21-45d9-8862-f2b703aee795",
+      "target_id": "b9e5ee4c-1f74-4d96-a3fd-1ecf58671c87",
+      "relationship_type": "HOSTS",
+      "confidence": 1.0
+    },
+    {
+      "edge_id": "e6d8b9db-6bbb-4231-9b21-8f70d4c2f3a2",
+      "source_id": "d70d4b0b-4f21-45d9-8862-f2b703aee795",
+      "target_id": "70090526-65b5-442d-92e2-de2deed0275a",
+      "relationship_type": "HOSTS",
+      "confidence": 1.0
+    },
+    {
+      "edge_id": "ad278eff-9df7-43fa-b533-b8c260474fd5",
+      "source_id": "d70d4b0b-4f21-45d9-8862-f2b703aee795",
+      "target_id": "979102f8-0bdb-401d-ba88-60b47e1dd331",
+      "relationship_type": "HOSTS",
+      "confidence": 1.0
+    },
+    {
+      "edge_id": "0691237e-8b37-45aa-959a-04c74e23d3b8",
+      "source_id": "ee23d5d5-30c9-470b-af24-283cba763a59",
+      "target_id": "977608ea-e756-408f-9660-5e3802c22c53",
+      "relationship_type": "HOSTS",
+      "confidence": 1.0
+    },
+    {
+      "edge_id": "8d3c644e-ce2d-4767-ae18-3c2ea881e55f",
+      "source_id": "ee23d5d5-30c9-470b-af24-283cba763a59",
+      "target_id": "2a6df888-3969-45d7-a396-04f7e8ddbaf2",
+      "relationship_type": "HOSTS",
+      "confidence": 1.0
+    },
+    {
+      "edge_id": "e159be92-b0bc-4b43-9df6-735aa6739cc5",
+      "source_id": "ee23d5d5-30c9-470b-af24-283cba763a59",
+      "target_id": "08453d0c-3f2f-490e-84de-35ea13c8501e",
+      "relationship_type": "HOSTS",
+      "confidence": 1.0
+    },
+    {
+      "edge_id": "1604fb17-57c7-4a46-87ff-2cddb21313d7",
+      "source_id": "ee23d5d5-30c9-470b-af24-283cba763a59",
+      "target_id": "6ee43f15-63ad-4245-9aba-b9941bb1ca41",
+      "relationship_type": "HOSTS",
+      "confidence": 1.0
+    },
+    {
+      "edge_id": "6c531eb8-0e45-4fe4-b308-4a1e87e70ced",
+      "source_id": "7b0d5f5e-f37d-4116-b7f3-e22c075bb07d",
+      "target_id": "0767fc81-907d-4ba2-b448-79d9779ea94f",
+      "relationship_type": "ADJACENT_TO",
+      "confidence": 0.75
+    },
+    {
+      "edge_id": "38cf6147-f428-4536-b8d0-458ae1007c46",
+      "source_id": "0767fc81-907d-4ba2-b448-79d9779ea94f",
+      "target_id": "7b0d5f5e-f37d-4116-b7f3-e22c075bb07d",
+      "relationship_type": "ADJACENT_TO",
+      "confidence": 0.75
+    },
+    {
+      "edge_id": "8a959810-d9ff-4214-8446-89d6b948f2ab",
+      "source_id": "a1d62bf9-eb7a-446c-a95e-962eed5fb4d4",
+      "target_id": "1875caf5-6baa-4e8b-9837-9393f3de5d06",
+      "relationship_type": "ADJACENT_TO",
+      "confidence": 0.75
+    },
+    {
+      "edge_id": "abde4659-5827-4b17-bcdd-8a43ab27f892",
+      "source_id": "1875caf5-6baa-4e8b-9837-9393f3de5d06",
+      "target_id": "a1d62bf9-eb7a-446c-a95e-962eed5fb4d4",
+      "relationship_type": "ADJACENT_TO",
+      "confidence": 0.75
+    },
+    {
+      "edge_id": "cdbafe64-e757-4b11-bc26-c565792991e0",
+      "source_id": "7b0d5f5e-f37d-4116-b7f3-e22c075bb07d",
+      "target_id": "a1d62bf9-eb7a-446c-a95e-962eed5fb4d4",
+      "relationship_type": "ADJACENT_TO",
+      "confidence": 0.75
+    },
+    {
+      "edge_id": "b99cc860-8bd3-4b51-a83d-40cd5c6fa7fb",
+      "source_id": "a1d62bf9-eb7a-446c-a95e-962eed5fb4d4",
+      "target_id": "7b0d5f5e-f37d-4116-b7f3-e22c075bb07d",
+      "relationship_type": "ADJACENT_TO",
+      "confidence": 0.75
+    },
+    {
+      "edge_id": "2356c2e4-1f85-4435-ae60-1e22fffd8c01",
+      "source_id": "7b0d5f5e-f37d-4116-b7f3-e22c075bb07d",
+      "target_id": "1875caf5-6baa-4e8b-9837-9393f3de5d06",
+      "relationship_type": "ADJACENT_TO",
+      "confidence": 0.75
+    },
+    {
+      "edge_id": "be4afd07-95a3-4d92-acb4-33b49924dd75",
+      "source_id": "1875caf5-6baa-4e8b-9837-9393f3de5d06",
+      "target_id": "7b0d5f5e-f37d-4116-b7f3-e22c075bb07d",
+      "relationship_type": "ADJACENT_TO",
+      "confidence": 0.75
+    },
+    {
+      "edge_id": "d3744255-9c4d-4c5e-b809-c4d2f78545eb",
+      "source_id": "a1d62bf9-eb7a-446c-a95e-962eed5fb4d4",
+      "target_id": "0767fc81-907d-4ba2-b448-79d9779ea94f",
+      "relationship_type": "ADJACENT_TO",
+      "confidence": 0.75
+    },
+    {
+      "edge_id": "6cd39e01-5d50-4836-abf6-6573dd8d2d6e",
+      "source_id": "0767fc81-907d-4ba2-b448-79d9779ea94f",
+      "target_id": "a1d62bf9-eb7a-446c-a95e-962eed5fb4d4",
+      "relationship_type": "ADJACENT_TO",
+      "confidence": 0.75
+    },
+    {
+      "edge_id": "9fb4d1e0-8d15-4a5c-af8a-66a152cee1a9",
+      "source_id": "0767fc81-907d-4ba2-b448-79d9779ea94f",
+      "target_id": "1875caf5-6baa-4e8b-9837-9393f3de5d06",
+      "relationship_type": "ADJACENT_TO",
+      "confidence": 0.75
+    },
+    {
+      "edge_id": "1e0188a6-0292-478e-9881-bd3462c852b2",
+      "source_id": "1875caf5-6baa-4e8b-9837-9393f3de5d06",
+      "target_id": "0767fc81-907d-4ba2-b448-79d9779ea94f",
+      "relationship_type": "ADJACENT_TO",
+      "confidence": 0.75
+    }
+  ],
+  "measurements": [
+    {
+      "measurement_id": "5c4dadb8-6184-4ba2-b7c7-e5abfbc75da4",
+      "target_entity_id": "eee2fe11-7223-40cb-a879-93c3b174be95",
+      "metric_type": "WALL_LENGTH",
+      "nominal_value": 3.4185231819633963,
+      "standard_deviation": 0.5132760475137104,
+      "interval_95": [
+        2.412502128836524,
+        4.424544235090268
+      ],
+      "unit": "m",
+      "provenance_ref": {
+        "source_capture_ids": [],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "measurement",
+        "timestamp": "2026-09-10T00:53:47.077191Z"
+      }
+    },
+    {
+      "measurement_id": "d4b9ce81-ae99-4227-a9b0-1114e630a721",
+      "target_entity_id": "d70d4b0b-4f21-45d9-8862-f2b703aee795",
+      "metric_type": "WALL_LENGTH",
+      "nominal_value": 2.6835376348996105,
+      "standard_deviation": 0.40304415577350494,
+      "interval_95": [
+        1.8935710895835407,
+        3.4735041802156803
+      ],
+      "unit": "m",
+      "provenance_ref": {
+        "source_capture_ids": [],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "measurement",
+        "timestamp": "2026-09-10T00:53:47.077191Z"
+      }
+    },
+    {
+      "measurement_id": "2d31f5ec-fb89-40c0-b8aa-00129e64b248",
+      "target_entity_id": "2c81b3df-be6e-49b9-b75a-25491cbc2e77",
+      "metric_type": "WALL_LENGTH",
+      "nominal_value": 2.64715231243078,
+      "standard_deviation": 0.3976314399304764,
+      "interval_95": [
+        1.8677946901670464,
+        3.426509934694514
+      ],
+      "unit": "m",
+      "provenance_ref": {
+        "source_capture_ids": [],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "measurement",
+        "timestamp": "2026-09-10T00:53:47.077191Z"
+      }
+    },
+    {
+      "measurement_id": "18a6eb27-e74c-43ab-98f4-1014fdca91ca",
+      "target_entity_id": "9b77e097-a958-4678-a70c-76857073f6df",
+      "metric_type": "WALL_LENGTH",
+      "nominal_value": 2.3850716431660848,
+      "standard_deviation": 0.35827696959335614,
+      "interval_95": [
+        1.6828487827631067,
+        3.087294503569063
+      ],
+      "unit": "m",
+      "provenance_ref": {
+        "source_capture_ids": [],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "measurement",
+        "timestamp": "2026-09-10T00:53:47.077191Z"
+      }
+    },
+    {
+      "measurement_id": "af79bda8-ee29-4bf2-8655-b629273cb60d",
+      "target_entity_id": "ee23d5d5-30c9-470b-af24-283cba763a59",
+      "metric_type": "WALL_LENGTH",
+      "nominal_value": 4.327454537100393,
+      "standard_deviation": 0.6497298652603426,
+      "interval_95": [
+        3.0539840011901216,
+        5.600925073010664
+      ],
+      "unit": "m",
+      "provenance_ref": {
+        "source_capture_ids": [],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "measurement",
+        "timestamp": "2026-09-10T00:53:47.077191Z"
+      }
+    },
+    {
+      "measurement_id": "eff6b4d8-8f6c-41e8-829e-373433255dc7",
+      "target_entity_id": "8bae420f-4d79-4886-af99-bcc5afadd6d7",
+      "metric_type": "WALL_LENGTH",
+      "nominal_value": 2.6472875245142493,
+      "standard_deviation": 0.3980514660330782,
+      "interval_95": [
+        1.8671066510894159,
+        3.4274683979390828
+      ],
+      "unit": "m",
+      "provenance_ref": {
+        "source_capture_ids": [],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "measurement",
+        "timestamp": "2026-09-10T00:53:47.077191Z"
+      }
+    },
+    {
+      "measurement_id": "aef0693d-5e19-43b9-bcaf-15031ac9fe17",
+      "target_entity_id": "94d566f1-0b17-49af-b42e-e492a7984289",
+      "metric_type": "WALL_LENGTH",
+      "nominal_value": 2.6819403698115503,
+      "standard_deviation": 0.40328051318556524,
+      "interval_95": [
+        1.8915105639678425,
+        3.472370175655258
+      ],
+      "unit": "m",
+      "provenance_ref": {
+        "source_capture_ids": [],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "measurement",
+        "timestamp": "2026-09-10T00:53:47.077191Z"
+      }
+    },
+    {
+      "measurement_id": "a9471940-238d-4df4-837b-b1c4e94d35b0",
+      "target_entity_id": "5262e0ff-9615-4d25-98c2-477bb1ed893d",
+      "metric_type": "WALL_LENGTH",
+      "nominal_value": 2.544925987234739,
+      "standard_deviation": 0.3823077651851244,
+      "interval_95": [
+        1.795602767471895,
+        3.294249206997583
+      ],
+      "unit": "m",
+      "provenance_ref": {
+        "source_capture_ids": [],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "measurement",
+        "timestamp": "2026-09-10T00:53:47.077191Z"
+      }
+    },
+    {
+      "measurement_id": "f9dded93-11e0-4808-af0e-78421c23efe8",
+      "target_entity_id": "401449e1-4dbf-4b82-a44e-c52732ab7749",
+      "metric_type": "WALL_LENGTH",
+      "nominal_value": 5.944199682980059,
+      "standard_deviation": 0.8920396884145354,
+      "interval_95": [
+        4.19580189368757,
+        7.692597472272549
+      ],
+      "unit": "m",
+      "provenance_ref": {
+        "source_capture_ids": [],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "measurement",
+        "timestamp": "2026-09-10T00:53:47.077191Z"
+      }
+    },
+    {
+      "measurement_id": "c9003aeb-20b0-4b47-aef9-dddeea38166e",
+      "target_entity_id": "92ed4527-481f-4cb5-a050-46284a860636",
+      "metric_type": "WALL_LENGTH",
+      "nominal_value": 4.9214979072129905,
+      "standard_deviation": 0.7385652066174769,
+      "interval_95": [
+        3.4739101022427357,
+        6.369085712183246
+      ],
+      "unit": "m",
+      "provenance_ref": {
+        "source_capture_ids": [],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "measurement",
+        "timestamp": "2026-09-10T00:53:47.077191Z"
+      }
+    },
+    {
+      "measurement_id": "e6a29aef-6995-4605-92b2-de367c38aa8c",
+      "target_entity_id": "441d8fb5-40a0-4987-ba05-f8930a2c8ccb",
+      "metric_type": "WALL_LENGTH",
+      "nominal_value": 4.649783797880448,
+      "standard_deviation": 0.6980305048214714,
+      "interval_95": [
+        3.281644008430364,
+        6.017923587330532
+      ],
+      "unit": "m",
+      "provenance_ref": {
+        "source_capture_ids": [],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "measurement",
+        "timestamp": "2026-09-10T00:53:47.077191Z"
+      }
+    },
+    {
+      "measurement_id": "a5fb4a59-e159-4b80-8d96-bbc411becfc9",
+      "target_entity_id": "a0dd13d4-1d8b-4483-a21c-b20bc9cb2aaf",
+      "metric_type": "WALL_LENGTH",
+      "nominal_value": 3.473271946769612,
+      "standard_deviation": 0.5217386739615395,
+      "interval_95": [
+        2.4506641458049945,
+        4.49587974773423
+      ],
+      "unit": "m",
+      "provenance_ref": {
+        "source_capture_ids": [],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "measurement",
+        "timestamp": "2026-09-10T00:53:47.077191Z"
+      }
+    },
+    {
+      "measurement_id": "62e300a5-5f93-4bb3-91d3-152c0587262e",
+      "target_entity_id": "a0f4cff5-ab1c-4bad-9f36-39af89d47591",
+      "metric_type": "WALL_LENGTH",
+      "nominal_value": 2.6321088143603477,
+      "standard_deviation": 0.3953182933728631,
+      "interval_95": [
+        1.857284959349536,
+        3.4069326693711597
+      ],
+      "unit": "m",
+      "provenance_ref": {
+        "source_capture_ids": [],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "measurement",
+        "timestamp": "2026-09-10T00:53:47.077191Z"
+      }
+    },
+    {
+      "measurement_id": "eeae9bde-a45b-47df-b466-62b69ab668a8",
+      "target_entity_id": "8fe64217-be8d-46a3-afe1-c366d70b7ada",
+      "metric_type": "WALL_LENGTH",
+      "nominal_value": 2.467903895165123,
+      "standard_deviation": 0.37070842002181925,
+      "interval_95": [
+        1.7413153919223574,
+        3.194492398407889
+      ],
+      "unit": "m",
+      "provenance_ref": {
+        "source_capture_ids": [],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "measurement",
+        "timestamp": "2026-09-10T00:53:47.077191Z"
+      }
+    },
+    {
+      "measurement_id": "5b38847c-a1df-48d4-a76d-f473568a1a78",
+      "target_entity_id": "a1b7d10c-74d8-4b01-99d6-dd93f5412d7b",
+      "metric_type": "WALL_LENGTH",
+      "nominal_value": 4.694133584657764,
+      "standard_deviation": 0.7046180882964406,
+      "interval_95": [
+        3.3130821315967403,
+        6.0751850377187875
+      ],
+      "unit": "m",
+      "provenance_ref": {
+        "source_capture_ids": [],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "measurement",
+        "timestamp": "2026-09-10T00:53:47.077191Z"
+      }
+    },
+    {
+      "measurement_id": "5bb43387-583e-48d7-83b6-df81b20e2bf2",
+      "target_entity_id": "f6b0ac6d-4c61-4d94-8cea-8b0cf23307e6",
+      "metric_type": "WALL_LENGTH",
+      "nominal_value": 4.47082781597603,
+      "standard_deviation": 0.6710695902643485,
+      "interval_95": [
+        3.1555314190579065,
+        5.786124212894153
+      ],
+      "unit": "m",
+      "provenance_ref": {
+        "source_capture_ids": [],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "measurement",
+        "timestamp": "2026-09-10T00:53:47.077191Z"
+      }
+    },
+    {
+      "measurement_id": "a3f0a829-5f8a-4aae-a21e-dc590c30003d",
+      "target_entity_id": "29a5011a-b63d-4edc-972a-1425d809d857",
+      "metric_type": "FLOOR_AREA",
+      "nominal_value": 2.734390884238854,
+      "standard_deviation": 0.4101586326358281,
+      "interval_95": [
+        1.9304799642726311,
+        3.538301804205077
+      ],
+      "unit": "m2",
+      "provenance_ref": {
+        "source_capture_ids": [],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "measurement",
+        "timestamp": "2026-09-10T00:53:47.077191Z"
+      }
+    },
+    {
+      "measurement_id": "5141ab22-142b-4353-a7d5-885881e82670",
+      "target_entity_id": "7b0d5f5e-f37d-4116-b7f3-e22c075bb07d",
+      "metric_type": "FLOOR_AREA",
+      "nominal_value": 1.2226071525843882,
+      "standard_deviation": 0.18339107288765824,
+      "interval_95": [
+        0.8631606497245781,
+        1.5820536554441984
+      ],
+      "unit": "m2",
+      "provenance_ref": {
+        "source_capture_ids": [],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "measurement",
+        "timestamp": "2026-09-10T00:53:47.077191Z"
+      }
+    },
+    {
+      "measurement_id": "88d015a3-1ef7-4fc8-813f-24c7223a4524",
+      "target_entity_id": "a1d62bf9-eb7a-446c-a95e-962eed5fb4d4",
+      "metric_type": "FLOOR_AREA",
+      "nominal_value": 3.397729950535247,
+      "standard_deviation": 0.509659492580287,
+      "interval_95": [
+        2.3987973450778846,
+        4.396662555992609
+      ],
+      "unit": "m2",
+      "provenance_ref": {
+        "source_capture_ids": [],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "measurement",
+        "timestamp": "2026-09-10T00:53:47.077191Z"
+      }
+    },
+    {
+      "measurement_id": "012a37e6-c03e-48df-aaa3-7d4f65699c0d",
+      "target_entity_id": "0767fc81-907d-4ba2-b448-79d9779ea94f",
+      "metric_type": "FLOOR_AREA",
+      "nominal_value": 0.6968439422366535,
+      "standard_deviation": 0.10452659133549802,
+      "interval_95": [
+        0.49197182321907734,
+        0.9017160612542297
+      ],
+      "unit": "m2",
+      "provenance_ref": {
+        "source_capture_ids": [],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "measurement",
+        "timestamp": "2026-09-10T00:53:47.077191Z"
+      }
+    },
+    {
+      "measurement_id": "ac882bcb-f98c-4431-9228-5ef639feadc0",
+      "target_entity_id": "1875caf5-6baa-4e8b-9837-9393f3de5d06",
+      "metric_type": "FLOOR_AREA",
+      "nominal_value": 0.681146710395115,
+      "standard_deviation": 0.10217200655926724,
+      "interval_95": [
+        0.48088957753895123,
+        0.8814038432512787
+      ],
+      "unit": "m2",
+      "provenance_ref": {
+        "source_capture_ids": [],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "measurement",
+        "timestamp": "2026-09-10T00:53:47.077191Z"
+      }
+    },
+    {
+      "measurement_id": "f8432b2c-3dfa-4cc4-b923-b058cffdc7c6",
+      "target_entity_id": "cb5e1cee-f819-447e-a397-313a30aa3b09",
+      "metric_type": "OPENING_WIDTH",
+      "nominal_value": 0.5945257707762429,
+      "standard_deviation": 0.10223927852168377,
+      "interval_95": [
+        0.3941367848737427,
+        0.7949147566787431
+      ],
+      "unit": "m",
+      "provenance_ref": {
+        "source_capture_ids": [],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "measurement",
+        "timestamp": "2026-09-10T00:53:47.077191Z"
+      }
+    },
+    {
+      "measurement_id": "5a46bb41-c33a-4bc3-b9d4-e52a20efb714",
+      "target_entity_id": "d5cb7bf5-1494-4ed4-9b7a-853cf069ebea",
+      "metric_type": "OPENING_WIDTH",
+      "nominal_value": 0.5945257707762429,
+      "standard_deviation": 0.10223927852168377,
+      "interval_95": [
+        0.3941367848737427,
+        0.7949147566787431
+      ],
+      "unit": "m",
+      "provenance_ref": {
+        "source_capture_ids": [],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "measurement",
+        "timestamp": "2026-09-10T00:53:47.077191Z"
+      }
+    },
+    {
+      "measurement_id": "aa30db0c-1d0a-4706-aafc-330915d0fc80",
+      "target_entity_id": "7d2c4b4f-728d-4651-adb1-c5a53dcf6d74",
+      "metric_type": "OPENING_WIDTH",
+      "nominal_value": 0.5945257707762429,
+      "standard_deviation": 0.10223927852168377,
+      "interval_95": [
+        0.3941367848737427,
+        0.7949147566787431
+      ],
+      "unit": "m",
+      "provenance_ref": {
+        "source_capture_ids": [],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "measurement",
+        "timestamp": "2026-09-10T00:53:47.077191Z"
+      }
+    },
+    {
+      "measurement_id": "603d5959-3642-4bd3-b3bc-a1210ffa1351",
+      "target_entity_id": "b9e5ee4c-1f74-4d96-a3fd-1ecf58671c87",
+      "metric_type": "OPENING_WIDTH",
+      "nominal_value": 0.5963416966443579,
+      "standard_deviation": 0.10247695804923714,
+      "interval_95": [
+        0.39548685886785306,
+        0.7971965344208627
+      ],
+      "unit": "m",
+      "provenance_ref": {
+        "source_capture_ids": [],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "measurement",
+        "timestamp": "2026-09-10T00:53:47.077191Z"
+      }
+    },
+    {
+      "measurement_id": "a357ce9e-b4ba-4bd9-9af5-1bdae64f37e4",
+      "target_entity_id": "70090526-65b5-442d-92e2-de2deed0275a",
+      "metric_type": "OPENING_WIDTH",
+      "nominal_value": 0.5963416966443579,
+      "standard_deviation": 0.10247695804923714,
+      "interval_95": [
+        0.39548685886785306,
+        0.7971965344208627
+      ],
+      "unit": "m",
+      "provenance_ref": {
+        "source_capture_ids": [],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "measurement",
+        "timestamp": "2026-09-10T00:53:47.077191Z"
+      }
+    },
+    {
+      "measurement_id": "3d040ce6-40ad-42af-858a-65fe8573c9b1",
+      "target_entity_id": "979102f8-0bdb-401d-ba88-60b47e1dd331",
+      "metric_type": "OPENING_WIDTH",
+      "nominal_value": 0.5963416966443579,
+      "standard_deviation": 0.10247695804923714,
+      "interval_95": [
+        0.39548685886785306,
+        0.7971965344208627
+      ],
+      "unit": "m",
+      "provenance_ref": {
+        "source_capture_ids": [],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "measurement",
+        "timestamp": "2026-09-10T00:53:47.077191Z"
+      }
+    },
+    {
+      "measurement_id": "d0ed99c7-4db9-4ce7-a36b-3f5f16b113fa",
+      "target_entity_id": "977608ea-e756-408f-9660-5e3802c22c53",
+      "metric_type": "OPENING_WIDTH",
+      "nominal_value": 0.5968902809793645,
+      "standard_deviation": 0.10254879409028442,
+      "interval_95": [
+        0.395894644562407,
+        0.797885917396322
+      ],
+      "unit": "m",
+      "provenance_ref": {
+        "source_capture_ids": [],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "measurement",
+        "timestamp": "2026-09-10T00:53:47.077191Z"
+      }
+    },
+    {
+      "measurement_id": "5f08bfa5-6159-4c07-a66f-e5ab47818ea6",
+      "target_entity_id": "2a6df888-3969-45d7-a396-04f7e8ddbaf2",
+      "metric_type": "OPENING_WIDTH",
+      "nominal_value": 0.5968902809793645,
+      "standard_deviation": 0.10254879409028442,
+      "interval_95": [
+        0.395894644562407,
+        0.797885917396322
+      ],
+      "unit": "m",
+      "provenance_ref": {
+        "source_capture_ids": [],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "measurement",
+        "timestamp": "2026-09-10T00:53:47.077191Z"
+      }
+    },
+    {
+      "measurement_id": "c72a8b49-465c-4ba8-af2e-76409faddb25",
+      "target_entity_id": "08453d0c-3f2f-490e-84de-35ea13c8501e",
+      "metric_type": "OPENING_WIDTH",
+      "nominal_value": 0.5968902809793645,
+      "standard_deviation": 0.10254879409028442,
+      "interval_95": [
+        0.395894644562407,
+        0.797885917396322
+      ],
+      "unit": "m",
+      "provenance_ref": {
+        "source_capture_ids": [],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "measurement",
+        "timestamp": "2026-09-10T00:53:47.077191Z"
+      }
+    },
+    {
+      "measurement_id": "981c01e1-1343-4105-a6dc-79bec3eaf61c",
+      "target_entity_id": "6ee43f15-63ad-4245-9aba-b9941bb1ca41",
+      "metric_type": "OPENING_WIDTH",
+      "nominal_value": 0.7958537079724861,
+      "standard_deviation": 0.12942611908384255,
+      "interval_95": [
+        0.5421785145681548,
+        1.0495289013768174
+      ],
+      "unit": "m",
+      "provenance_ref": {
+        "source_capture_ids": [],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "measurement",
+        "timestamp": "2026-09-10T00:53:47.077191Z"
+      }
+    },
+    {
+      "measurement_id": "46220cb1-0466-4fc2-a360-eb7c9f71827f",
+      "target_entity_id": "29a5011a-b63d-4edc-972a-1425d809d857",
+      "metric_type": "CEILING_HEIGHT",
+      "nominal_value": 2.365994801756665,
+      "standard_deviation": 0.031645496651054435,
+      "interval_95": [
+        2.3039696283205986,
+        2.428019975192732
+      ],
+      "unit": "m",
+      "provenance_ref": {
+        "source_capture_ids": [],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "measurement",
+        "timestamp": "2026-09-10T00:53:47.077191Z"
+      }
+    }
+  ],
+  "scale_estimates": [
+    {
+      "scale_id": "2ff6076b-0876-45b6-94bb-b40d9b28bd19",
+      "frame_id": "9d508333-e367-571f-af71-6b08d878d2f8",
+      "scale_factor": 1.0,
+      "uncertainty": {
+        "uncertainty_id": "0bb9a3f3-0c6d-4e43-abb6-db82bb0883d4",
+        "distribution_type": "metric_depth_model_prior",
+        "confidence_bounds": [
+          0.0,
+          0.15
+        ]
+      },
+      "confidence": 0.45,
+      "evidence": [
+        "metric_depth"
+      ],
+      "provenance": {
+        "source_capture_ids": [
+          "8a50c41c-8740-5eef-aa56-3dfe96090149",
+          "a559b74e-6c5b-56aa-b1f6-c1be0f125860",
+          "dfe3b524-5f7e-5a65-a998-16d4112844e2",
+          "966d7341-e1ac-59dd-bb46-8d392d255e90"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "depth_odometry_metric_scale",
+        "timestamp": "2026-09-10T00:50:28.217254Z"
+      }
+    },
+    {
+      "scale_id": "c7667cb6-eb82-4ebd-b796-567d199abef9",
+      "frame_id": "214f4e5b-450c-5834-af63-83b400b4b81c",
+      "scale_factor": 1.0,
+      "uncertainty": {
+        "uncertainty_id": "54e6db16-2831-4884-9b30-5be8a6b016c9",
+        "distribution_type": "metric_depth_model_prior",
+        "confidence_bounds": [
+          0.0,
+          0.15
+        ]
+      },
+      "confidence": 0.6166666666666667,
+      "evidence": [
+        "metric_depth"
+      ],
+      "provenance": {
+        "source_capture_ids": [
+          "31ad7b12-64d7-5a05-b397-046d9654c601",
+          "6c861f25-fc73-53a9-a1d6-6e17a7cc676e",
+          "5847bc29-667c-54fa-9cbd-a3195236a0c3",
+          "6b7845b2-2f53-55a8-897d-585ff18e98b5"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "depth_odometry_metric_scale",
+        "timestamp": "2026-09-10T00:51:52.393626Z"
+      }
+    },
+    {
+      "scale_id": "d0ae86d4-55d0-41d5-b873-bdaaa180ab08",
+      "frame_id": "9a3ec24f-1720-5fcb-8d44-9032e3d4a16c",
+      "scale_factor": 1.0,
+      "uncertainty": {
+        "uncertainty_id": "dd16c95c-08fa-4a3a-a2ad-deead184fc9a",
+        "distribution_type": "metric_depth_model_prior",
+        "confidence_bounds": [
+          0.0,
+          0.15
+        ]
+      },
+      "confidence": 0.45,
+      "evidence": [
+        "metric_depth"
+      ],
+      "provenance": {
+        "source_capture_ids": [
+          "8edded90-fc00-588f-aea0-1cb135fec78f",
+          "3bafbbbc-3000-536e-a6b1-d6f1fbb5b396",
+          "898e3a71-a898-52c1-b25e-3e4bfbfa1303",
+          "aa8c7a62-e333-5364-a492-eb5796274636"
+        ],
+        "source_pose_ids": [],
+        "source_observation_ids": [],
+        "generating_pipeline_stage": "depth_odometry_metric_scale",
+        "timestamp": "2026-09-10T00:53:47.059105Z"
+      }
+    }
+  ],
+  "provenance": {
+    "source_capture_ids": [],
+    "source_pose_ids": [],
+    "source_observation_ids": [],
+    "generating_pipeline_stage": "global_property_optimization",
+    "timestamp": "2026-09-10T00:53:47.070821Z"
+  }
+}

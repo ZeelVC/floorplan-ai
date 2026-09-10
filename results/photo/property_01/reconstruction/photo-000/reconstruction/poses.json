@@ -1,0 +1,70 @@
+[
+  {
+    "camera_id": 1,
+    "image_id": 1,
+    "image_name": "1.jpeg",
+    "qvec": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "timestamp_seconds": null,
+    "tvec": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "image_id": 2,
+    "image_name": "2.jpeg",
+    "qvec": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "timestamp_seconds": null,
+    "tvec": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "image_id": 3,
+    "image_name": "3.jpeg",
+    "qvec": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "timestamp_seconds": null,
+    "tvec": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "camera_id": 1,
+    "image_id": 4,
+    "image_name": "4.jpeg",
+    "qvec": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "timestamp_seconds": null,
+    "tvec": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  }
+]

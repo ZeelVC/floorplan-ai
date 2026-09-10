@@ -1,0 +1,9 @@
+{
+  "drift_correction_enabled": true,
+  "global_property_optimization": true,
+  "measurement_count": 32,
+  "opening_count": 10,
+  "room_count": 5,
+  "stitching_components": 3,
+  "wall_count": 16
+}
