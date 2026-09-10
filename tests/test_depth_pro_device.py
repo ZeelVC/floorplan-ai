@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -60,8 +61,14 @@ def test_native_loader_overrides_depth_pro_cwd_checkpoint(tmp_path, monkeypatch)
         device=lambda name: (calls.__setitem__("device", name) or name),
         float32="float32",
     )
-    fake_config = SimpleNamespace(checkpoint_uri="./checkpoints/depth_pro.pt")
-    fake_depth_module = SimpleNamespace(DEFAULT_MONODEPTH_CONFIG_DICT=fake_config)
+
+    @dataclass(frozen=True)
+    class FakeDepthProConfig:
+        checkpoint_uri: str = "./checkpoints/depth_pro.pt"
+
+    fake_depth_module = SimpleNamespace(
+        DEFAULT_MONODEPTH_CONFIG_DICT=FakeDepthProConfig()
+    )
     fake_module = SimpleNamespace(create_model_and_transforms=create_model_and_transforms)
 
     def fake_import(name):
