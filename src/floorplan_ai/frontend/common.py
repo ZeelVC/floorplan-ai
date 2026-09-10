@@ -69,16 +69,17 @@ def build_model(capture_inputs, result:ReconstructionResult, output_dir:Path, so
     _STABLE_SCOPE = str(output_dir.resolve())
     output_dir.mkdir(parents=True,exist_ok=True)
 
-    # Never allow a failed or empty camera reconstruction to reach metric-depth
-    # fusion. Previously this was converted into the much less useful
-    # "no valid reconstructed frame" error, hiding the actual COLMAP failure.
-    if not result.success:
-        reason = result.failure_reason or 'reconstruction backend reported failure without a reason'
-        raise RuntimeError(f'{source_type}_reconstruction: {reason}')
-    if not result.camera_models:
-        raise RuntimeError(f'{source_type}_reconstruction: backend produced no camera models; verify COLMAP input and feature extraction')
-    if not result.poses:
-        raise RuntimeError(f'{source_type}_reconstruction: backend produced no registered camera poses; provide overlapping views of the same scene and verify COLMAP mapper output')
+    # Degraded reconstruction is valid for the frontend contract when metric
+    # fusion is not requested. Real metric reconstruction must fail early with
+    # the backend's actionable error instead of a generic depth error.
+    if metric_depth is not None:
+        if not result.success:
+            reason = result.failure_reason or 'reconstruction backend reported failure without a reason'
+            raise RuntimeError(f'{source_type}_reconstruction: {reason}')
+        if not result.camera_models:
+            raise RuntimeError(f'{source_type}_reconstruction: backend produced no camera models; verify COLMAP input and feature extraction')
+        if not result.poses:
+            raise RuntimeError(f'{source_type}_reconstruction: backend produced no registered camera poses; provide overlapping views of the same scene and verify COLMAP mapper output')
 
     frame=CoordinateFrame(frame_id=stable_id(str(output_dir.resolve())+'/frame'),frame_type=FrameType.LOCAL)
     captures=tuple(Capture(capture_id=stable_id('capture/'+c.capture_id),capture_type=source_type,payload_reference=c.file,metadata=dict(c.metadata)) for c in capture_inputs)
